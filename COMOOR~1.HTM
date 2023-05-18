@@ -1,0 +1,676 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Como organizar mis registros para publicar en GBIF</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="bf7c929a-4e33-43b9-bd02-497dd1341d54" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🍃</span></div><h1 class="page-title">Como organizar mis registros para publicar en GBIF</h1></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="4f9cba5d-fdbe-47ea-8bbd-1adc0f7a46e5"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%">Resumen de lo necesario:
+1. Datos en formato DwC según planilla BASE
+2. Información para completar los Metadatos</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2a6ea500-c7fe-488c-b747-8807c2924423"><div style="font-size:1.5em"><span class="icon">📢</span></div><div style="width:100%">No olvides que debes enviar la solicitud de gestión de datos a través del <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-nlXmShC6JYOcir2RkehRvABRauEHYZNvoakerF5PP7KbXw/viewform">Formulario de Gestión de Datos</a></div></figure><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3">¿Qué es GBIF?</summary><div class="indented"><p id="e9840cb7-6778-44ce-97f7-54f4e7052799" class="">GBIF es la sigla para Global Biodiversity Information Facility (<mark class="highlight-gray"><em>Infraestructura Mundial de Información en Biodiversidad</em></mark><em>). </em>En palabras simples, es una plataforma que recopila información sobre especies y su distribución en el mundo de manera sistematizada, ya sea a través de Check-list de especies, registros en eventos de muestreos o registros biológicos.</p><p id="fbc0a08d-dec8-4369-86fb-2d67275420f2" class="">En GBIF puedes encontrar información tanto registros realizados de manera in-situ, al igual de registros de colecciones de museos.</p><p id="c1c6977f-1410-4867-ab32-d27dfdd1c44a" class="">Muchos países están asociados a GBIF y están comprometidos con colaborar en el acceso a la información relacionada con la Biodiversidad, permitiendo que distintas entidades publiquen a través de plataformas gubernamentales o relacionadas a instituciones de investigación. En caso de BASE, existe el acceso a publicar a través de GBIF Chile.</p><p id="c176618a-7fa6-432d-95ea-7281db85115f" class="">GBIF esta conectada con la plataforma INaturalist, así los registros subidos a esa plataforma también son registrados en GBIF.</p><p id="45bc53c5-7437-46d9-add9-09547707d5ee" class="">Toda la información registrada en GBIF se encuentra en archivos de tipo Darwin Core</p></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3">¿Qué es un archivo Darwin Core (DwC-A)?</summary><div class="indented"><p id="688fa3a3-7017-409a-8e5d-ad0d1fae64eb" class="">Un archivo Darwin Core (DwC-A) se compone generalmente de tres tipos de archivos:</p><ol type="1" id="0d00ba8a-d26a-4440-9987-e0bf080f74a9" class="numbered-list" start="1"><li><mark class="highlight-blue_background">Archivo core (obligatorio):</mark> este corresponde a los datos que serán registrados (puedes revisarlos en la siguiente sección). Estos deben complir con el estandar Darwin Core, en manera simple, es un sistema de parámetros establecidos que deben tener los datos, por ejemplo, en lugar que la tabla con los registros diga “ESPECIE”<strong><strong> , </strong></strong>para identificar el nombre científico la columna tiene que tener por nombre “scientificName”. Aunque es posible tener nombre de columnas u otros descriptores en tus datos de manera personalizada y posteriormente cambiar el nombre de manera manual al publicar (mapear los datos DwC), la mejor práctica es utilizar de manera directa el estándar DwC, en la siguiente sección podrás ver cuales son los parámetros obligatorios y sugeridos que deben tener tus plantillas, con links externos para explorar que significa cada término, además de planillas para utilizar y ejemplos. Además puedes encontrar la planilla BASE para la publicación de registros biológicos.</li></ol><ol type="1" id="76913ee8-7c7a-467b-8a9c-b63a4d826097" class="numbered-list" start="2"><li><mark class="highlight-purple_background">Archivo extensión (opcional):</mark> archivos que complementen la información que se registra en el archivo core, este también debe estar en formato DwC y tiene que estar identificado a que registro hace referencia del archivo core, un ejemplo puede ser una lista de nombres comunes para las especies registradas en un evento de muestreo.</li></ol><ol type="1" id="3a78574d-416d-4e33-a580-8d19b30685ff" class="numbered-list" start="3"><li><mark class="highlight-red_background">Meta-archivo descriptor (obligatorio):</mark> Es un archivo que describe los datos del core y de la extensión. Este es un archivo XML simple que se puede crear de manera directa en la plataforma GBIF, y describe que campo DwC está en cada columna.</li></ol><ol type="1" id="9179f097-457e-4e4f-b1e9-cd76a2ada36f" class="numbered-list" start="4"><li><mark class="highlight-teal_background">Metadatos del recurso (obligatorio): </mark>Un metadato es información sobre los datos (datos sobre datos), este contiene información de los autores, métodos de muestreo empleados, entre otra información. Esta se puede completar a través de la plataforma GBIF. </li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3">Tipo de datos para Publicar</summary><div class="indented"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Metadatos del recurso</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></summary><div class="indented"><h3 id="4fcdd210-1542-4d15-b1e1-cf34346960cf" class=""><strong>Campos obligatorios de los metadatos</strong></h3><ul id="6331bdba-09c4-4ecb-a37d-32c1edd124ae" class="bulleted-list"><li style="list-style-type:disc">título</li></ul><ul id="c4092525-1f05-4394-9592-00ca148ee56c" class="bulleted-list"><li style="list-style-type:disc">descripción</li></ul><ul id="52cb6320-a345-42c0-ae9b-ee3ce569bdd7" class="bulleted-list"><li style="list-style-type:disc">Organización publicadora</li></ul><ul id="120386af-ef02-4895-9eae-f10c24a314f7" class="bulleted-list"><li style="list-style-type:disc">Tipo</li></ul><ul id="070fff51-1eaf-4c4c-a853-d3a6d4a47c55" class="bulleted-list"><li style="list-style-type:disc">licencia</li></ul><ul id="48a5ea14-5559-468e-9648-e8ff8c961568" class="bulleted-list"><li style="list-style-type:disc">contacto(s)</li></ul><ul id="f401b7f0-af9f-451a-854c-0ace2bc0a9e5" class="bulleted-list"><li style="list-style-type:disc">creador(es)</li></ul><ul id="f6ff4a5f-3968-4782-8e9b-5d9400c28e3e" class="bulleted-list"><li style="list-style-type:disc">proveedor(es) de los metadatos</li></ul><h3 id="f981eb81-aca6-4b73-acf3-bf970e4d9826" class=""><strong>Campos de metadatos recomendados</strong></h3><ul id="8ffe548b-010d-4213-8a6c-824d39725a0f" class="bulleted-list"><li style="list-style-type:disc">metodología de muestreo, en situaciones en las que los datos provienen de eventos de muestreo</li></ul><ul id="64182685-b415-47e0-97dc-62759e52e39c" class="bulleted-list"><li style="list-style-type:disc">cita, para garantizar que su conjunto de datos se cite de la manera que desee</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">Registros biológicos</summary><div class="indented"><h3 id="86db852f-df48-4bf9-b8e6-287a1da7761d" class=""><strong>Campos DwC requeridos</strong></h3><ul id="f23203de-e412-416c-9e74-c109211abe1b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:occurrenceID">occurrenceID</a></li></ul><ul id="1f30e3ab-c2c1-43c8-b925-67e3fdccd483" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:basisOfRecord">basisOfRecord</a></li></ul><ul id="006b3ee5-ea63-4157-81e9-ebcf87eebe7e" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:scientificName">scientificName</a></li></ul><ul id="104472fe-c7e3-4e90-9df2-b8d1d0f24219" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:eventDate">eventDate</a></li></ul><h3 id="133f25e2-f235-4d78-b140-ceef2c711e1e" class=""><strong>Campos DwC recomendados</strong></h3><ul id="b34cf7ff-d729-409a-98b1-9c52c55b3cc4" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:taxonRank">taxonRank</a> - para justificar el nombre científico (scientificName)</li></ul><ul id="634deaa1-a679-42fb-9a04-9f52c4133d15" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:kingdom">kingdom</a> - y otra taxonomía superior si es posible</li></ul><ul id="4c5300ac-1e07-403e-83bc-93ad25059655" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:decimalLatitude">decimalLatitude</a> &amp; <a href="https://dwc.tdwg.org/terms/#dwc:decimalLongitude">decimalLongitude</a> &amp; <a href="https://dwc.tdwg.org/terms/#dwc:geodeticDatum">geodeticDatum</a> - to provide a specific point location</li></ul><ul id="6443808c-f68a-417e-9b96-ef4a933fecc8" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:countryCode">countryCode</a></li></ul><ul id="c891e654-cf71-483a-a2fa-0116d50cb758" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:individualCount">individualCount</a> / <a href="https://dwc.tdwg.org/terms/#dwc:organismQuantity">organismQuantity</a> &amp; <a href="https://dwc.tdwg.org/terms/#dwc:organismQuantityType">organismQuantityType</a> - para registrar la cantidad de registros biológicos de una especie</li></ul><figure id="4c885068-f467-4a0c-836a-c7d77f2c72f4"><a href="https://github.com/gbif/ipt/wiki/occurrenceData#templates" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">occurrenceData</div><div class="bookmark-description">You can&#x27;t perform that action at this time. You signed in with another tab or window. You signed out in another tab or window. Reload to refresh your session. Reload to refresh your session.</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/gbif/ipt/wiki/occurrenceData#templates</div></div><img src="https://opengraph.githubassets.com/9c273efa08c3d1330380db6dec5d99eeb549933830f3accf80b4c2c5fc29820c/gbif/ipt" class="bookmark-image"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">Eventos de Muestreo</summary><div class="indented"><h3 id="312a2bb4-6036-428d-80d3-91323d7b7900" class=""><strong>Campos DwC requeridos</strong></h3><ul id="57f3df1f-4fdc-4a49-b18c-23b633ada418" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:eventID">eventID</a>, también es necesario para los datos de registros biológicos asociados (para vincularlos)</li></ul><ul id="6f95f2e3-29e4-4fb1-8387-9ccd9826b28d" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:eventDate">eventDate</a></li></ul><ul id="7017ec54-20c3-47fd-a29a-bc84753d55bc" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:samplingProtocol">samplingProtocol</a></li></ul><h3 id="23cbb07a-2ed3-4e99-a2fa-de0b17a7f8b9" class=""><strong>Campos DwC recomendados</strong></h3><ul id="f42a4b28-17cc-46a7-8515-cab991e1e8bd" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:sampleSizeValue">sampleSizeValue</a> &amp; <a href="https://dwc.tdwg.org/terms/#dwc:sampleSizeUnit">sampleSizeUnit</a></li></ul><ul id="c9fc4398-801f-42a7-8385-3e7052aece3f" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:parentEventID">parentEventID</a>, en situaciones en las que el evento es parte de una serie de eventos</li></ul><ul id="e30bffdc-c8e7-416e-84a4-9eec497c29ae" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:samplingEffort">samplingEffort</a>, para proporcionar evidencia del rigor del evento de muestreo</li></ul><ul id="8a29228f-c473-4e92-8396-55e2fbafad11" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:locationID">locationID</a>, en situaciones en las que la parcela/transecto muestreada tiene un identificador único</li></ul><ul id="09e81a21-9eed-49f3-bc8e-627fb27d2f5b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:decimalLatitude">decimalLatitude</a> &amp; <a href="https://dwc.tdwg.org/terms/#dwc:decimalLongitude">decimalLongitude</a> &amp; <a href="https://dwc.tdwg.org/terms/#dwc:geodeticDatum">geodeticDatum</a> - to provide a specific point location</li></ul><ul id="432500dd-f74b-44c9-9f92-3e1613571b82" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:footprintWKT">footprintWKT</a> &amp; <a href="https://dwc.tdwg.org/terms/#dwc:footprintSRS">footprintSRS</a>, para proporcionar una ubicación de forma específica</li></ul><ul id="ff7918b1-39a2-40c6-8153-e2d95d435d63" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:countryCode">countryCode</a></li></ul><ul id="d7eb9292-5dd8-4f26-9020-7963ec70b92f" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:occurrenceStatus">occurrenceStatus</a>, sólo para datos de registros biológicos asociados para registrar datos de presencia/ausencia.</li></ul><figure id="06d2f103-46d1-455e-b8e5-cfa8de89277c"><a href="https://github.com/gbif/ipt/wiki/samplingEventData#templates" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">samplingEventData</div><div class="bookmark-description">You can&#x27;t perform that action at this time. You signed in with another tab or window. You signed out in another tab or window. Reload to refresh your session. Reload to refresh your session.</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/gbif/ipt/wiki/samplingEventData#templates</div></div><img src="https://opengraph.githubassets.com/9c273efa08c3d1330380db6dec5d99eeb549933830f3accf80b4c2c5fc29820c/gbif/ipt" class="bookmark-image"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">Check-list</summary><div class="indented"><h3 id="3794b4bf-6290-4fd1-ac44-471b355ad0f6" class=""><strong>Campos DwC requeridos</strong></h3><ul id="04850836-5156-4f90-9624-2633d98645b1" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:taxonID">taxonID</a></li></ul><ul id="d8b34848-ac21-42f8-97aa-d2d0ff632041" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:scientificName">scientificName</a></li></ul><ul id="c5c5e574-e06d-4ab6-ba7b-4b3450c4d2fc" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:taxonRank">taxonRank</a></li></ul><h3 id="b70075f5-6a42-4129-90e6-94cdbb7ef65f" class=""><strong>Campos DwC recomendados</strong></h3><ul id="114f1412-9076-4ca7-a592-117fcbc8f7e5" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:kingdom">kingdom</a> - y otra taxonomía superior si es posible</li></ul><ul id="a1f0ce6c-8e88-4c1b-8feb-f51f7187944d" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:parentNameUsageID">parentNameUsageID</a> - en situaciones en las que se pretende publicar una taxonomía</li></ul><ul id="4dfc717e-6caf-41dd-bd55-7579d59689a2" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dwc.tdwg.org/terms/#dwc:acceptedNameUsageID">acceptedNameUsageID</a> - en situaciones en las que se pretende publicar una taxonomía</li></ul><figure id="720f5e44-bb34-45fd-9f68-3760cc1ddfbf"><a href="https://github.com/gbif/ipt/wiki/checklistData#templates" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">checklistData</div><div class="bookmark-description">You can&#x27;t perform that action at this time. You signed in with another tab or window. You signed out in another tab or window. Reload to refresh your session. Reload to refresh your session.</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/gbif/ipt/wiki/checklistData#templates</div></div><img src="https://opengraph.githubassets.com/9c273efa08c3d1330380db6dec5d99eeb549933830f3accf80b4c2c5fc29820c/gbif/ipt" class="bookmark-image"/></a></figure></div></details></div></details><div id="903837a7-3dad-4a50-81e2-fccdfd434cf0" class="column-list"><div id="eda10772-091c-456c-826f-b5072b46ab5a" style="width:50%" class="column"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3">Plantilla Instituto Milenio BASE</summary><div class="indented"><p id="d78fc901-9ee3-434a-aaa3-ae5f54d8ffac" class="">Como Instituto Milenio BASE se ha creado una planilla de registros biológicos, para asegurar la calidad de los datos que se publiquen como institución. En el documento, además de encontrar los datos que debes completar, se encuentra que significa cada uno de los campos.</p><figure id="444d710f-8dd3-4da5-a4cc-b8cb286cb26f"><div class="source"><a href="Como%20organizar%20mis%20registros%20para%20publicar%20en%20GBIF%20bf7c929a4e3343b9bd02497dd1341d54/Plantilla_Estndar_Darwin_Core___terreno.xlsx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/afcd856c-07ef-474f-9e0b-9a7dfc6faf84/Plantilla_Estndar_Darwin_Core___terreno.xlsx</a></div></figure><p id="61a3756a-3d3e-4e60-9003-aeb5d165f980" class="">Además se ha creado una planilla para la extensión relacionada con los archivos multimedia</p><figure id="71523d04-0876-448e-adf2-eebb75dec4df"><div class="source"><a href="Como%20organizar%20mis%20registros%20para%20publicar%20en%20GBIF%20bf7c929a4e3343b9bd02497dd1341d54/Planilla_Multimedia_BASE.xlsx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ddef6dc7-ada1-487b-96d0-469a4d0c5087/Planilla_Multimedia_BASE.xlsx</a></div></figure><p id="6b5ec5bf-5052-4873-ae44-be889d9142e8" class=""> </p></div></details></div><div id="c39cbc17-8d4e-441f-bb86-14f55213110f" style="width:49.99999999999999%" class="column"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3">Plantilla MMA</summary><div class="indented"><p id="8c28d79c-72ab-45d8-86e5-a8bb96c293b3" class="">El ministerio de medio ambiente a creado una planilla base para la publicación de datos en GBIF además de los requerimientos de archivo de metadatos.</p><p id="903ce23f-6696-4526-9b0e-6a39c132b97c" class="">Además es posible descargar en formato de datapaper los datos compartidos en GBIF al descargarlos de manera directa del IPT del país seleccionado el formato <strong>RFT</strong></p><figure id="8ed36beb-ce32-4749-bc1f-10d487da95a3"><div class="source"><a href="Como%20organizar%20mis%20registros%20para%20publicar%20en%20GBIF%20bf7c929a4e3343b9bd02497dd1341d54/Plantilla_de_registros_biolgicos_formato_Darwin_Core_2022.xlsx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bf48dd81-818d-428f-a06d-f49a1e368704/Plantilla_de_registros_biolgicos_formato_Darwin_Core_2022.xlsx</a></div></figure><figure id="af0ec42b-c675-4c24-a6b9-b712b6723368"><div class="source"><a href="Como%20organizar%20mis%20registros%20para%20publicar%20en%20GBIF%20bf7c929a4e3343b9bd02497dd1341d54/Plantilla_de_metadatos_EML_GBIF.doc">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/59ac462d-6e18-412e-a7c2-50e70e325cd4/Plantilla_de_metadatos_EML_GBIF.doc</a></div></figure><p id="1f583e3a-f360-4cfd-90e6-14023298767f" class="">
+</p><p id="abddf3d2-a5b4-458c-982c-2e73d7fa115b" class="">
+</p><p id="c45a0002-72d6-4bf3-9df6-3d2fa627e6a1" class="">
+</p><p id="7d8f4e9b-e675-43c1-9f91-1944e841bbf6" class="">
+</p></div></details></div></div><p id="b01b4448-5807-4540-a25c-17ed338e13af" class="">Puedes revisar también el taller interno sobre la toma de datos de ocurrencia </p><figure id="6c076f67-064b-4df5-a85c-a5342fdfca41"><div class="source"><a href="https://www.youtube.com/watch?v=tCPWO11Nb0I">https://www.youtube.com/watch?v=tCPWO11Nb0I</a></div></figure><p id="e8faddcc-d500-4fdd-9919-4aa623a6cc2c" class="">
+</p></div></article></body></html>
