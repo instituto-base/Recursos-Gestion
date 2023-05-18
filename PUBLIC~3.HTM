@@ -1,0 +1,672 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Publicando datos cualitativos (Quality Data Repository)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2cf74821-5d4c-4299-aecc-a32291a853ff" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📰</span></div><h1 class="page-title">Publicando datos cualitativos (Quality Data Repository)</h1></header><div class="page-body"><p id="21683eac-b980-4384-9be3-ddd1a4a1fc7a" class="">QDR es un repositorio dedicado a el almacenamiento y divulgación de datos generados a través de métodos cualitativo y multi-modelos derivados de investigación en ciencias sociales y otras disciplinas relacionadas.</p><p id="d6dd9059-7dfb-491b-8ce0-e0f5632d9604" class="">La publicación a través de QDR tiene distintos beneficios, entre ellos: </p><ul id="94f95651-f8d6-494b-b6a1-ea3f63706d45" class="bulleted-list"><li style="list-style-type:disc">Usable: el contenido está en formatos digitales establecidos accionables por máquina.</li></ul><ul id="5988a7fa-bb92-422e-9aa3-9f9578dfb645" class="bulleted-list"><li style="list-style-type:disc">Visible: se proporciona un catálogo disponible públicamente y que se puede buscar libremente.</li></ul><ul id="ca68caf4-b71e-4166-a5dc-f173e40ff587" class="bulleted-list"><li style="list-style-type:disc">Significativo: se ofrecen metadatos, documentación y otros materiales necesarios para facilitar la reutilización de datos.</li></ul><ul id="c14282ee-1675-4dfc-ad06-c0fb0ea45253" class="bulleted-list"><li style="list-style-type:disc">Citables: la citación formal de datos se facilita mediante la asignación de identificadores persistentes, resolubles globalmente y procesables por máquina que se vinculan de manera verificable a versiones específicas de datos.</li></ul><ul id="8734be75-0464-47c9-8923-5b3186257917" class="bulleted-list"><li style="list-style-type:disc">Seguro: se mantienen políticas y controles de procedimiento para proteger la confidencialidad y la privacidad personal según lo exige la ley y los estándares éticos de la comunidad de investigación.</li></ul><ul id="d6c23d3c-5795-45e8-97b0-e94a7d823f9f" class="bulleted-list"><li style="list-style-type:disc">No discriminatorio: el acceso al contenido se ofrece en términos que no discriminan a personas, grupos o campos de actividad.</li></ul><ul id="e4c532b7-f58c-4b44-94cd-36ed5db37131" class="bulleted-list"><li style="list-style-type:disc">Duradero: se garantiza la conservación a largo plazo y el acceso a los activos digitales.</li></ul><p id="84d07aa5-f2f8-4018-9495-12c0c3a0406c" class="">Las publicaciones a través de QDR generan su propio DOI</p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">Tipos de datos cualitativos</summary><div class="indented"><ul id="5fb3f0c6-a57e-4b8b-ba88-12d171149a04" class="bulleted-list"><li style="list-style-type:disc">Datos de entrevistas estructuradas, semiestructuradas o no estructuradas; grupos de enfoque; historias orales (grabaciones de audio/video; transcripciones; notas/resúmenes; cuestionarios/protocolos de entrevista)</li></ul><ul id="142a2ab7-c430-4e07-9144-3d0ccedcc810" class="bulleted-list"><li style="list-style-type:disc">Notas de campo (incluso de observación participante o etnografía)</li></ul><ul id="05485300-9a10-4723-8e7b-6fcf2055ff42" class="bulleted-list"><li style="list-style-type:disc">Mapas/imágenes satelitales/datos geográficos</li></ul><ul id="2005ec2d-0b4b-491d-88e9-8023004f1836" class="bulleted-list"><li style="list-style-type:disc">Documentos oficiales/públicos, archivos, informes (diplomáticos, de orden público, de propaganda, etc.)</li></ul><ul id="9b32a7a8-bfc2-4a17-880e-473bac6e2246" class="bulleted-list"><li style="list-style-type:disc">Acta de reunión</li></ul><ul id="bd6faaf9-2bca-4887-ae5e-cd8a8951b0c6" class="bulleted-list"><li style="list-style-type:disc">Estadísticas gubernamentales</li></ul><ul id="63ec5057-0d2c-4cea-8a72-aa35367914bb" class="bulleted-list"><li style="list-style-type:disc">Correspondencia, memorandos, comunicados, consultas, quejas</li></ul><ul id="35a09cc9-9cd6-4203-a79c-19751831646a" class="bulleted-list"><li style="list-style-type:disc">Procedimientos parlamentarios/legislativos</li></ul><ul id="a8613a28-94d2-4a41-9886-4776861729e4" class="bulleted-list"><li style="list-style-type:disc">Testimonio en audiencias públicas</li></ul><ul id="f2904cbf-9b83-4b16-aac4-1bf4e8396d5b" class="bulleted-list"><li style="list-style-type:disc">Discursos, ruedas de prensa</li></ul><ul id="c22ff775-93b9-48e6-bd1e-2fc28bb11c96" class="bulleted-list"><li style="list-style-type:disc">Registros militares</li></ul><ul id="7e79f459-7da8-459b-ae5c-1005a6895df0" class="bulleted-list"><li style="list-style-type:disc">Registros de la corte; documentos legales (gráficos, testamentos, contratos)</li></ul><ul id="bc31b06a-1b57-4a1b-977e-bfbc1fb565f4" class="bulleted-list"><li style="list-style-type:disc">Crónicas, autobiografías, memorias, cuadernos de viaje, diarios</li></ul><ul id="48df773c-b4bd-49b1-8986-5187ec8c73e3" class="bulleted-list"><li style="list-style-type:disc">Folletos, carteles, volantes</li></ul><ul id="fe0e097b-c218-466d-b14d-889094b4a1b7" class="bulleted-list"><li style="list-style-type:disc">Comunicados de prensa, boletines, informes anuales</li></ul><ul id="6d19db30-a87c-4acb-adf1-e262802e33af" class="bulleted-list"><li style="list-style-type:disc">Registros, papeles, directorios</li></ul><ul id="5d23227b-bbc1-4f9e-9b26-cd702486095c" class="bulleted-list"><li style="list-style-type:disc">Memorandos internos, informes, actas de reuniones</li></ul><ul id="91827026-3db9-48d5-87db-b9c07f7bb95a" class="bulleted-list"><li style="list-style-type:disc">Documentos de posición/abogacía, declaraciones de misión</li></ul><ul id="f6922fa6-003c-4b57-bb86-b84ea489fdb5" class="bulleted-list"><li style="list-style-type:disc">Plataformas de grupos</li></ul><ul id="8dec5427-c640-41be-8d32-2138476b753b" class="bulleted-list"><li style="list-style-type:disc">Documentos personales (cartas, diarios personales, correspondencia, documentos personales)</li></ul><ul id="9327a418-925d-432e-88e9-3273192d01c1" class="bulleted-list"><li style="list-style-type:disc">Mapas, diagramas, dibujos.</li></ul><ul id="02627647-3d71-49f1-b409-165fcfe5d1e8" class="bulleted-list"><li style="list-style-type:disc">Emisiones de radio (audio o transcripciones)</li></ul><ul id="db69142d-0991-4b9c-a60f-54335362eb97" class="bulleted-list"><li style="list-style-type:disc">Programas de TV (video o transcripciones)</li></ul><ul id="2341c6f2-7048-4944-a328-6cf76cabc6a3" class="bulleted-list"><li style="list-style-type:disc">Medios impresos (revistas, artículos periodísticos)</li></ul><ul id="95f5d575-84e6-4591-8413-6df9ec78d8a8" class="bulleted-list"><li style="list-style-type:disc">Medios electrónicos</li></ul><ul id="99f4ab97-4935-4fad-8c38-6a90b9b40da9" class="bulleted-list"><li style="list-style-type:disc">Colecciones publicadas de documentos, nomenclátores, anuarios, etc.
+Libros, artículos, disertaciones, documentos de trabajo</li></ul><ul id="b0a5a8ac-1a1d-4ee4-b8f4-96dc976d974b" class="bulleted-list"><li style="list-style-type:disc">Fotografías</li></ul><ul id="eba9fac5-835a-4ed3-a12e-2927a18c2cf0" class="bulleted-list"><li style="list-style-type:disc">Efímera; materiales visuales o de audio de la cultura popular (telas impresas, arte, música/canciones, etc.)</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">Tipos de proyectos (Data project)</summary><div class="indented"><p id="33321dad-b9f9-49d4-8405-7b66beb66ad9" class="">Los proyectos de datos comprenden fuentes de datos que se recolectaron y/o generaron en asociación con un proyecto de investigación cualitativo o de métodos múltiples en particular, así como documentación que describe los datos y los procesos a través de los cuales se recolectaron/generaron.</p><p id="0c70a299-bffe-4d49-b677-3a4f8e147001" class="">Dependiendo del tipo (o tipos) de proyecto que se deposite en QDR se generarán etiquetas para estos.</p><ul id="c6eba125-b796-49e8-b01d-eb282cab96ce" class="bulleted-list"><li style="list-style-type:disc"><strong>Thematic Data Project: </strong>Comprende un conjunto coherente de fuentes de datos recopilados y/o generados en asociación con un enfoque de investigación, tema, conjunto de preguntas o proyecto en particular, así como documentación que describe los datos y el proceso de recopilación/generación. Los Thematic Data Project pueden estar, pero no necesariamente, asociados con una determinada publicación. Es probable que estos proyectos sean útiles para el análisis secundario.</li></ul><ul id="392c174e-00d2-4a20-b6dd-065a8e0e08a9" class="bulleted-list"><li style="list-style-type:disc"><strong>Supplemental Data Project: </strong>Asociado con un artículo de revista en particular u otra publicación. Este tipo de proyecto facilita la evaluación de las afirmaciones hechas en la publicación y proporciona contexto y antecedentes adicionales para la investigación y el análisis que las produjo. El título de dichos proyectos de datos comienza con &quot;Datos para:&quot;.</li></ul><ul id="bad16e45-90b9-4aa3-9994-89ecc3978a0f" class="bulleted-list"><li style="list-style-type:disc"><strong>ATI Data Supplement: </strong>Consiste en un conjunto de anotaciones digitales que contienen notas analíticas (que analizan la generación y el análisis de datos cualitativos y cómo respaldan afirmaciones/conclusiones textuales), extractos de fuentes (y traducciones según sea necesario) y las fuentes de datos en sí (cuando sea posible). Se utilizan con mayor frecuencia para hacer que la investigación cualitativa o de métodos múltiples sea más transparente.</li></ul><ul id="beb67663-6297-414c-83ec-2ebc831cb904" class="bulleted-list"><li style="list-style-type:disc"><strong><strong>Active Citation Compilation: </strong></strong>es una técnica inicial para hacer transparente la investigación cualitativa. El enfoque implica citas mejoradas digitalmente (referencias en el texto, notas al pie y/o notas al final) que respaldan afirmaciones o conclusiones impugnadas en una pieza académica al vincularlas a un Apéndice de transparencia (TRAX) donde aparecen versiones más rigurosas y anotadas de las citas. </li></ul><ul id="246335d7-fa4a-43fa-91d3-af28d6ebc572" class="bulleted-list"><li style="list-style-type:disc"><strong>Pedagogical Data Project: </strong>Los instructores de los cursos de métodos de investigación a menudo utilizan datos estilizados especialmente preparados para maximizar la participación de los estudiantes y centrar su atención en los métodos que se enseñan. Dichos datos se derivan comúnmente de datos de investigación, pero simplificados y organizados para la instrucción.</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">Preparación de los datos para publicar</summary><div class="indented"><ol type="1" id="43f618d6-b25a-40ac-8873-346cefc01bbf" class="numbered-list" start="1"><li>Organización<ul id="93f62134-1744-45ad-a8a9-7ccea642161a" class="bulleted-list"><li style="list-style-type:disc">Información sobre la organización del proyecto</li></ul><ul id="bc4dd954-5bac-4859-9739-fe7685377d97" class="bulleted-list"><li style="list-style-type:disc">Identificar la fuente de los datos</li></ul><ul id="342fb12d-7cce-4109-a885-70e9255f8daa" class="bulleted-list"><li style="list-style-type:disc">Identificar las dimensiones primaria y secundaria con el cual el proyecto está organizado</li></ul></li></ol><ol type="1" id="dc70b731-15da-49b0-9ba8-25323986a4aa" class="numbered-list" start="2"><li>Convención de nombres y sugerencias relacionadas<ul id="57a53c04-d277-4eb4-9180-28b2e9c9d016" class="bulleted-list"><li style="list-style-type:disc">Basado en el la organización del proyecto<ol type="a" id="9e7ce3cf-741d-46f9-ace0-59357833e37b" class="numbered-list" start="1"><li>El primer elemento de cada nombre de archivo debe ser el apellido del autor principal del proyecto; este puede ser usted si está depositando los datos. Además, para los formatos de archivo en los que se puede usar texto editable (p. ej., MSWord, Excel, editores de texto), le recomendamos que inserte un encabezado o una pestaña de documentación en cada archivo que incluya el apellido del autor y una versión narrativa del nombre del archivo. <figure id="a97964b4-b9ee-464a-ac23-552dcf4a0f2c" class="image"><a href="Publicando%20datos%20cualitativos%20(Quality%20Data%20Reposi%202cf748215d4c4299aecca32291a853ff/Untitled.png"><img style="width:540px" src="Publicando%20datos%20cualitativos%20(Quality%20Data%20Reposi%202cf748215d4c4299aecca32291a853ff/Untitled.png"/></a></figure><p id="b55a3726-5d58-4d6a-96f5-5eed7062b2bf" class="">Puede también insertarse esta información en las propiedades del archivo.</p></li></ol><ol type="a" id="ab0fe235-d237-4eef-9402-3aa6df6c75c7" class="numbered-list" start="2"><li>El guión bajo (_) debe usarse como transición entre cada elemento en el nombre del archivo.</li></ol><ol type="a" id="9a6dda7e-5911-4c55-8f99-db67f30f98cb" class="numbered-list" start="3"><li>Para todos los archivos de documentación (p. ej., guiones de consentimiento, solicitud de IRB, protocolo de desidentificación), se debe usar el sufijo &quot;DOCUMENTATION&quot; para indicar que esos archivos no son archivos de datos.</li></ol><ol type="a" id="f9b27501-0507-4ae7-a9da-b368b0ccaff7" class="numbered-list" start="4"><li>Cuando corresponda, el último elemento en el nombre del archivo debe ser la fecha de creación en el formato AAAAMMDD recomendado por ISO.</li></ol><ol type="a" id="0fd4ef84-cf6b-489f-af6d-e5b008ee48b7" class="numbered-list" start="5"><li>Si un archivo corresponde a un entrevistado o a una organización cuya identidad no se quiere revelar, no utilice el nombre o cualquier otro identificador directo o indirecto como parte del nombre o encabezado del archivo.</li></ol></li></ul></li></ol><ol type="1" id="f61aaf14-0439-41dc-b3c1-964c027a8b69" class="numbered-list" start="3"><li>Formatos<table id="256a7360-bb76-4d28-99be-6907724c8cc4" class="simple-table"><thead class="simple-table-header"><tr id="70c79919-1447-4a0b-9ca2-838dfa511d66"><th id="VNe^" class="simple-table-header-color simple-table-header" style="width:272px">Data Type</th><th id="i}G&lt;" class="simple-table-header-color simple-table-header" style="width:334px">Recommended Formats</th></tr></thead><tbody><tr id="ea93288d-e5a6-4f72-8db5-02ef4a1bf6ec"><td id="VNe^" class="" style="width:272px">Texto</td><td id="i}G&lt;" class="" style="width:334px">PDF/A, formato de texto enriquecido (.rtf), texto sin formato/html (.txt, .html), lenguaje de marcado extendido (.xml) siguiendo un esquema adecuado.</td></tr><tr id="2fce5d0d-f905-4408-8964-c2078761e133"><td id="VNe^" class="" style="width:272px">Imágenes</td><td id="i}G&lt;" class="" style="width:334px">Tagged Image Format sin comprimir (.tif)JPEG2000 (.jpg) cuando la imagen se crea como JPEG (p. ej., imágenes de cámaras digitales) Gráficos vectoriales escalables (.svg) o postscript encapsulado (.eps) para gráficos vectoriales (p. ej., figuras creadas por muchas herramientas estadísticas</td></tr><tr id="5d2ed03c-e629-4b8c-9bf7-8b3cfe9bac20"><td id="VNe^" class="" style="width:272px">Audio</td><td id="i}G&lt;" class="" style="width:334px">Broadcast Wave Format (.bwf; ideal cuando está disponible), Wave audio format (.wav), MP3 (.mp3), OGG (.ogg). Mientras que los formatos sin pérdidas como BWF y WAV son preferibles cuando se utilizan desde la grabación hasta el depósito, no convertir los formatos comprimidos (MP3, OGG) ta WAV.</td></tr><tr id="442ded75-134b-43d8-b7a1-5d2c4d8a3ced"><td id="VNe^" class="" style="width:272px">Video</td><td id="i}G&lt;" class="" style="width:334px">MP4</td></tr><tr id="9cd93a05-459d-4fdf-90cb-0deb82663c2e"><td id="VNe^" class="" style="width:272px">Datos geoespaciales</td><td id="i}G&lt;" class="" style="width:334px">ESRI Shapefiles (esencial - .shp, .shx, .dbf, opcional - .prj, .sbx, .sbn), Geo-referenced TIFF (GeoTIFF, .tif)</td></tr><tr id="e9bcceac-fd61-4fe2-a278-b212adf33ca6"><td id="VNe^" class="" style="width:272px">Datos tabulados</td><td id="i}G&lt;" class="" style="width:334px">Para datos con metadatos enriquecidos: Stata, SPSS, and R data files (.dta, .sav, .RData)Para datos con metadatos pequeños: Valores separados con coma o tabulaciones(.csv or .tab)</td></tr><tr id="103b3ecf-a82c-481b-9164-48aeaf5c4232"><td id="VNe^" class="" style="width:272px">CAQDAS (Computer-Aided Qualitative Data Analysis)</td><td id="i}G&lt;" class="" style="width:334px">Cuando está dispoible <a href="https://www.qdasoftware.org/">REFI-QDA Project (.qdpx) y REFI-QDA Codebook (.qdc) descritos aquí</a>. Consulte la liste de productos que implementan los estándares en <a href="https://www.qdasoftware.org/products-codebook-exchange/#implementation_codebook/">REFI-QDA Codebook</a> y <a href="https://www.qdasoftware.org/products-project-exchange/#project_implementation">REFI-QDA Project</a> . De lo contrario, deposite tanto el formato propietario del software de su elección con la información de la versión completa como una exportación en un formato de datos común (como .rtf) que implique la pérdida de datos.</td></tr></tbody></table></li></ol><ol type="1" id="c69471ab-9556-465f-8645-4a0b8ab4d390" class="numbered-list" start="4"><li>Divulgación de información personal y/o confidencial<p id="7912b96e-6181-41ee-a6eb-9f3bd2322525" class="">Todos los académicos deben cumplir con las restricciones éticas y legales al compartir datos. Si ha recopilado datos que son confidenciales y/o sensibles, será necesaria una atención adicional para garantizar que se compartan de manera ética y legal. QDR ofrece una guía detallada sobre la gestión y el intercambio de datos confidenciales que se aplica a varias etapas del proceso de investigación:</p><ul id="9e6fc185-cdce-4b7b-9ec9-b34a83a27193" class="bulleted-list"><li style="list-style-type:disc">Cuando <em>planifique su investigación</em>, considere compartir datos en su solicitud de IRB y, en particular, cuando escriba su protocolo de consentimiento informado.</li></ul><ul id="b02aeb31-42e0-4623-963b-cac50fb115b1" class="bulleted-list"><li style="list-style-type:disc"><em>Durante su investigación</em>, asegúrese de administrar y manejar los datos de manera responsable y mantener seguros todos los datos, y especialmente los datos confidenciales.</li></ul><ul id="84a6fa1e-c5b9-4e8c-91fe-afd44ca3a10b" class="bulleted-list"><li style="list-style-type:disc">Mientras <em>prepara sus datos</em> para compartirlos, asegúrese de seguir las mejores prácticas para des-identificar datos si ha prometido mantener la confidencialidad de las identidades de los participantes.</li></ul><ul id="72d3c21d-6b9a-4ac3-add1-492b054835c4" class="bulleted-list"><li style="list-style-type:disc">A medida que <em>deposita sus datos </em> hable con QDR sobre las opciones para <a href="https://qdr.syr.edu/guidance/human-participants/access-controls">establecer controles de acceso</a> que limitan quién puede ver y descargar algunos o todos los datos</li></ul></li></ol><ol type="1" id="86449ec0-cb3e-4911-a77f-dbc2f701806a" class="numbered-list" start="5"><li>Copyright<p id="b8537099-4752-43d6-b62d-63e2cd4b3c8d" class="">Se aplican diferentes consideraciones cuando se comparte una copia digital de una obra que está protegida por derechos de autor, porque es posible que se deban producir varias otras copias digitales con fines de conservación y administración, y porque a menudo se pretende la difusión a un grupo más grande de usuarios.</p><p id="3fc99e7d-f154-46b1-892f-854a675a6e5d" class="">Los curadores de QDR pueden ayudarlo a encontrar formas legales de brindar acceso a los datos que están protegidos por derechos de autor. Por ejemplo, podemos ayudarlo a obtener las licencias y los permisos necesarios para publicar los materiales en cuestión. Como alternativa, puede proporcionar una lista de datos detallada (p. ej., información bibliográfica completa) para los archivos de datos que no se pueden compartir. Solicitar el asesoramiento de QDR sobre los pasos a seguir durante el proceso de recopilación antes de recopilar los materiales protegidos por derechos de autor puede ayudarlo a evitar tener que ponerse en contacto retroactivamente con los titulares de los derechos de autor para obtener permisos.</p></li></ol><ol type="1" id="2f9ceaa7-6c45-4ddb-8e2c-7b6378a6a893" class="numbered-list" start="6"><li>Preparación de datos Cuantitativos<p id="5c0289c0-7b57-4b8d-9d6c-f77c3014370f" class="">Se recomienda consultar e las pautas más detalladas y bien establecidas proporcionadas por ICPSR.</p></li></ol><ol type="1" id="b05244d7-ba48-4b39-8bd1-1d939881303a" class="numbered-list" start="7"><li>Preparación de datos CAQDAS<p id="f4e82287-7c29-4cbf-86d2-9ac054b6a307" class="">QDR recomienda que comparta los datos de CAQDAS en dos formas diferentes. </p><ul id="bf60cd9a-5b45-4403-af0a-b720a1c5a9fe" class="bulleted-list"><li style="list-style-type:disc">La primera forma es la exportación completa sin procesar de su proyecto. Haga una copia de su proyecto y elimine cualquier información que no desee compartir, como información confidencial o notas personales. Luego, exporte en el formato propietario del proveedor (p. ej., .npv para NVivo, .xml con unidad hermenéutica completa para atlas.ti, proyecto completo .xml para Dedoose) y deposite ese archivo con QDR.</li></ul><ul id="f40d390d-0679-48c7-a441-58176584e01e" class="bulleted-list"><li style="list-style-type:disc">Para permitir que los usuarios de otro software (o usuarios que no emplean software) accedan a sus datos, le recomendamos que también cree una exportación &quot;legible por humanos&quot; de esa misma copia del proyecto. Exporte todos los archivos relevantes en formatos ampliamente utilizados (como RTF, PDF, Excel o formatos comunes de video, imagen y audio). También exporte todas las notas relevantes como archivos RTF o PDF. Deposite todos los archivos exportados con QDR</li></ul></li></ol><ol type="1" id="a9a292ce-1cf7-4fff-966e-fec250710338" class="numbered-list" start="8"><li>Datos de documentación<ul id="a019b682-b691-47e4-bd9b-2e3586d3cf0e" class="bulleted-list"><li style="list-style-type:disc">Cuestionarios utilizados para encuestas o entrevistas semiestructuradas</li></ul><ul id="56e6c222-555a-4ecd-adc1-927cbd1873c5" class="bulleted-list"><li style="list-style-type:disc">Materiales de orientación utilizados para el trabajo de campo en equipo</li></ul><ul id="f65d79f8-1f8c-4b90-9192-44379fcb88b6" class="bulleted-list"><li style="list-style-type:disc">Instrucciones para la facilitación de grupos focales</li></ul><ul id="cb3af143-b302-4d2d-88e4-28d5637a6ab2" class="bulleted-list"><li style="list-style-type:disc">Formularios de consentimiento y hojas informativas</li></ul><ul id="ba6983ee-28ff-4ddf-a693-b907f26473d8" class="bulleted-list"><li style="list-style-type:disc">Solicitud de IRB aprobada</li></ul><ul id="8c82bde6-786f-4b4b-956a-f5160e03bd18" class="bulleted-list"><li style="list-style-type:disc">Permisos o licencias de los titulares de los derechos de autor</li></ul><ul id="bf0297a7-6fd9-4385-b3df-f9b0f762a835" class="bulleted-list"><li style="list-style-type:disc">Descripción de los métodos utilizados para analizar los datos.</li></ul><ul id="5a80622b-748f-429d-8ae1-375c3b115df8" class="bulleted-list"><li style="list-style-type:disc">Descripción del trabajo de campo y contexto del proyecto </li></ul><ul id="5667ab6e-a3b6-4759-bc06-db44df3e6ca7" class="bulleted-list"><li style="list-style-type:disc">Descripción de cómo se crearon los materiales derivados (archivos individuales o variables)</li></ul><ul id="aa888b99-f82c-4ae2-8ecc-f8459e3cf622" class="bulleted-list"><li style="list-style-type:disc">Esquemas de codificación</li></ul></li></ol><ol type="1" id="c841f358-d85a-40ca-9d22-71b776e199b2" class="numbered-list" start="9"><li>Proporcionar enlaces entre artículos académicos relevantes<ul id="943351f2-bb4e-4c48-81dd-f1e769549c31" class="bulleted-list"><li style="list-style-type:disc">Se debe proporcionar información sobre cualquier producto escrito publicado o en curso que le gustaría vincular al proyecto de datos. La información bibliográfica completa para dicho trabajo se muestra junto con el proyecto de datos publicado en QDR siguiendo las mejores prácticas para tales enlaces. </li></ul></li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">Proceso de publicación</summary><div class="indented"><p id="3bf485bf-06d7-4bea-82d3-bd8bb470f755" class="">
+</p><ol type="1" id="6dd529de-4f76-4d51-ad39-d92b164b8389" class="numbered-list" start="1"><li>Iniciar un proyecto (Data project)<ul id="c13e75d2-1f43-45da-ad99-f109c050fdc3" class="bulleted-list"><li style="list-style-type:disc">Crear el proyecto en <strong><strong><strong>New Project </strong></strong></strong>completar información solicitada</li></ul><ul id="0d5ec9ad-f34d-40e1-a215-e34dfce96c19" class="bulleted-list"><li style="list-style-type:disc">Guardar el trabajo. Requisitos mínimos: Título, autor/contacto, descripción y tema</li></ul><ul id="582c768c-2508-47b4-a0df-ff4a8f011446" class="bulleted-list"><li style="list-style-type:disc">Continuar trabajando. Los proyectos pueden estar en etapa de<mark class="highlight-blue"> </mark><mark class="highlight-blue"><strong><strong><strong>borrador, </strong></strong></strong></mark><mark class="highlight-orange"><strong><strong><strong>sin</strong></strong></strong></mark><mark class="highlight-blue"><strong><strong><strong> </strong></strong></strong></mark><mark class="highlight-orange"><strong><strong><strong>publicar </strong></strong></strong></mark>o<mark class="highlight-orange"><strong><strong><strong> </strong></strong></strong></mark><mark class="highlight-teal"><strong><strong><strong>en revisión</strong></strong></strong></mark><mark class="highlight-orange"><strong><strong><strong>.</strong></strong></strong></mark></li></ul></li></ol><ol type="1" id="c35f2455-d130-4fe6-8275-3f6b5251fb8e" class="numbered-list" start="2"><li>Depósito inicial<ul id="79944a84-6f7a-4206-adf3-d6363ed7043a" class="bulleted-list"><li style="list-style-type:disc">Subir el proyecto pare revisar sin ningún archivo (Submit for Review)</li></ul><ul id="539a64c0-a611-47f4-a196-67ce94a30c5b" class="bulleted-list"><li style="list-style-type:disc">En un plazo máximo a cinco días el equipo de QDR debe contactar para discutir la organización de los datos, documentación y desafíos éticos y legales. Además de solicitar controles de acceso</li></ul><ul id="69fbac17-6984-4c86-ac73-bd9fca1108bb" class="bulleted-list"><li style="list-style-type:disc">Información sobre el pago del proceso de publicación (300-1000 USD)</li></ul></li></ol><ol type="1" id="8a0876dd-7b30-470a-a6b8-3f9004a480ea" class="numbered-list" start="3"><li>Actualizar archivos y finalizar el depósito<ul id="85d0d6c9-2ef0-4f23-b569-d7bcb87664ef" class="bulleted-list"><li style="list-style-type:disc">Subir archivos y sus descripciones de manera específica además de la información bibliográfica.</li></ul><ul id="5c20e22d-b2ab-4675-bd35-e2d431f79e24" class="bulleted-list"><li style="list-style-type:disc">Completar metadatos</li></ul><ul id="27493c12-ecde-434d-be63-bc6d856135f6" class="bulleted-list"><li style="list-style-type:disc">Guardar cambios</li></ul><ul id="f27ce116-6dec-4129-9d81-b9a93def6d0d" class="bulleted-list"><li style="list-style-type:disc">Solicitar Nuevo proceso de revisión y realizar el pago. Se recibirá un correo de confirmación.</li></ul><ul id="9d136d19-055f-4a74-be3a-bca21ce7b185" class="bulleted-list"><li style="list-style-type:disc">Si los datos no tienen restricciones se debe firmar el acuerdo estándar, si hay restricciones se debe firmar el acuerdo especial.</li></ul><ul id="b3cbbf71-b8c6-4884-b73a-f8eb1984a301" class="bulleted-list"><li style="list-style-type:disc">Confirmando el pago y la documentación, QDR comienza el proceso de curación y publica los datos</li></ul></li></ol><ol type="1" id="4a9faa32-74a9-4e63-8b1c-cda2eac6d9f2" class="numbered-list" start="4"><li>Actualizar proyectos publicados<ul id="3e5d6630-db4a-40ad-89e2-7422efcc55f3" class="bulleted-list"><li style="list-style-type:disc">No se pueden hacer cambios en un proyecto publicado pero se pueden actualizar. Se recomienda contactar a QDR.</li></ul><p id="99722d0e-6926-4908-8070-8c860a8cbd91" class="">
+</p></li></ol></div></details></div></article></body></html>

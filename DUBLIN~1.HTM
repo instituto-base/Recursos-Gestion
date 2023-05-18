@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Dublin Core: Qué es y como utilizarlo</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7db831a5-de6f-4c00-adae-e667fd23c561" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">💽</span></div><h1 class="page-title">Dublin Core: Qué es y como utilizarlo</h1></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="d31233cd-0d95-42ef-aee8-472b8d74f4e5"><div style="font-size:1.5em"><span class="icon">📢</span></div><div style="width:100%">Todos los archivos que inicien un proceso de gestión deben ir acompañados por un archivo de metadatos, el cual es generado y mantenido por el data manager durante la gestión de estos.</div></figure><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">¿Qué es el formato Dublin Core?</summary><div class="indented"><p id="a15efd14-de91-4263-b883-61dde9ebbeca" class="">Es un modelo o estándar utilizado para describir recursos (metadatos), generalmente se encuentra en formato XML.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">Clasificación y elementos</summary><div class="indented"><p id="81378e44-013c-4448-9c8b-363af9afac17" class="">En general, podemos clasificar estos elementos en tres grupos que indican la clase o el ámbito de la información que se guarda en ellos:</p><ul id="86671404-872f-4f05-bbde-b4ef34e0804f" class="bulleted-list"><li style="list-style-type:disc">Elementos relacionados principalmente con el contenido del recurso.</li></ul><ul id="6a009cf3-f521-4ff3-b00e-50bd43e85039" class="bulleted-list"><li style="list-style-type:disc">Elementos relacionados principalmente con el recurso cuando es visto como una propiedad intelectual.</li></ul><ul id="54aecf71-c195-48dc-8273-523cffa52794" class="bulleted-list"><li style="list-style-type:disc">Elementos relacionados principalmente con la instanciación del recurso.</li></ul><p id="ebb116bf-250c-41c8-a3a4-373ee1bb783d" class="">Dentro de cada clasificación encontramos los siguientes elementos:</p><h3 id="8eb97fa9-31bb-471c-a8b4-813bbd17947f" class=""><strong>Contenido:</strong></h3><ul id="48d6faa3-9451-4e58-a3e1-74a746611170" class="bulleted-list"><li style="list-style-type:disc"><strong>Título:</strong> el nombre dado a un recurso, habitualmente por el autor.</li></ul><p id="55a2e4c7-c13c-49a8-b920-ed890b4e0b69" class="">Etiqueta: DC.Title</p><ul id="2253e1d1-b0e9-4b67-8d9d-066afd46abd1" class="bulleted-list"><li style="list-style-type:disc"><strong>Claves:</strong> los temas del recurso. Típicamente, Subject expresará las claves o frases que describen el título o el contenido del recurso. Se fomentará el uso de vocabularios controlados y de sistemas de clasificación formales.</li></ul><p id="175f3c2b-abc1-4715-8272-b380bd6e188e" class="">Etiqueta: DC.Subject</p><ul id="7d358f6b-19ff-49bd-9bed-7573c11f50ee" class="bulleted-list"><li style="list-style-type:disc"><strong>Descripción:</strong> una descripción textual del recurso. Puede ser un resumen en el caso de un documento o una descripción del contenido en el caso de un documento visual.</li></ul><p id="d00d3f13-ff4a-43a1-b0f0-83b1d3d916c0" class="">Etiqueta: DC.Description</p><ul id="931b3b09-158a-4a1b-b5c0-5508c7019cb5" class="bulleted-list"><li style="list-style-type:disc"><strong>Fuente:</strong> secuencia de caracteres usados para identificar unívocamente un trabajo a partir del cual proviene el recurso actual.</li></ul><p id="aa49a90c-f192-4dda-bf72-a656620bec00" class="">Etiqueta: DC.Source</p><ul id="394c957c-716e-4bda-9376-256b8da52a34" class="bulleted-list"><li style="list-style-type:disc"><strong>Tipo del Recurso:</strong> la categoría del recurso. Por ejemplo, página personal, romance, poema, diccionario, etc.</li></ul><p id="f2fedd34-e778-43c5-8960-8b47914f7622" class="">Etiqueta: DC.Type</p><ul id="8143524d-3c24-4253-ad4c-d6e4d53eee33" class="bulleted-list"><li style="list-style-type:disc"><strong>Relación:</strong> es un identificador de un segundo recurso y su relación con el recurso actual. Este elemento permite enlazar los recursos relacionados y las descripciones de los recursos.</li></ul><p id="86cba7a4-0a38-4e47-9e6b-5aece17a3c32" class="">Etiqueta: DC.Relation</p><ul id="83085a38-e44e-4420-886b-e37eaf89cf61" class="bulleted-list"><li style="list-style-type:disc"><strong>Cobertura:</strong> es la característica de cobertura espacial y/o temporal del contenido intelectual del recurso.</li></ul><p id="3ed4808a-e35f-467a-9d53-510190ac0b67" class="">La cobertura espacial se refiere a una región física, utilizando por ejemplo coordenadas.La cobertura temporal se refiere al contenido del recurso, no a cuándo fue creado (que ya lo encontramos en el elemento Date).Etiqueta: DC.Coverage</p><h3 id="bb0cad52-7851-4a80-8092-53481d1f133d" class=""><strong>Propiedad Intelectual:</strong></h3><ul id="7d56e8bd-327c-4a5d-8984-12c89c335ee4" class="bulleted-list"><li style="list-style-type:disc"><strong>Autor o Creador:</strong> la persona u organización responsable de la creación del contenido intelectual del recurso. Por ejemplo, los autores en el caso de documentos escritos; artistas, fotógrafos e ilustradores en el caso de recursos visuales.</li></ul><p id="80cb53f8-4735-4ee5-8b26-4050a649c42e" class="">Etiqueta: DC.Creator</p><ul id="b45f993b-6a83-4267-ada1-03e5907c4318" class="bulleted-list"><li style="list-style-type:disc"><strong>Editor:</strong> la entidad responsable de hacer que el recurso se encuentre disponible en la red en su formato actual.</li></ul><p id="0d87ef36-1353-42f6-808a-690f27e10a08" class="">Etiqueta: DC.Publisher</p><ul id="30fe084c-4f88-4ed0-aedb-eff97d537e05" class="bulleted-list"><li style="list-style-type:disc"><strong>Otros Colaboradores:</strong> una persona u organización que haya tenido una contribución intelectual significativa, pero que esta sea secundaria en comparación con las de las personas u organizaciones especificadas en el elemento Creator. (por ejemplo: editor, ilustrador y traductor).</li></ul><p id="089f4194-1cd0-48c5-b079-756969e07909" class="">Etiqueta: DC.Contributor</p><ul id="4e5a337a-10ec-4e12-bd81-8bceb198c613" class="bulleted-list"><li style="list-style-type:disc"><strong>Derechos:</strong> son una referencia (por ejemplo, una URL) para una nota sobre derechos de autor, para un servicio de gestión de derechos o para un servicio que dará información sobre términos y condiciones de acceso a un recurso.</li></ul><p id="1505e2e2-3919-4e72-bef4-4e4d5da191f9" class="">Etiqueta: DC.Rights</p><h3 id="6f6a4bdd-ead3-482c-9069-f886a4ed6ee8" class=""><strong>Instanciación:</strong></h3><ul id="24f00a31-e43a-495d-bb21-f4d9d8c3cefd" class="bulleted-list"><li style="list-style-type:disc"><strong>Fecha:</strong> una fecha en la cual el recurso se puso a disposición del usuario en su forma actual. Esta fecha no se tiene que confundir con la que pertenece al elemento Coverage, que estaría asociada con el recurso en la medida que el contenido intelectual está de alguna manera relacionado con aquella fecha.</li></ul><p id="00ce2990-1aa3-4ebc-a35c-9bc29df39384" class="">Etiqueta: DC.Date</p><ul id="4d429e0f-bfa8-4680-b4db-098f90c22f18" class="bulleted-list"><li style="list-style-type:disc"><strong>Formato:</strong> es el formato de datos de un recurso, usado para identificar el software y, posiblemente, el hardware que se necesitaría para mostrar el recurso.</li></ul><p id="ed12a38d-2c99-4839-9741-0c780cf831dc" class="">Etiqueta: DC.Format</p><ul id="6b00270d-da09-4abb-a597-ad7fcd68c8ac" class="bulleted-list"><li style="list-style-type:disc"><strong>Identificador del Recurso:</strong> secuencia de caracteres utilizados para identificar unívocamente un recurso. Ejemplos para recursos en línea pueden ser <a href="https://es.wikipedia.org/wiki/URL">URLs</a> y <a href="https://es.wikipedia.org/wiki/URN">URNs</a>. Para otros recursos pueden ser usados otros formatos de identificadores, como por ejemplo <a href="https://es.wikipedia.org/wiki/ISBN">ISBN</a> (<em>&quot;International Standard Book Number&quot;</em>).</li></ul><p id="16ce8e97-c58a-4c83-9a63-c5ea644a38d0" class="">Etiqueta: DC.Identifier</p><ul id="17c358ac-4e9e-4c73-bb93-9a0762b7587b" class="bulleted-list"><li style="list-style-type:disc"><strong>Idioma:</strong> Idioma/s del contenido intelectual del recurso.</li></ul><p id="2085922c-7f70-47ff-9de0-155aad570687" class="">Etiqueta: DC.Language</p><table id="a6cbd12d-59f8-41ce-9eeb-88f15e03f3d1" class="simple-table"><tbody><tr id="c5fddf3a-9d40-4ae5-a4d4-085afa8f5697"><td id="Eiaf" class="">Campo</td><td id="Vk{C" class="">Element</td><td id="i{yd" class="">Requerido</td><td id="fUT[" class="">Repetible</td><td id="KhGI" class="">Descripción</td></tr><tr id="565f11b8-6018-4e29-8aeb-18deb584c6bf"><td id="Eiaf" class="">Título</td><td id="Vk{C" class="">dc:title</td><td id="i{yd" class="">Sí</td><td id="fUT[" class="">No</td><td id="KhGI" class="">El
+  nombre del recurso.</td></tr><tr id="c7b78797-e43c-4c43-bd99-47c12475bc76"><td id="Eiaf" class="">Creador</td><td id="Vk{C" class="">dc:creator</td><td id="i{yd" class="">Sí</td><td id="fUT[" class="">No</td><td id="KhGI" class="">La
+  persona u organización responsable de crear el recurso.</td></tr><tr id="3c92f389-9dfc-4e30-9255-18d20485115a"><td id="Eiaf" class="">Tema</td><td id="Vk{C" class="">dc:subject</td><td id="i{yd" class="">No</td><td id="fUT[" class="">Sí</td><td id="KhGI" class="">El
+  tema del recurso.</td></tr><tr id="95e93284-9ed1-4bfc-b38a-411a92bf3bcf"><td id="Eiaf" class="">Descripción</td><td id="Vk{C" class="">dc:description</td><td id="i{yd" class="">No</td><td id="fUT[" class="">No</td><td id="KhGI" class="">Un
+  resumen o descripción breve del recurso.</td></tr><tr id="518646c0-89a9-4c87-abfa-ad33c08c0d78"><td id="Eiaf" class="">Editor</td><td id="Vk{C" class="">dc:publisher</td><td id="i{yd" class="">No</td><td id="fUT[" class="">No</td><td id="KhGI" class="">La
+  persona u organización responsable de hacer que el recurso esté disponible.</td></tr><tr id="7772ba12-288b-46ee-b2f9-0f5565efc8fb"><td id="Eiaf" class="">Colaborador</td><td id="Vk{C" class="">dc:contributor</td><td id="i{yd" class="">No</td><td id="fUT[" class="">Sí</td><td id="KhGI" class="">Una
+  entidad responsable de hacer contribuciones al contenido del recurso.</td></tr><tr id="e2f194af-69cf-43e8-8da4-37792129cb47"><td id="Eiaf" class="">Fecha</td><td id="Vk{C" class="">dc:date</td><td id="i{yd" class="">No</td><td id="fUT[" class="">No</td><td id="KhGI" class="">La
+  fecha de creación o otra fecha significativa asociada con el recurso.</td></tr><tr id="fcc21cdf-8d2a-4eec-b8af-b79eb246ae95"><td id="Eiaf" class="">Tipo</td><td id="Vk{C" class="">dc:type</td><td id="i{yd" class="">No</td><td id="fUT[" class="">No</td><td id="KhGI" class="">La
+  naturaleza o género del recurso.</td></tr><tr id="cf4b58fa-63c7-4350-95f6-a178852f9b7f"><td id="Eiaf" class="">Formato</td><td id="Vk{C" class="">dc:format</td><td id="i{yd" class="">No</td><td id="fUT[" class="">No</td><td id="KhGI" class="">El
+  formato de archivo, medio físico o dimensiones del recurso.</td></tr><tr id="fb01cf3d-abd1-4afb-b8da-9d1947494356"><td id="Eiaf" class="">Identificador</td><td id="Vk{C" class="">dc:identifier</td><td id="i{yd" class="">No</td><td id="fUT[" class="">Sí</td><td id="KhGI" class="">Una
+  referencia o identificador único para el recurso.</td></tr><tr id="e2438643-ac4d-4dff-977a-ed4073ee4c33"><td id="Eiaf" class="">Fuente</td><td id="Vk{C" class="">dc:source</td><td id="i{yd" class="">No</td><td id="fUT[" class="">No</td><td id="KhGI" class="">Un
+  recurso relacionado del cual se deriva el recurso descrito.</td></tr><tr id="e82215b0-8138-430f-90f5-b7cd4a554b68"><td id="Eiaf" class="">Idioma</td><td id="Vk{C" class="">dc:language</td><td id="i{yd" class="">No</td><td id="fUT[" class="">No</td><td id="KhGI" class="">El
+  idioma del recurso.</td></tr><tr id="64c678cd-84a7-4ad5-a93a-42a88b28d1f6"><td id="Eiaf" class="">Relación</td><td id="Vk{C" class="">dc:relation</td><td id="i{yd" class="">No</td><td id="fUT[" class="">Sí</td><td id="KhGI" class="">Un
+  recurso relacionado.</td></tr><tr id="0aebae41-9bb4-4b1f-a317-ad12836eb04b"><td id="Eiaf" class="">Cobertura</td><td id="Vk{C" class="">dc:coverage</td><td id="i{yd" class="">No</td><td id="fUT[" class="">No</td><td id="KhGI" class="">La
+  cobertura espacial o temporal del recurso.</td></tr><tr id="e33de025-5933-4574-838c-d994137a62a6"><td id="Eiaf" class="">Derechos</td><td id="Vk{C" class="">dc:rights</td><td id="i{yd" class="">No</td><td id="fUT[" class="">No</td><td id="KhGI" class="">Información sobre los derechos que se
+  tienen sobre el recurso.</td></tr></tbody></table></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">¿Cómo crear un archivo de metadatos en formato Dublin Core?</summary><div class="indented"><p id="663089f0-2930-4d5b-853d-14fe077bb825" class="">La manera más sencilla de crear un archivo Dublin Core es a través de portales online como es que se encuentra en el siguiente enlace</p><figure id="ad71b523-5945-4e46-b38b-800e1dd63f52"><a href="http://purl.org/dc/elements/1.1/creator" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Creator</div><div class="bookmark-description">An entity primarily responsible for making the resource.</div></div><div class="bookmark-href"><img src="https://www.dublincore.org/images/favicons/favicon.svg" class="icon bookmark-icon"/>http://purl.org/dc/elements/1.1/creator</div></div><img src="https://www.dublincore.org/images/meta/twitter_card.jpg" class="bookmark-image"/></a></figure><p id="c8d41f7d-1476-4b11-b4a5-246e6248e15b" class="">También puedes crearlo a través de una planilla excel y transformarlo a formato XML, a continuación encontrarás una planilla y un script en R que puede transformar el archivo en XML.</p><figure id="44f4ded6-093c-4b97-9022-4f8e9da56f9b"><div class="source"><a href="Dublin%20Core%20Que%CC%81%20es%20y%20como%20utilizarlo%207db831a5de6f4c00adaee667fd23c561/DublinCore_PlanillaBASE.xlsx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fe95dab6-52de-410f-b557-445db608766d/DublinCore_PlanillaBASE.xlsx</a></div></figure><p id="da5e4298-c8e0-4602-a9e5-e5082893a80f" class="">Recuerda que debes guardar en formato .csv cuando termines de completar los campos de la planilla para poder utilizar el script</p><figure id="16f7401c-cc2f-4cf5-9691-67ac140c16c0"><div class="source"><a href="Dublin%20Core%20Que%CC%81%20es%20y%20como%20utilizarlo%207db831a5de6f4c00adaee667fd23c561/DC_XML_IBASE.r">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fd0ad544-7e23-4e4f-9059-411bfe7aa483/DC_XML_IBASE.r</a></div></figure><p id="f952ab7a-a909-4ef1-8fcf-ea9bc2391026" class="">
+</p></div></details></div></article></body></html>

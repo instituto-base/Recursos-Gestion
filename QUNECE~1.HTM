@@ -1,0 +1,797 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>¿Qué necesito enviar al data manager para subir mis secuencias a GenBank?</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="0bd5c505-6f08-4911-8fa5-598de35631f4" class="page sans"><header><img class="page-cover-image" src="%C2%BFQue%CC%81%20necesito%20enviar%20al%20data%20manager%20para%20subir%20m%200bd5c5056f0849118fa5598de35631f4/DSCF6291.jpg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🧬</span></div><h1 class="page-title">¿Qué necesito enviar al data manager para subir mis secuencias a GenBank?</h1></header><div class="page-body"><p id="50d786fa-d9a1-4993-b5b6-c01d7fef0054" class=""><mark class="highlight-gray"><em>Esta información fue extraída de los webinar para el envío de secuencias con la herramienta BankIt: A Submitter’s Guide to GenBank, Part 1 &amp; Part 2. </em></mark></p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="88a2985e-8b92-4f6f-a1bb-da02007851d6"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%">Resumen de lo necesario<ol type="1" id="79fcc48a-2b76-49fa-afc9-6a7e1bfddaa4" class="numbered-list" start="1"><li>Información biológica</li></ol><ol type="1" id="e2e90a74-4d0a-4513-8d40-2015dfedf69a" class="numbered-list" start="2"><li>Información de los autores y publicación</li></ol><ol type="1" id="5e2b2d3b-22f7-4927-93a0-68c2fde4fa86" class="numbered-list" start="3"><li>Secuencia en formato FASTA.txt</li></ol><ol type="1" id="c1667c02-6a97-464c-af29-7575c743a778" class="numbered-list" start="4"><li>Tabla de Modificatores.txt (Source Modifiers Table)</li></ol><ol type="1" id="bff71d62-a95f-434f-b417-a6a34509ec97" class="numbered-list" start="5"><li>Tabla de características.txt (Features Table)</li></ol></div></figure><p id="61b76587-b6fb-4652-8cdc-a3df754fc3f8" class="">Si tienes dudas sobre cualquiera de los requerimientos, puedes seguir leyendo a continuación</p><hr id="8b05e208-9193-4ff1-a5d4-48d78925a554"/><p id="846a3b17-d8dc-4f48-b681-001da825d681" class="">Pasos a seguir en BankIT</p><ol type="1" id="4bd9d1ae-2b5d-4c06-860b-581ab96650b5" class="numbered-list" start="1"><li>Información Inicial</li></ol><ol type="1" id="77042eca-8e97-4d29-91e0-ea750976c480" class="numbered-list" start="2"><li>Identificación de los Autores</li></ol><ol type="1" id="6ebbf9ce-8e83-4fa9-a3d8-c1fd6f2cd774" class="numbered-list" start="3"><li>Fecha de Publicación</li></ol><ol type="1" id="7db4fcc5-d13b-47be-ad72-432c8f070b5e" class="numbered-list" start="4"><li>Identificación de la secuencia</li></ol><ol type="1" id="4ebd64eb-7c60-40c4-afce-ffaf0f62f77b" class="numbered-list" start="5"><li>Categoría (Original/A partir de terceros)</li></ol><ol type="1" id="a941d382-5e8e-4ad2-bc2c-e6c79790bdda" class="numbered-list" start="6"><li>Modificadores</li></ol><ol type="1" id="4c99b019-d2a7-4ffa-a644-ef9ecaad9b67" class="numbered-list" start="7"><li>Características</li></ol><ol type="1" id="b66db83b-0e53-427d-9622-b4625f48e677" class="numbered-list" start="8"><li>Consideraciones</li></ol><hr id="2763b24b-3b27-4824-a334-27c10e31d1c1"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">Información inicial</summary><div class="indented"><p id="4bbe1771-a664-4d36-9c55-e9276f06001c" class="">Para poder ingresar una secuencia a GenBank se deben conocer distintos aspectos de la secuencia:</p><ul id="ba463e7b-ec34-4aca-b6c7-5544bfc3c865" class="toggle"><li><details open=""><summary><strong>Origen de la secuencia</strong></summary><p id="cb3b663e-886d-4ead-9338-d281868f2216" class="">¿Cuál es el organismo?</p><p id="de7d7172-1ebc-478a-b548-583027c69ab6" class="">¿Dónde proviene el organismo?</p><p id="c7250b85-2622-4148-948f-b6360e4f1055" class="">¿Cuándo y cómo se obtuvo la secuencia?</p></details></li></ul><ul id="adea399c-02e3-4dcb-9fdd-c50f5c0b80a0" class="toggle"><li><details open=""><summary><strong>Tipo y localización</strong></summary><p id="b44b477d-8330-4706-b9d1-cb58dc2db94c" class="">Secuencia Genómica / Secuencia mARN</p><p id="4a23b49e-3928-4d31-84d2-26ec536e7485" class="">Genoma / Organelo (plásmido, plastidio, mitocondria)</p></details></li></ul><ul id="22ad830b-fd6e-46a1-b87b-ae6ee05fdeb7" class="toggle"><li><details open=""><summary><strong>Significado biológico de la secuencia</strong></summary><p id="a6441c82-eb1d-41e6-bb1f-cbf2b0e5db37" class="">¿Qué gen representa?</p><p id="37af997e-75da-4723-8bbf-8228fccfb4df" class="">¿Total o parcial?</p></details></li></ul></div></details><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="09a4b52f-dc0b-4dff-b912-39b11d22537f"><div style="font-size:1.5em"><span class="icon">📢</span></div><div style="width:100%">No se pueden ingresar nuevos datos en BankIt  si hay un trabajo en proceso. Si se hace una nueva subida de datos esta se va a sobre-escribir</div></figure><p id="975aacda-11bf-4078-9f5c-972ead729326" class="">La información anterior permite guiar el proceso de publicación de la secuencia. Los requerimientos específicos que solicita GenBank son los siguientes:</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">Identificación de los Autores y Publicación </summary><div class="indented"><p id="2c8a64a6-3df5-4679-9f0b-de64ca7b4ff8" class="">Autores: Quien publica la secuencias</p><p id="a0549d10-a245-4c74-afac-866067afbd78" class="">Publicación: Puede que la secuencia provenga de un trabajo sin publicar</p><p id="9fa59f6b-e554-4a40-95c8-9b92b0c66cd4" class="">Nombre y Estado de la Publicación</p><p id="6b032746-11f5-4400-bd71-bb6d9d2b63fb" class="">Autores de la Publicación</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">Fecha de Publicación</summary><div class="indented"><p id="d30af2af-0987-4615-a914-a1bebd863950" class="">Corresponde a la fecha en la que se desea que se publiquen los datos en GenBank</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">Identificación de la secuencia</summary><div class="indented"><p id="9d01828b-6642-4fe1-960e-35229ae1841b" class="">Junto con poder responder las preguntas anteriores, para poder subir las secuencias a GenBank a través de la herramienta BankIt, es necesario que las secuencias se encuentren en formato FASTA:</p><ol type="1" id="6e2663d1-f458-47e1-9c65-f8c9e9e787de" class="numbered-list" start="1"><li>Tipo de secuencia <ul id="df9f700f-fa2e-465e-907b-c7296d2dd8a8" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.ncbi.nlm.nih.gov/WebSub/html/annot_examples.html#mrna">mRNA Sequences</a></li></ul><ul id="b286752a-fa17-4f76-933d-963f306cff92" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.ncbi.nlm.nih.gov/WebSub/html/annot_examples.html#prok">Prokaryotic Genes</a></li></ul><ul id="e296ee89-15a1-4f72-b65e-2289ee70b7d1" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.ncbi.nlm.nih.gov/WebSub/html/annot_examples.html#euka">Eukaryotic Genes</a></li></ul><ul id="850faab2-1bd7-465e-b48e-7799c70c324c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.ncbi.nlm.nih.gov/WebSub/html/annot_examples.html#rrna">rRNA and/or ITS</a></li></ul><ul id="3af8c41b-7b42-4a4f-9aba-8f7a73f84abb" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.ncbi.nlm.nih.gov/WebSub/html/annot_examples.html#viral">Viral Sequences</a></li></ul><ul id="70853a12-fe1b-4fbf-be25-d1d403ee0c00" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.ncbi.nlm.nih.gov/WebSub/html/annot_examples.html#trans">Transposon or Insertion Sequences</a></li></ul><ul id="29172bf7-b860-422d-9d88-3f9f8874d8dc" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.ncbi.nlm.nih.gov/WebSub/html/annot_examples.html#micro">Microsatellite Sequences</a></li></ul><ul id="60e46b35-6e87-404b-a72f-b0eef1b62be6" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.ncbi.nlm.nih.gov/WebSub/html/annot_examples.html#pseudo">Pseudogenes</a></li></ul><ul id="36af9c71-aa14-450c-b7e2-bbb5d64cbb65" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.ncbi.nlm.nih.gov/WebSub/html/annot_examples.html#clone">Cloning Vectors</a></li></ul><ul id="a628fa7c-ceba-40ce-a1c3-1fff423d1d59" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.ncbi.nlm.nih.gov/WebSub/html/annot_examples.html#popset">Phylogenetic or Population Sets</a></li></ul><ul id="2b184151-ecc2-4d37-91d4-5d0c4b2f98ba" class="bulleted-list"><li style="list-style-type:disc">Non-coding RNAs</li></ul></li></ol><ol type="1" id="e786c2ff-ca9b-4e8f-a432-2bf0319f6f02" class="numbered-list" start="2"><li>Topología </li></ol><ol type="1" id="5c7a3245-10c8-418d-9d17-a3a0ea32b520" class="numbered-list" start="3"><li>Completitud del Genoma</li></ol><ol type="1" id="cdb072e0-5625-4f35-9434-6fd0187c5dfb" class="numbered-list" start="4"><li>Número de secuencias <p id="c30b8cd1-4c62-4c7e-bc5b-61f7ff81bb31" class="">En caso de que sea más de una secuencia que contiene 4 genes distintos, es recomendable que se indique en Set/Barch que serán 4 envios separados, esto genera números de seguimiento consecutivos. En caso de ser 1 gen en distintos organismos, es solo 1 envío.<div class="indented"><p id="48bb03a5-7771-4a5b-b156-db3d53ce1abe" class="">Las opciones en este caso son:<div class="indented"><p id="d3dd75ed-45af-48ee-a77b-46f7850ec617" class="">Pop Set: Estudio poblacional, un set de secuencias que fueron derivadas secuenciado el mismo gen de diferentes aislados del mismo organismo</p><p id="7b48e1e0-3ddb-4b21-8651-7b00a51002f3" class="">Phy set: Estudio filogenético, un set de secuencias que fueron derivadas secuenciando el mismo gen de diversos organismos</p><p id="ae16c2cb-1d4e-473c-81ba-61d5e750e235" class="">Mut set: Estudio mutaciones, un set de secuencias que fueron derivadas secuenciando múltiples mutaciones de un gen</p><p id="8e957a8c-de4d-4579-899a-d7d0a7fc61f0" class="">Env set: estudio ambiental: un set de secuencias que fueron derivadas de la secuenciación del mismo gen para una población de organismos sin clasificar o desconocidos.</p><p id="bb37b164-8672-48f5-a2bf-58ba8df6c1d4" class="">Batch: Múltiples secuencias relacionadas nucleótidos que no son de un mismo gen, pero pueden ser de la misma publicación u organismo. </p></div></p></div></p></li></ol><ol type="1" id="c5e721f0-3978-45ce-ac22-da2695c200db" class="numbered-list" start="5"><li>Secuencia en formato FASTA<p id="178e979e-e9fe-4fab-aa95-b8d034479557" class="">Esta se puede copiar directamente o puede subirse en un archivo .txt</p><ul id="c45f5149-be5e-4e5f-9652-abf7581b614e" class="toggle"><li><details open=""><summary><strong>Formato FASTA para secuencias de nucleótidos</strong></summary><p id="48a41169-d5c1-45a7-ac92-286c17fb58e7" class="">En el formato FASTA, la línea antes de la secuencia de nucleótidos, llamada línea de definición FASTA, debe comenzar con un quilate (&quot;&gt;&quot;), seguida de un SeqID (identificador de secuencia) único.</p><ul id="bf2babb4-6c7f-443c-90b8-6167d15430e7" class="bulleted-list"><li style="list-style-type:disc">El SeqID debe ser único para cada secuencia de nucleótidos y no debe contener espacios. Limite el SeqID a 25 caracteres o menos. El SeqID solo puede incluir letras, dígitos, guiones (-), guiones bajos (_), puntos (.), dos puntos (:), asteriscos (*) y signos de número (#). El personal de la base de datos reemplazará el identificador de secuencia con un número de acceso cuando se procese su envío.<p id="046dfe83-eb0f-48a7-8d2c-4e920001acec" class=""><strong>›SeqABCD</strong></p></li></ul><ul id="bd4655eb-cc9b-4255-9527-f27d4e2bb850" class="bulleted-list"><li style="list-style-type:disc">La información sobre el organismo fuente del que se obtuvo la secuencia sigue al SeqID y debe tener el formato [modifier=text]. No ponga espacios alrededor del &quot;=&quot;. Como mínimo, se debe incluir el nombre científico del organismo. Se pueden agregar modificadores opcionales para proporcionar información adicional. Los modificadores se pueden encontrar aquí <a href="https://www.ncbi.nlm.nih.gov/genbank/mods_fastadefline/">https://www.ncbi.nlm.nih.gov/genbank/mods_fastadefline/</a><p id="6f5eb955-1c25-4a28-a771-9e1e3190c064" class=""><strong>›SeqABCD [organism=Mus musculus] [strain=C57BL/6]</strong></p></li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="03bc5a91-3bc8-432d-aec9-2aab941fa74d"><div style="font-size:1.5em"><span class="icon">📢</span></div><div style="width:100%">[isolate=xxx] sirve para identificar distintos indiviudos de una misma especie, de manera de evitar que pasen por duplicados, puede utilizarse la identificación que se estime conveniente. Cada modificador está descrito en el siguiente enlace: <a href="https://www.ncbi.nlm.nih.gov/genbank/mods_fastadefline/">https://www.ncbi.nlm.nih.gov/genbank/mods_fastadefline/</a></div></figure><ul id="8789f006-d486-4d5e-bdfc-5bf25275df43" class="bulleted-list"><li style="list-style-type:disc">El último componente opcional de la línea de definición de FASTA es el título de la secuencia, que se utilizará como campo DEFINICIÓN en el archivo plano. El título debe contener una breve descripción de la secuencia. Existe un formato preferido para los títulos de nucleótidos y proteínas. El título provisto será cambiado al formato adecuado por el personal de la base de datos durante el procesamiento.<p id="0022d5b2-c05f-4ca3-a545-2af64ef1a919" class=""><strong>›SeqABCD [organism=Mus musculus] [strain=C57BL/6] Mus musculus neuropilin 1 (Nrp1) mRNA, complete cds.</strong></p></li></ul><p id="65ac5213-a529-49c1-a541-742b0628fe5c" class="">Tenga en cuenta que, en todos los casos, la línea de definición de FASTA no debe contener retornos firmes. Toda la información debe estar en una sola línea de texto. Si tiene problemas para importar sus secuencias FASTA, verifique que su software de edición no haya agregado retornos a la línea de definición FASTA.</p><p id="d3d55d60-d70f-4f64-9c01-de31233aa6f9" class="">Ejemplos de líneas de definición FASTA correctamente formateadas para secuencias de nucleótidos:<div class="indented"><pre id="ffa8a3a0-6b44-4a09-a2e7-7c9bbbcca930" class="code code-wrap"><code>&gt;Seq1 [organism=Streptomyces lavendulae] [strain=456A] Streptomyces lavendulae strain 456A mitomycin radical oxidase (mcrA) gene, complete cds.
+
+&gt;ABCD [organism=Plasmodium falciparum] [isolate=ABCD] Plasmodium falciparum isolate ABCD merozoite surface protein 2 (msp2) gene, partial cds.
+
+&gt;DNA.new [organism=Homo sapiens] [chromosome=17] [map=17q21] [moltype=mRNA] Homo sapiens breast and ovarian cancer susceptibility protein (BRCA1) mRNA, complete cds.</code></pre></div></p><p id="8a88dbb1-d077-41f9-93c3-b9f8e56eb138" class="">La línea después de la línea de definición de FASTA comienza la secuencia de nucleótidos. A diferencia de la línea de definición de FASTA, la propia secuencia de nucleótidos puede contener retornos. Se recomienda que cada línea de secuencia no tenga más de 80 caracteres. Utilice únicamente los símbolos IUPAC dentro de la secuencia de nucleótidos. Para secuencias que no son</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="42bf5dfc-eba8-4d1d-9fc2-a375c9ec2d75"><div style="font-size:1.5em"><span class="icon">📢</span></div><div style="width:100%">Para indicar una base que no se conoce, estas se definen como N y se repiten el número de veces que se tenga en conocimiento, pero no se deben poner al final de las secuencias. Si se insertan 100 N, esto indica que no se conoce la longitud de las pares de base faltantes. El número de N tiene que ser como máximo el 50% de la secuencia. Cada intervalo sin identificar debe ingresarse como mis_feature. Pueden indicarse los intervalos en formato FASTA, ejemplo:<pre id="2ae70957-0c82-48d1-b738-9ca569b213b3" class="code code-wrap"><code>&gt;Seq1
+
+TGGTGGAA
+
+&gt;?unk12
+
+CCCA
+
+&gt;?unk100
+
+CCGTGTGT</code></pre></div></figure><p id="01f988dd-442e-4433-a88e-4569b6aba772" class="">
+</p></details></li></ul></li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">Modificadores</summary><div class="indented"><p id="b6c28758-52e0-400f-a441-c393905c05c2" class="">Los modificadores pueden incluirse en la línea de definición de la secuencia FAST, para esto se ingresa entre corchetes [ ], el modificador que tiene la secuencia. También puede realizarse con una tabla. Los modificadores para la línea de definición se encuentran en el siguiente enlace: <a href="https://www.ncbi.nlm.nih.gov/genbank/mods_fastadefline/">https://www.ncbi.nlm.nih.gov/genbank/mods_fastadefline/</a></p><p id="d31a10c0-24c1-4356-b51d-f2055508ac6c" class="">Esto también se puede hacer de manera manual cuando se ingresa solo UNA secuencia. Para esto es necesario identificar de cual organelo proviene la secuencia. </p><ul id="c433a5c8-1b3e-42ce-9c0d-d0e9d574e2b2" class="toggle"><li><details open=""><summary><strong>Tabla de Modificadores (Source Modifiers Table)</strong></summary><p id="63061c7b-66a3-465a-bf66-b8036b7b51a9" class="">Si es más de una secuencias es necesario completar una tabla de modificadores como la que se presentan a continuación</p><pre id="d71b803e-2f64-4677-a452-fd1d571e1df7" class="code code-wrap"><code>Sequence_ID	Specimen_voucher	Collected_by	Collection_date	Country	Identified_by	Lat_Lon
+Seq1	MKP 334	C. Grant	31-Jan-2001	USA	C. Grant	13.57 N 24.68 W
+Seq2	MKP 1230	S. Tracy	28-Feb-2002	Slovakia	C. Grant	13.24 N 24.35 W
+Seq3	1B-2526	A. Gardner	16-Apr-2001	France	C. Grant	43.21 N 56.78 W
+Seq4	WBM 86-64	F. McMurray	26-May-2002	Germany	C. Grant	45.32 N 21.34 E
+Seq5	1B-2518	V. Leigh	13-Jun-2003	Brazil	V. Leigh	46.80 N 13.57 E
+Seq6	WBM 86-65	E. Flynn	15-Aug-2000	Australia	V. Leigh	68.53 S 57.42 E
+Seq7	1B-2355	G. Kelly	26-Oct-2002	Mexico	C. Grant	22.44 S 55.77 W
+Seq8	1B-2455	G. Kelly	26-Sep-2002	Mexico	C. Grant	22.44 S 55.77 W
+Seq9	WBM 87-70	G. Kelly	10-Nov-2000	Mexico	C. Grant	22.44 S 55.77 W
+Seq10	1B-3355	G. Kelly	02-Dec-2002	Mexico	C. Grant	22.44 S 55.77 W
+Seq11	WBM 90-95	G. Kelly	26-Oct-2002	Mexico	C. Grant	22.44 S 55.77 W</code></pre><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="cbae00cc-0758-4911-b993-70149440d18f"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%">Se puede verificar o rellenar en una tabla Excel, pero BankIT sólo reconoce .txt</div></figure><table id="aba324c6-3f6e-41bb-9c35-7c992f96ba3e" class="simple-table"><tbody><tr id="a29f33b0-2865-485d-8cd0-0b763f78b890"><td id="]@mq" class="" style="width:80px">Sequence_ID</td><td id="pz~A" class="" style="width:80px">Collected_by</td><td id="lYs]" class="" style="width:80px">Collection_date</td><td id="HQmH" class="" style="width:80px">Country</td><td id="EQ\~" class="" style="width:80px">Isolation_source</td><td id="N^EQ" class="" style="width:80px">Isolate</td><td id="KW_p" class="" style="width:80px">Lat_Lon</td><td id="BJM@" class="" style="width:80px">Specimen_voucher</td></tr><tr id="c2c41286-6163-4c8c-a7d2-33cb1d143d8e"><td id="]@mq" class="" style="width:80px">Seq1</td><td id="pz~A" class="" style="width:80px">C. Grant</td><td id="lYs]" class="" style="width:80px">31-Jan-2001</td><td id="HQmH" class="" style="width:80px">USA</td><td id="EQ\~" class="" style="width:80px">soil</td><td id="N^EQ" class="" style="width:80px">A</td><td id="KW_p" class="" style="width:80px">13.57 N 24.68 W</td><td id="BJM@" class="" style="width:80px">MKP 334</td></tr><tr id="dab1605f-641d-4ebe-9cdd-073cb166275f"><td id="]@mq" class="" style="width:80px">Seq2</td><td id="pz~A" class="" style="width:80px">S. Tracy</td><td id="lYs]" class="" style="width:80px">28-feb-02</td><td id="HQmH" class="" style="width:80px">Slovakia</td><td id="EQ\~" class="" style="width:80px">contaminated soil</td><td id="N^EQ" class="" style="width:80px">B</td><td id="KW_p" class="" style="width:80px">13.24 N 24.35 W</td><td id="BJM@" class="" style="width:80px">MKP 1230</td></tr><tr id="a7e19245-0461-4ea3-98fb-7e9148918f87"><td id="]@mq" class="" style="width:80px">Seq3</td><td id="pz~A" class="" style="width:80px">A. Gardner</td><td id="lYs]" class="" style="width:80px">16-Apr-2001</td><td id="HQmH" class="" style="width:80px">France</td><td id="EQ\~" class="" style="width:80px">farm soil</td><td id="N^EQ" class="" style="width:80px">C</td><td id="KW_p" class="" style="width:80px">43.21 N 56.78 W</td><td id="BJM@" class="" style="width:80px">1B-2526</td></tr><tr id="1b0b321f-10ee-44d6-b492-dd86831b9d8e"><td id="]@mq" class="" style="width:80px">Seq4</td><td id="pz~A" class="" style="width:80px">F. McMurray</td><td id="lYs]" class="" style="width:80px">26-may-02</td><td id="HQmH" class="" style="width:80px">Germany</td><td id="EQ\~" class="" style="width:80px">farm runoff water</td><td id="N^EQ" class="" style="width:80px">D</td><td id="KW_p" class="" style="width:80px">45.32 N 21.34 E</td><td id="BJM@" class="" style="width:80px">WBM 86-64</td></tr><tr id="24d3797b-03bf-45b8-942f-8c25b5bb6267"><td id="]@mq" class="" style="width:80px">Seq5</td><td id="pz~A" class="" style="width:80px">V. Leigh</td><td id="lYs]" class="" style="width:80px">13-jun-03</td><td id="HQmH" class="" style="width:80px">Brazil</td><td id="EQ\~" class="" style="width:80px">forest soil</td><td id="N^EQ" class="" style="width:80px">E</td><td id="KW_p" class="" style="width:80px">46.80 N 13.57 E</td><td id="BJM@" class="" style="width:80px">1B-2518</td></tr><tr id="10ae4633-9cfe-452b-9841-469142c64c2a"><td id="]@mq" class="" style="width:80px">Seq6</td><td id="pz~A" class="" style="width:80px">E. Flynn</td><td id="lYs]" class="" style="width:80px">15-Aug-2000</td><td id="HQmH" class="" style="width:80px">Australia</td><td id="EQ\~" class="" style="width:80px">river water</td><td id="N^EQ" class="" style="width:80px">F</td><td id="KW_p" class="" style="width:80px">68.53 S 57.42 E</td><td id="BJM@" class="" style="width:80px">WBM 86-65</td></tr><tr id="db314ed3-7e6d-48df-b126-03f7451feef3"><td id="]@mq" class="" style="width:80px">Seq7</td><td id="pz~A" class="" style="width:80px">G. Kelly</td><td id="lYs]" class="" style="width:80px">26-oct-02</td><td id="HQmH" class="" style="width:80px">Mexico</td><td id="EQ\~" class="" style="width:80px">river bed soil</td><td id="N^EQ" class="" style="width:80px">G</td><td id="KW_p" class="" style="width:80px">22.44 S 55.77 W</td><td id="BJM@" class="" style="width:80px">1B-2355</td></tr></tbody></table></details></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">Características</summary><div class="indented"><ol type="1" id="4c1c4ab0-1fc8-408f-95cc-e329e9e433d5" class="numbered-list" start="1"><li>Región codificante (CDS) / Gen / ARNm<ol type="a" id="571c73ee-277a-4473-a4ed-129f6be69ca4" class="numbered-list" start="1"><li>Por intervalos<ol type="i" id="dc179784-1248-4148-ba5e-73ebda75fa0c" class="numbered-list" start="1"><li>Hebra : + o - (► o ◄)</li></ol><ol type="i" id="eb703cd9-7fed-4f28-91db-21dc426463a8" class="numbered-list" start="2"><li>Parcial : 5’ o 3’ (en que extremo es parcial)<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="dd56da83-56fb-423f-b562-faf0015ac848"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">&lt; 5’ parcial<p id="3cbbd2f8-8e4c-413d-9575-f335cf3135a0" class="">&gt; 3’ parcial</p></div></figure><p id="c85d562c-c71d-4724-9a72-cd62bc76327d" class="">Reading frame: Si es parcial al extremo 5’, indicar el marco de lectura. Cuál base inicia el primer codón de triplete completo para cuando la secuencia de nucleótidos se traduce en secuencia de proteína</p><p id="80a14c20-37d4-4e57-a947-934d13c25509" class="">Cuando se tienen genes exones es necesario tener la posición de cada uno de estos</p><ol type="1" id="a5e99cb9-16c9-4970-aff5-9735564187cd" class="numbered-list" start="1"><li>Gen sin intrones</li></ol><ol type="1" id="64888a02-af9d-480b-8620-2ad0de6177b3" class="numbered-list" start="2"><li>Intervalos de Nucleótidos<ol type="a" id="d67df9d5-1e19-4bd3-8885-a2fe2ce897ea" class="numbered-list" start="1"><li>Secuencia completa</li></ol><ol type="a" id="a31eb6c8-1cfd-463b-a8d0-300ead8ad46f" class="numbered-list" start="2"><li>Intervalo específico</li></ol><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="db9433dc-1079-4e98-9eef-b21129af587b"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">En caso de ser más de una secuencia, las características se pueden ingresar de manera compartida para todas o de manera específica para cada una de ellas</div></figure></li></ol><ol type="1" id="26ab73c4-4d94-4c6d-8573-416de58cfe5a" class="numbered-list" start="3"><li>Información de la Proteína<ol type="a" id="58427176-550a-4a92-a6d3-dfaa7a2bf981" class="numbered-list" start="1"><li>Nombre</li></ol><ol type="a" id="1dc63f5d-7f1c-4d5a-b5bd-9ec5ca679cdd" class="numbered-list" start="2"><li>Descripción</li></ol><ol type="a" id="14b468d7-d4f8-4ecc-83dc-555a8f9a40b9" class="numbered-list" start="3"><li>Número EC</li></ol></li></ol><ol type="1" id="022ce6e3-fd51-4b76-bf70-b11ff00590db" class="numbered-list" start="4"><li>Información del gen<ol type="a" id="637092b3-efd9-40ef-a28a-56648237ce1e" class="numbered-list" start="1"><li>Nombre del gen</li></ol><ol type="a" id="7a29387d-fef9-46e6-985c-bd3aeec93a92" class="numbered-list" start="2"><li>Alelo del gen</li></ol><ol type="a" id="56b123a2-80bf-4231-b062-bf6aacdcef74" class="numbered-list" start="3"><li>Descripción del Gen</li></ol></li></ol><ol type="1" id="da37e857-9868-44da-b88b-d2ccef54b08d" class="numbered-list" start="5"><li>Información ARNm</li></ol></li></ol></li></ol><ol type="a" id="198c4655-458b-46eb-8dc0-af26ddbb4b3a" class="numbered-list" start="2"><li>Por datos de la secuencia proteica</li></ol></li></ol><ol type="1" id="43c88a28-704b-4277-bf4a-b9c4e8b8de5c" class="numbered-list" start="2"><li>ARN (ARNr, ARN no codificante, misc_ARN, etc)</li></ol><ol type="1" id="54882583-6a21-4f1f-9c34-720fc6674257" class="numbered-list" start="3"><li>Región repetida (para secuencias repetidas, elementos móviles y satélites)</li></ol><ol type="1" id="c5c0b39e-8da3-4c95-8609-5654a28ee3f4" class="numbered-list" start="4"><li>Otros</li></ol><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="f6922d8b-cce7-4d3f-b84c-fce79a5e3526"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Luego de ingresar la secuencia, BankIT traducirá a secuencia de aminoácidos de manera automática</div></figure><ul id="7ef15cf2-4da5-4a40-accb-c8803112efb0" class="toggle"><li><details open=""><summary><strong>Tabla de Características (Features Table File)</strong></summary><p id="f24614ed-fa2c-49c0-8c8c-0b462eca770b" class="">La primera línea de la tabla de características contiene la siguiente información básica</p><p id="af23aa9f-6fb9-4f66-8a34-9ce2f5291a52" class="">&gt;Feature Sequence_ID</p><p id="f3998ddc-e562-4ea0-a4e6-03cbbeea6167" class="">El identificador de secuencia (Sequence_ID) debe coincidir con la etiqueta utilizada para identificar la secuencia correspondiente de cada tabla en el archivo FASTA de nucleótidos.
+Las líneas subsiguientes de la tabla enumeran las características.</p><p id="490f1967-796c-47c1-96d0-fb66c6a97ed7" class="">Prepare el archivo de la tabla de características en un editor de texto y guárdelo como texto ASCII sin formato (no .rtf ni .doc)</p><p id="7e729c11-eac3-44c3-b5d2-7a688a5ecf8e" class="">Formato para una tabla de características:</p><ul id="7f2ab8e9-68b8-4c51-87e4-0b75f1f3ead1" class="bulleted-list"><li style="list-style-type:disc">Cada característica se muestra en una línea separada.</li></ul><ul id="94ff96cc-8818-4c1f-bb49-e8579b1a904c" class="bulleted-list"><li style="list-style-type:disc">Múltiples intervalos de nucleótidos para una característica están en líneas subsiguientes.</li></ul><ul id="7ecb578e-3afa-4ee2-9c0d-92a9e9c477a3" class="bulleted-list"><li style="list-style-type:disc">Los calificadores que describen una característica están en las líneas debajo de esa característica y sus intervalos.</li></ul><ul id="1d62d2e0-7b5b-4bf7-a24a-4a2af2e53078" class="bulleted-list"><li style="list-style-type:disc">Cada columna está separada por una pestaña.</li></ul><p id="3bef93d1-be0e-4829-9039-360c0ac43946" class="">Como se muestra en los siguientes ejemplos:</p><p id="550d1238-28dd-4243-bbe7-60e82921aace" class="">Línea 1
+Columna 1: Ubicación de inicio (primer nucleótido) de una característica
+Columna 2: Ubicación de parada (último nucleótido) de una característica
+Columna 3: Nombre de la función (por ejemplo, &#x27;CDS&#x27; o &#x27;mRNA&#x27; o &#x27;rRNA&#x27; o &#x27;gen&#x27; o &#x27;exon&#x27;)</p><p id="10116436-97b7-41fc-9d53-1733d22601e2" class="">Línea 2:
+Columna 4: Nombre del calificador (por ejemplo, &#x27;producto&#x27; o &#x27;número&#x27; o &#x27;gen&#x27; o &#x27;nota&#x27;)
+Columna 5: Valor del calificador
+Tenga en cuenta en los ejemplos a continuación que &#x27;gen&#x27; es tanto una característica como un calificador y debe ingresarse en dos columnas separadas.</p><p id="3cdd52ea-c9e6-4719-9ef2-73c4d704fa85" class="">Los ejemplos a continuación muestran tablas de muestra e ilustran una serie de puntos sobre el formato de la tabla.</p><pre id="515d1b1d-b5b1-4373-94f5-2a45f304561a" class="code code-wrap"><code>&gt;Feature Seq1
+&lt;1    &gt;1050    gene
+                        gene          ATH1
+&lt;1    1009    CDS
+                        product       acid trehalase
+                        product       Athlp
+                        codon_start   2
+&lt;1    &gt;1050    mRNA
+                        product       acid trehalase
+
+&gt;Feature Seq2
+2626  2590    tRNA
+2570  2535
+                        product       tRNA-Phe
+
+&gt;Feature Seq3
+1080  1210  CDS
+1275  1315
+                        product       actin
+                        note          alternatively spliced
+1055  1210  mRNA
+1275  1340
+                        product       actin
+1055  1340  gene
+                        gene          ACT
+1055  1079  5&#x27;UTR
+1316  1340  3&#x27;UTR</code></pre><table id="75593187-85ff-442a-9c97-6fea6241f355" class="simple-table"><tbody><tr id="6c9ed348-ab77-4f32-929e-14131c4e32c7"><td id="WfVR" class="" style="width:128px">&gt;Feature Seq1</td><td id="Irfm" class="" style="width:128px"></td><td id="}ciy" class="" style="width:128px"></td><td id="]fQi" class="" style="width:128px"></td><td id="YOOn" class="" style="width:128px"></td></tr><tr id="678d53cb-6b0d-432f-8a19-8a64fb7e9f41"><td id="WfVR" class="" style="width:128px">&lt;1   </td><td id="Irfm" class="" style="width:128px"> &gt;1050   </td><td id="}ciy" class="" style="width:128px"> gene</td><td id="]fQi" class="" style="width:128px"></td><td id="YOOn" class="" style="width:128px"></td></tr><tr id="9d5ea9c4-e387-43c8-bbe4-d4b996b5696a"><td id="WfVR" class="" style="width:128px"></td><td id="Irfm" class="" style="width:128px"></td><td id="}ciy" class="" style="width:128px"> gene </td><td id="]fQi" class="" style="width:128px">gene </td><td id="YOOn" class="" style="width:128px">ATH1</td></tr><tr id="78c86b1d-91cb-4904-9841-f90f517fb986"><td id="WfVR" class="block-color-yellow_background" style="width:128px"></td><td id="Irfm" class="block-color-yellow_background" style="width:128px"></td><td id="}ciy" class="block-color-yellow_background" style="width:128px"></td><td id="]fQi" class="block-color-yellow_background" style="width:128px"></td><td id="YOOn" class="block-color-yellow_background" style="width:128px"></td></tr><tr id="d2c75f2c-cca3-4286-b54b-3cd7a105d179"><td id="WfVR" class="" style="width:128px">&lt;1   </td><td id="Irfm" class="" style="width:128px">1009</td><td id="}ciy" class="" style="width:128px">CDS</td><td id="]fQi" class="" style="width:128px"></td><td id="YOOn" class="" style="width:128px"></td></tr><tr id="d18460db-a70b-4ed9-98b0-06193c1bab43"><td id="WfVR" class="" style="width:128px"></td><td id="Irfm" class="" style="width:128px"></td><td id="}ciy" class="" style="width:128px"></td><td id="]fQi" class="" style="width:128px">product</td><td id="YOOn" class="" style="width:128px">acid trehalase</td></tr><tr id="79aa6214-69df-42bf-9e66-556e11707215"><td id="WfVR" class="" style="width:128px"></td><td id="Irfm" class="" style="width:128px"></td><td id="}ciy" class="" style="width:128px"></td><td id="]fQi" class="" style="width:128px">product</td><td id="YOOn" class="" style="width:128px">Athlp</td></tr><tr id="aca52965-53ac-4859-9b0d-92a1d1a3e9e6"><td id="WfVR" class="" style="width:128px"></td><td id="Irfm" class="" style="width:128px"></td><td id="}ciy" class="" style="width:128px"></td><td id="]fQi" class="" style="width:128px">codon_start</td><td id="YOOn" class="" style="width:128px">2</td></tr><tr id="edc31538-7789-4784-ae2a-e5e24784adef"><td id="WfVR" class="block-color-yellow_background" style="width:128px"></td><td id="Irfm" class="block-color-yellow_background" style="width:128px"></td><td id="}ciy" class="block-color-yellow_background" style="width:128px"></td><td id="]fQi" class="block-color-yellow_background" style="width:128px"></td><td id="YOOn" class="block-color-yellow_background" style="width:128px"></td></tr><tr id="a8a81ae8-575d-4d7d-aeeb-29cbb285b2a5"><td id="WfVR" class="" style="width:128px">&lt;1   </td><td id="Irfm" class="" style="width:128px">&gt;1050</td><td id="}ciy" class="" style="width:128px">mRNA</td><td id="]fQi" class="" style="width:128px"></td><td id="YOOn" class="" style="width:128px"></td></tr><tr id="98c159f4-6773-446b-9f9f-0abe2ea76b28"><td id="WfVR" class="" style="width:128px"></td><td id="Irfm" class="" style="width:128px"></td><td id="}ciy" class="" style="width:128px"></td><td id="]fQi" class="" style="width:128px">product</td><td id="YOOn" class="" style="width:128px">acid trehalase</td></tr></tbody></table><p id="85a00f72-8783-47d4-821f-564b58dd268d" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="08df700a-f265-4770-ba6f-66b099b2e691"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%">Se puede verificar o rellenar en una tabla Excel, pero BankIT sólo reconoce .txt</div></figure><ul id="6fcc1dbc-d55e-4e79-ae39-1b1d0db7f5bb" class="bulleted-list"><li style="list-style-type:disc">Las características que están en la cadena complementaria, como el tRNA-Phe, se indican invirtiendo las ubicaciones de los intervalos (número más grande a más pequeño)</li></ul><ul id="3bc16af9-8943-4bb1-a407-2150b98dd1d8" class="bulleted-list"><li style="list-style-type:disc">Las ubicaciones de las funciones parciales (incompletas) se indican con un &quot;&gt;&quot; o &quot;&lt;&quot; junto al número. En el ejemplo de Seq1, el gen, el CDS y el ARNm comienzan aguas arriba del inicio de la secuencia de nucleótidos. El símbolo &quot;&lt;&quot; indica que son características parciales 5&#x27; y el símbolo &quot;&gt;&quot; indica que el gen y el ARNm son parciales 3&#x27;. Además, para que la proteína se traduzca correctamente, se debe indicar el marco de lectura correcto con el calificativo &quot;codon_start&quot; en el CDS. No es necesario indicar start_codon en los CDS completos, ya que se supone que la traducción comienza en el primer nucleótido del intervalo si no se proporciona codon_start.</li></ul><ul id="e54ac626-4bd4-4932-86b1-01ee43ec0ede" class="bulleted-list"><li style="list-style-type:disc">Si una característica contiene múltiples intervalos, como el tRNA-Phe empalmado, cada intervalo se enumera en una línea separada por su posición inicial y final antes de las líneas calificadoras posteriores.</li></ul><ul id="485c5c33-0c6a-4ff5-bf41-e3c2b88b9221" class="bulleted-list"><li style="list-style-type:disc">Las características genéticas son siempre un solo intervalo y su ubicación debe cubrir los intervalos de todas las características relevantes (por ejemplo: CDS más 5&#x27;UTR más 3&#x27;UTR).</li></ul><ul id="7c2ee562-0140-4775-9f1f-c320ef7ba5a2" class="bulleted-list"><li style="list-style-type:disc">Si una proteína tiene más de un nombre, cada uno puede incluirse en la tabla como un calificador de producto separado en el CDS de la tabla. El valor del primer calificador de producto se convertirá en /product en el CDS en el archivo plano, y cualquier calificador de producto adicional se mostrará como una nota /en el CDS en el archivo plano. Todas las características de CDS deben tener al menos un producto.</li></ul><ul id="1a5620e9-bc4c-49fe-a44a-ca9be1c9d4ae" class="bulleted-list"><li style="list-style-type:disc">Se puede agregar un archivo plano/nota a cualquier característica usando la nota calificadora en la tabla<p id="fbf20aa0-af99-4aac-90f5-8c6e2ad57dd0" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2f6e012d-7532-4292-b221-0dce11fb6533"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%">Para indicar que esta en la hebra - , se escribe el del numero más grande al pequeño</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="f119eb07-4bb8-4cf9-a771-99869076d652"><div style="font-size:1.5em"><span class="icon">📢</span></div><div style="width:100%">Si se ocupa una tabla, es necesario eliminar todas las características que se ingresaron manualmente</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="94999fa6-ca5f-4521-a019-1b8e4d7f0dbc"><div style="font-size:1.5em"><span class="icon">📢</span></div><div style="width:100%">Intergenic spacer se identifican como misc_feature, y en note se explica que es</div></figure></li></ul><p id="071bd15d-c0c2-4773-a216-74dc3bf86f25" class="">
+</p></details></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">Otras consideraciones</summary><div class="indented"><ul id="579ff3f6-a9cd-404c-b2f0-03d3385d400e" class="bulleted-list"><li style="list-style-type:disc">Si es reenvío de secuencia es necesario el número anterior para poder reemplazar</li></ul><ul id="b0a211d4-559d-4efb-961d-5251b486a82c" class="toggle"><li><details open=""><summary><strong>Documentos necesarios para actualizar datos ya publicados en GenBank</strong></summary><p id="260f0916-bbe4-43ab-8e40-92814885c17d" class="">Se pueden hacer actualizaciones sobre cualquier registro ya existente dependiendo de las indicaciones que siguen a continuación. Si se desean actualizar registros múltiples es necesario enviar una lista de todas las adhesiones que se actualizarán al inicio de la solicitud. También se puede solicitar un cambio en la fecha de publicación de los registros dependiendo de el estado de la solicitud. </p><p id="04a46d02-539f-4093-bf1f-59ff3d05fe5e" class="">No se deben subir nuevos archivos para actualizar un registro ya existente ya que que se creará una base de datos duplicada</p><p id="70026d26-6502-434f-912d-5306cef8bbe6" class="">Si envió a nuestros colaboradores en ENA o DDBJ, consulte sus instrucciones para actualizar los formatos. Los genomas procariotas y eucariotas, TSA y SRA deben actualizarse como se describe en las páginas vinculadas. Las actualizaciones de BioProject y BioSample deben enviarse a <a href="mailto:submit-help@ncbi.nlm.nih.gov">submit-help@ncbi.nlm.nih.gov</a>.</p><ul id="80b5ec4a-146c-407e-8554-695044453c4b" class="toggle"><li><details open=""><summary><strong>Editar información del origen de la secuencia</strong></summary><p id="2f1f8666-70b5-4eac-ac2a-48ec7967caa2" class="">Se puede actualizar cualquier información sobre el origen de la secuencia siguiendo el siguiente formato</p><pre id="b50492ed-cb69-49c5-b679-0e7d7c6f7d1a" class="code code-wrap"><code>acc. num.       strain  country organism
+MHxxxx02        82      USA Escherichia coli
+MHxxxx03        ABC     Canada  Bacillus subtilis</code></pre></details></li></ul><ul id="370d855e-00d9-4e44-8d41-10bbdbd6affe" class="toggle"><li><details open=""><summary><strong>Actualizar Información de la publicación</strong></summary><ol type="a" id="7b69c7ca-d88c-43f9-9d61-72c6934b9dd4" class="numbered-list" start="1"><li>Si el PMID o el DOI están disponibles públicamente la información se envía en el siguiente formato<pre id="b86d509d-1cbf-487c-ace5-a5098a703eb4" class="code code-wrap"><code>acc. num.   PMID 
+    MHXXXX01    29980901
+    MHXXXX02    29980901
+or
+
+    acc. num.   DOI
+    MHXXXX01    10.1000/xyz123
+    MHXXXX02    https://doi.org/10.1000/xyz123doi</code></pre></li></ol><ol type="a" id="2971ee0b-e0fa-4c09-ac8b-f775a8844e38" class="numbered-list" start="2"><li>Para todas las demás actualizaciones en el siguiente formato, teniendo en consideración que se deben remplazaron todo carácter que no pertenezca a los caracteres ASCII (por ejemplo, los caracteres con acentos y diéresis),<p id="de0f6186-46e5-40f6-bdbf-276405b57ebf" class="">La lista completa de los nombres de autores revisados debe ser en el formato: first_initial middle_initial surname</p><pre id="95bce71b-57f2-41ba-a15b-c21aeaa5161f" class="code code-wrap"><code>   acc. num.    authors    title
+    MHXXXX01    J. A. Smith    Identification of gene A
+    MHXXXX02    X. P. Weng, J. Doe    Identification of gene B</code></pre><p id="8dcfbf90-ae35-4b07-aef0-1c1182ccdcbd" class="">Los siguientes son campos de publicación válidos que deben ser ussados como identificadores en el encabezado de cada columna</p><ul id="b6c3b4f0-e53b-4e32-9c1b-c03e8724e60b" class="bulleted-list"><li style="list-style-type:disc">authors</li></ul><ul id="05828e2b-0700-4cb4-84c3-8ba1cc6ef2e9" class="bulleted-list"><li style="list-style-type:disc">journal</li></ul><ul id="5a550919-23a4-44ca-9d6f-b67bfb8b7848" class="bulleted-list"><li style="list-style-type:disc">volume</li></ul><ul id="e9cb371d-9870-4b63-bdfa-755647ced714" class="bulleted-list"><li style="list-style-type:disc">issue</li></ul><ul id="9444d483-df86-41b0-a9fb-ce814684a9f4" class="bulleted-list"><li style="list-style-type:disc">pages</li></ul><ul id="451d7569-26aa-4a7c-b954-0f714a39882d" class="bulleted-list"><li style="list-style-type:disc">publication date</li></ul><ul id="4200edc3-55ab-4951-a5bf-967dd1d72012" class="bulleted-list"><li style="list-style-type:disc">title</li></ul><ul id="3722a674-2170-41ce-8528-747f84c2ba5a" class="bulleted-list"><li style="list-style-type:disc">affiliation</li></ul><ul id="79ad40f5-a7be-44a6-a3ea-4aaa780ec102" class="bulleted-list"><li style="list-style-type:disc">department</li></ul><ul id="b5621465-2f42-4039-abba-8dad36d54d6e" class="bulleted-list"><li style="list-style-type:disc">city</li></ul><ul id="0f274538-af8c-42f3-ac06-a2d2b1bf2bee" class="bulleted-list"><li style="list-style-type:disc">state</li></ul><ul id="99d94137-6eb7-4dc8-b6ce-08cbac6a0201" class="bulleted-list"><li style="list-style-type:disc">publication country</li></ul><ul id="954e8fa9-280e-4963-b159-987dc707d731" class="bulleted-list"><li style="list-style-type:disc">street</li></ul><ul id="0fba5a2c-a28e-417c-86a2-a3d00704c926" class="bulleted-list"><li style="list-style-type:disc">postal code</li></ul><ul id="93452056-cf58-49e7-8bcc-3a517111eefa" class="bulleted-list"><li style="list-style-type:disc">PMID</li></ul><ul id="cedfb3ad-88ce-4deb-85d0-d2cdc7f426d5" class="bulleted-list"><li style="list-style-type:disc">*class</li></ul><p id="0c2cd512-02c3-446d-9481-76f9794c8810" class="">Todas las columnas pueden ser no apropiadas para cada referencia. Use solamente aquellas que sean relevantes, Si la referencia ya a sido publicada, incluya en título completo de la revista, no su abreviación.</p><p id="49fd7808-c207-4471-baee-5d36937a66d1" class="">*Si la publicación tiene un identificador PubMed (PMID) ,no es necesario rellenar ninguno de los restantes campos de publicación. Es suficiente enviar una tabla con el número de adhesión y PMDI</p><p id="0b066f92-3b7a-4c60-905b-5fca99ec32a8" class="">**El descriptor class solo debe se usado cuando el estado de publicación tuviera algun cambio. El descriptor tiene vocabulario controlado y solo puede incluirse una de las siguientes clases:<div class="indented"><ul id="10523971-cb2a-46fc-8f0f-64b16caa0755" class="bulleted-list"><li style="list-style-type:disc">unpublished</li></ul><ul id="543e0f9e-8868-4aa5-a262-df31d682dadb" class="bulleted-list"><li style="list-style-type:disc">in-press journal</li></ul><ul id="6cccbbf2-3a34-4346-9062-848d03b4ab32" class="bulleted-list"><li style="list-style-type:disc">journal</li></ul></div></p></li></ol></details></li></ul><ul id="bb64b3d0-cdd7-4001-a6a6-bb8fa478e775" class="toggle"><li><details open=""><summary><strong>Actualización de la secuencia</strong></summary><p id="46702dc1-ff06-4dc0-9378-6d8f12f2a7ba" class="">Si se esta actualizando la sequencia de nucleótidos actual, se debe enviar al secuencia nueva completa en formato FASTA</p><pre id="61c11368-95db-4337-8171-ea97b516ad20" class="code code-wrap"><code>&gt;MHxxxx02
+cggtaataatggaccttggaccccggcaaagcggagagac
+&gt;MHxxxx03
+ggaccttggaccccggcaaagcggagagaccggtaataat</code></pre><p id="371525bd-e18a-4451-a052-301cd21bddae" class="">No se debe enviar una lista de los cambios de nucleótdos. No se debe incluir caracteres no IUPAC dentro de la secuencias. Usar n para los nucleótidos desconocidos dentro de la secuencia</p></details></li></ul><ul id="36532a1f-b6a8-4e63-a8de-7ad915c1fec1" class="toggle"><li><details open=""><summary><strong>Actualizar tabla de características</strong></summary><p id="c931ece3-5e5e-413d-b48d-0dedc9a84428" class="">Si se añadan anotaciones o cambion en las ubicaciones de las características se debe enviar una tabla de características como la siguiente</p><ul id="e1202efd-361f-483d-8a8c-ec8954a0934c" class="toggle"><li><details open=""><summary>Formato de tabla de características para actualizaciones</summary><pre id="e2aaba87-9280-4a29-8225-fc01a63ab70e" class="code code-wrap"><code>&gt;Feature Sc_16
+1    7000    REFERENCE
+                        PubMed         8849441
+&lt;1    1050    gene
+                        gene           ATH1
+&lt;1    1009    CDS
+                        product        acid trehalase
+                        product        Ath1p
+                        codon_start    2
+&lt;1    1050    mRNA
+                        product        acid trehalase
+[offset=2000]
+1253    420    gene
+                        gene           YPR027C
+1253    420    CDS
+                        product        Ypr027cp
+                        note           hypothetical protein
+1253    420    mRNA
+                        product        Ypr027cp
+2626    2535    gene
+                        gene           trnF
+2626    2590    tRNA
+2570    2535
+                        product        tRNA-Phe
+2626    2590    exon
+                        number         1
+2570    2535    exon
+                        number         2
+3450    4536    gene
+                        gene           YIP2
+3522    3572    CDS
+3706    4197
+                        product        Yip2p
+                        prot_desc      similar to human polyposis locus protein 1 (YPD)
+3450    3572    mRNA
+3706    4536
+                        product        Yip2p
+</code></pre><ul id="642211a7-db2e-4839-8fc3-8bd5e336f8af" class="bulleted-list"><li style="list-style-type:disc">Las características que se encuentran en la cadena complementaria, como el gen YPR027C y el tRNA-Phe, se indican invirtiendo las ubicaciones de los intervalos.</li></ul><ul id="4191be23-fc38-45cc-a9a4-b2c61afc47d7" class="bulleted-list"><li style="list-style-type:disc">Las ubicaciones de las características parciales (incompletas) se indican con un &quot;&gt;&quot; o &quot;&lt;&quot; delante de la ubicación del nucleótido. El símbolo &quot;&lt;&quot; siempre aparece en la columna 1 y &quot;&gt;&quot; siempre aparece en la columna 2, independientemente de la varada de la característica. En este ejemplo, el primer gen, el CDS y el ARNm comienzan aguas arriba del inicio de la secuencia de nucleótidos. El símbolo &quot;&lt;&quot; indica que son elementos parciales de 5&#x27;,  así como el símbolo &quot;&gt;&quot; indica que son elementos parciales de 3’-</li></ul><ul id="312b55b1-9b14-400e-8583-f5baa82916ec" class="bulleted-list"><li style="list-style-type:disc">Para que la proteína de un CDS que es parcial en su extremo 5’ se traduzca correctamente, el primer nucleótido del CDS que es la primera base del primer codón completo debe estar indicado con el calificador “codon_start”. Este no es el marco de lectura de toda la secuencia; es solo la posición del nucleótido dentro del CDS. En el ejemplo, el nucleótido 2 comienza el primer codón completo de la CDS de la trehalasa ácida. La situación predeterminada es que codon_start es 1. No es necesario indicar codon_start en CDS completos, ya que la traducción siempre comienza en el primer nucleótido del intervalo.</li></ul><ul id="37626105-723a-410d-aff9-6a0fd48b071e" class="bulleted-list"><li style="list-style-type:disc">Si una característica contiene múltiples intervalos, como el tRNA-Phe empalmado o el Yip2p CDS, cada intervalo se enumera en una línea separada por su posición inicial y final antes de las líneas calificadoras posteriores.</li></ul><ul id="a920f5e8-878e-4395-9ef9-afb0668ee9df" class="bulleted-list"><li style="list-style-type:disc">Las características genéticas son siempre un solo intervalo, y su ubicación debe cubrir los intervalos de todas las características relevantes. Por ejemplo, el gen YIP2 es tan largo como su ARNm y, por lo tanto, es más largo que su CDS.</li></ul><ul id="22c30604-32be-400c-9209-70ebefeae2f8" class="bulleted-list"><li style="list-style-type:disc">Si la característica del gen abarca los intervalos de las características de CDS o ARNm para ese gen, no es necesario incluir calificadores de genes en esas características en la tabla, porque se seleccionarán por superposición. Por ejemplo, en el archivo sin formato, los nombres de genes ATH1 e YPR027C están presentes como /gen en los CDS superpuestos, aunque no se enumeran explícitamente como calificadores de genes en esos CDS en la tabla. Esta opción se puede suprimir agregando un calificador de gen con el valor &#x27;-&#x27; a la característica. La supresión del gen / superpuesto es importante cuando, por ejemplo, un tRNA está codificado dentro de un intrón de un gen de mantenimiento.</li></ul><ul id="fee82c08-ad70-4ed4-b3fa-da77365e7995" class="bulleted-list"><li style="list-style-type:disc">Si una proteína tiene más de un nombre, cada uno puede incluirse en la tabla como un calificador de producto separado en el CDS de la tabla. El valor del primer calificador de producto se convertirá en /product en el CDS en el archivo plano, y cualquier calificador de producto adicional se mostrará como una nota /en el CDS en el archivo plano. Consulte el primer CDS, que tiene dos calificadores de productos, trehalasa ácida y Ath1p. Todas las características de CDS deben tener al menos un producto.
+Se puede agregar un archivo plano/nota a cualquier característica usando la nota calificadora en la tabla. Se ha agregado una nota al segundo CDS.</li></ul><ul id="6a6908f1-70a1-4a46-b9bf-49ac19fd1e10" class="bulleted-list"><li style="list-style-type:disc">Las citas publicadas se agregan mediante la función REFERENCE. Para la mayoría de las publicaciones, el inicio y el final de la función son el primer y el último nucleótido de la secuencia. La clave calificadora es PubMed y el valor es el identificador de PubMed (PMID), que se puede encontrar en PubMed.</li></ul><ul id="ed63f362-be6b-4b26-830b-32092fe12456" class="bulleted-list"><li style="list-style-type:disc">El [offset] se usa para agregar un número específico a todos los intervalos de nucleótidos posteriores. En este ejemplo, el registro se anotó en dos partes, cada parte a partir del residuo número 1. Las secuencias mismas se unieron en el archivo FASTA. El [offset=2000] agrega 2000 nt a la ubicación de todas las funciones que lo siguen, lo que ahorra al remitente la necesidad de volver a calcular la ubicación de cada función. Esta opción podría usarse si los intervalos de características para dos brazos de un cromosoma o contigs adyacentes se almacenan por separado, pero deben unirse para el envío final.</li></ul></details></li></ul><ol type="a" id="c924649a-dfd3-4ef2-b04e-287f42c349c3" class="numbered-list" start="1"><li>Si el registro es liberado de manera pública y tiene anotación, es posible descargar la anotación existente en un rachivo .tnl recuperando el registro y haciendo click en la opción “Send to”. Elija “File” como destino y luego “Feature Table” como formato. Edite esa tabla y envíela via email.</li></ol><ol type="a" id="0a563ed0-409a-476d-9768-c242f0fed56e" class="numbered-list" start="2"><li>Si el registro aun no es liberado de manera pública, es necesario contactar al equipo de Genbank para que ellos envién una tabla de características con la anotación actual para que se edite según las nuevas características y se reenvíe nuevamente al equipo de Genbank.<p id="0e4f39b0-3fa2-41e9-b79f-068917ad253a" class="">Se debe mantener el siguiente formato al editar la tabla </p><pre id="d2359dcb-3065-4765-b7ed-2bd071f7fa87" class="code code-wrap"><code>&gt;Feature gb|EFxxxxxx|EFxxxxxx
+&lt;1      400     gene
+                        gene            ENO1
+&lt;1      30      CDS
+70      300
+                        product         enolase
+                        note            homodimer
+&lt;1      30      mRNA
+70      400
+                        product         enolase
+&lt;1      30      exon
+                        number          1
+70      400     exon
+                        number          2</code></pre></li></ol></details></li></ul></details></li></ul><ul id="ee137ff6-d1bc-4944-8ae5-621834cce755" class="bulleted-list"><li style="list-style-type:disc">Si es una nueva secuencia, puede ponerse un título opcional. Este <strong><strong><strong>NO </strong></strong></strong>reemplaza el ID de Genbank</li></ul><ul id="947a0087-035b-4de8-9ae2-45e106ae7a46" class="bulleted-list"><li style="list-style-type:disc">Pueden enviar información adicional, pero si se completaron los pasos anteriores no debería ser necesario. Además, si existe alguna duda o problema, GenBank se pondrá en contacto de manera posterior</li></ul><ul id="34575b11-3736-4a9e-9a95-0e6e86a2cff0" class="bulleted-list"><li style="list-style-type:disc">BankIt no acepta formatos alineados, puede usar Sequin para formatos como FASTA-GAP, PHYLIP, NEXUS</li></ul></div></details><hr id="80d2c889-2e9b-43ce-859a-54e25f90afa8"/><p id="ff2c5b1e-b9ae-48ef-9d1d-7f8b710c0cde" class="">Cuando tengas toda la información necesaria y tu archivo en formato FASTA, estas listo para hacer tu solicitud, para eso debes responder el siguiente formulario: <a href="https://forms.gle/UXWKn2g3TMRiWw1V8">Formulario Gestión de Datos</a></p><p id="d14e573f-c736-4411-b706-75f774d62f47" class="">Recuerda que puedes adjuntar tus archivos dentro del formulario o mandarlos posteriormente con tu número de solicitud al data manager </p><p id="4d46c00e-9189-4010-9e44-9c60b6d4c755" class="">Data manager: Catalina Marín</p><p id="15aa5b56-106a-4b88-a4c6-796eb3916277" class="">Correo: datoscientificos@institutobase.cl</p><p id="c3fb03fd-15e8-4e30-a7f9-8e61d62aee0c" class="">Asunto: Envío archivos número de solicitud DM-XXXX</p><p id="4ce7f4b5-b067-43b0-95e8-48108ccd659f" class="">
+</p></div></article></body></html>

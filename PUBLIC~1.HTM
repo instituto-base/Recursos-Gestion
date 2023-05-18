@@ -1,0 +1,672 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Publicación de registros en iNaturalist</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b3d08999-c81f-4b53-98ad-52274db5d2ec" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🦜</span></div><h1 class="page-title">Publicación de registros en iNaturalist</h1></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="55c7e952-ac09-4768-b41f-585a49e6168f"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%">En los siguiente enlace se encuentra un  tutorial en español para el uso de la plataforma web y app de iNaturalist.
+<a href="https://www.youtube.com/watch?v=h_44av0KDDA&amp;ab_channel=BioTuber">https://www.youtube.com/watch?v=h_44av0KDDA&amp;ab_channel=BioTuber</a></div></figure><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3">¿Qué es iNaturalist?</summary><div class="indented"><p id="29b5a933-700d-4832-97c7-a6603f9d2aaa" class="">iNaturalist es una plataforma online internacional que se base en la observación ciudadana de la naturaleza, en esta plataforma es posible publicar todo tipo de registros biológicos además de ayudar a identificar elementos subidos por la comunidad.</p><p id="4fdb5ec9-bf35-45fd-8639-40e192ed59c3" class="">Para acceder a la plataforma es necesario crear una cuenta, con la cuál puedes tener acceso a través de su página web o descargando su aplicación.</p><p id="c101dfca-2fb6-42ac-885c-254e8443c01c" class="">Diversos países agrupan los registros y proyectos que se alojan en la plataforma, en el caso de Chile, se encuentra la plataforma iNaturalistCL, puedes explorar los registros y proyecto aquí: </p><figure id="5a71400d-abb9-4127-a5fb-51196cd61b31"><a href="https://inaturalist.mma.gob.cl/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">iNaturalist Chile</div><div class="bookmark-description">iNaturalist Chile es una red social para NaturaListas en donde puedes guardar tus observaciones de plantas y animales, y compartirlas con tus amigos e investigadores, y aprende más acerca de nuetra biodiversidad.</div></div><div class="bookmark-href"><img src="https://static.inaturalist.org/sites/18-favicon.png?1599780729" class="icon bookmark-icon"/>https://inaturalist.mma.gob.cl/</div></div><img src="https://static.inaturalist.org/sites/18-shareable_image.png?1599780683" class="bookmark-image"/></a></figure><p id="bab36217-8eaa-4b1e-860c-3056d520d4b9" class="">Los registros que se publican en iNaturalist tienen tres categorias<div class="indented"><ol type="1" id="29092421-cecd-4615-abcf-66e071b45da4" class="numbered-list" start="1"><li>Casual: Cuando un registro solo es subido por el usuario y no tiene retroalimentación de la comunidad o no tiene la información completa requerida</li></ol><ol type="1" id="079d88d2-f3af-4719-9064-002bb52691ea" class="numbered-list" start="2"><li>Necesita identificación: Un registro que no tiene la información de la especie confirmada por otra comunidad, o le falta información.</li></ol><ol type="1" id="78f97560-4ead-4ada-839b-5fc4ef564d3e" class="numbered-list" start="3"><li>Grado de investigación: Un registro en que la especia que ha sido corroborada al menos por otros dos usuarios de la plataforma y contiene toda la información básica para ser considerada un registro óptimo. Estos registros se conectan de manera automática con la plataforma GBIF si es que cuenta con la autorización del autor.</li></ol></div></p><p id="030be204-8867-4219-867a-36dcead6890b" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3">¿Qué registros se pueden publicar?</summary><div class="indented"><p id="e2ee8384-cca7-47cf-b213-3fa827e76064" class="">iNaturalist esta principalmente enfocado en las observaciones de organismo de vida silvestre, aunque también es posible aportar con organismos en cautiverio o cultivados. También se pueden publicar señales de vida biológica, ya sean huellas, plumas, fecas, audios, entre otras señales de la existencia de especies.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3">Requisitos mínimos para publicar</summary><div class="indented"><p id="038bc422-e2f5-43cc-bf5a-7fb5c7f66c23" class="">Para tener un registro que puede ser comentado por la comunidad es necesario:<div class="indented"><ol type="1" id="54b1305d-e854-4db0-8013-604851ccd93a" class="numbered-list" start="1"><li>Nombre del organismo: este puede ser el  especie, género, familia, entre otros niveles taxonómicos. También es posible utilizar nombres comunes o incluso grupos como “aves”, “helecho”</li></ol><ol type="1" id="ee389d0c-806e-4928-bec2-67bb6fddab55" class="numbered-list" start="2"><li>Fotografías del organismo: Una fotografía que muestre al organismo completo, en el caso de las plantas se sugiere una foto que muestre todo el organismo además de una fotografía de la hoja, si es posible incluir frutos o flores. Es posible que a través de la fotografía se sugieran nombres de especies u otro nivel taxonómico para apoyar la investigación</li></ol><ol type="1" id="759c2c4f-863d-42ba-8896-98f9387ce875" class="numbered-list" start="3"><li>Ubicación: Este puede ir directamente asociado a la fotografía si esta se hizo con un dispositivo que guarde esta información, o de manera manual. Es importante agregar un rango estimado de donde se encuentra el organismo, especialmente en organismos móviles.</li></ol><ol type="1" id="48f77228-1417-45fc-b94a-e4dd667a641f" class="numbered-list" start="4"><li>Fecha y Hora: Esta debe corresponder a cuando se observó el organismo, algunos dispositivos cuentan con esta información dentro de los meta datos de la fotografía, pero puede cambiarse de manera manual.</li></ol></div></p></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3">Calidad de los datos</summary><div class="indented"><p id="ccd7ee31-536e-4aca-bcb6-023db4e36e45" class="">La evaluación de la calidad de los datos es un resumen sobre la precisión de una observación. Todas las observaciones empiezan calificadas como de tipo <strong>&quot;casual&quot;</strong>, y pasan a ser <strong>&quot;necesita Identificación&quot;</strong> cuando:</p><ul id="068bda9e-f4fb-40a2-81d1-216f888936f8" class="bulleted-list"><li style="list-style-type:disc">La observación <strong>tiene una fecha</strong></li></ul><ul id="f9928971-3776-4168-acdb-72bffb729748" class="bulleted-list"><li style="list-style-type:disc">La observación <strong>está georeferenciada</strong> (por ejemplo, tiene coordenadas de lat/long)</li></ul><ul id="428a7742-9334-429e-a3df-b8efa37d6877" class="bulleted-list"><li style="list-style-type:disc">La observación <strong>se acompaña de fotos o sonidos</strong></li></ul><ul id="14954fe7-ec0b-46df-831c-239794097332" class="bulleted-list"><li style="list-style-type:disc">La observación <strong>no es de un humano</strong>.</li></ul><p id="9358a6af-b648-41c3-867c-efc46fa1ca8a" class="">Las observaciones pasan ser de <strong>grado de investigación</strong>cuando:</p><ul id="6c6d6eb7-10c4-43ff-ac86-2b93f3efc522" class="bulleted-list"><li style="list-style-type:disc">La comunidad de iNaturalistCl está <strong>de acuerdo con la identificación específica o inferior</strong>, por ejemplo, más de 2/3 de los identificadores están de acuerdo con taxón (si la comunidad vota que el Taxón Comunitario no se puede mejorar más, se revierte a Identificación al nivel de subfamilia o inferior).</li></ul><p id="868d5241-a217-4a48-b5c6-c56b3c551553" class="">Las observaciones revertirán a <strong>&quot;casual&quot;</strong> si las condiciones anteriores no se cumplen o la comunidad está de acuerdo en que:</p><ul id="6962a0fd-b06c-482c-9c77-d550445ea3b9" class="bulleted-list"><li style="list-style-type:disc">la <strong>localización no parece precisa</strong>(p.e. monos en medio del océano o hipopótamos en un edificio de oficinas)</li></ul><ul id="78243bfc-558c-4b1d-b1f7-e8420aa2192c" class="bulleted-list"><li style="list-style-type:disc">el <strong>organismo no es salvaje o naturalizado</strong>(p.e. cautivo o cultivado por humanos o unos extraterrestres inteligentes)</li></ul><ul id="18ba5d18-e44c-42b8-8352-bcaa2ea29951" class="bulleted-list"><li style="list-style-type:disc">la observación <strong>no presenta evidencias de un organismo</strong>, por ejemplo imágenes de figuras en el agua, piedras o paisajes, etc. que no incluyen el organismo</li></ul><ul id="87ff8274-9828-46e4-89a9-f26dece18ce0" class="bulleted-list"><li style="list-style-type:disc">la observación <strong>no aporta evidencias recientes (~100 años) de presencia</strong>(p.e. fósiles, pero sí que son válidas las huellas, excrementos, restos u hojas muertas)</li></ul><ul id="92fcc192-4d57-4e68-bcc6-a375da91873c" class="bulleted-list"><li style="list-style-type:disc">la observación no necesita más Identificaciones <em>y</em> la Identificación de la comunidad está por debajo de la familia</li></ul><ul id="32d1e22f-ddc8-44ef-ab7b-4944cedb7095" class="bulleted-list"><li style="list-style-type:disc">el observador ha desactivado la Identificación por la Comunidad y el taxón identificado por la comunidad no es un ancestro o descendiente del taxón asociado con la Identificación del observador.</li></ul><p id="c95a8d05-d7e3-49ad-b082-a892fef2f053" class="">Y por si esto no fuera suficientemente complicado, aún hay situaciones en las que el sistema puede votar:</p><ul id="e291585b-eb90-4606-8743-cf5b0a5da86f" class="bulleted-list"><li style="list-style-type:disc">El sistema puede votar que la observación es de un organismo que no es salvaje o naturalizado si, al menos hay 10 observaciones más de un género o inferior en el país, estado o provincia, lo que sea menor, que contiene esta observación y el 80% o más observaciones han sido marcadas como no salvaje o naturalizado.</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3">Proyectos y bioblitz</summary><div class="indented"><p id="3b10ce17-29c3-452b-bcf0-59c18832ad9e" class="">Otra característica útil de iNaturalist es la participación y creación en proyectos así como también en bioblitz.</p><p id="2ba93e8c-cca7-4ca3-a9d8-c4536559b582" class="">Los proyectos se agrupan de manera geográfica y pueden ser de diversos objetivos, por ejemplo la flora de una región o un parque nacional, todas las especies de aves de un sector, etc. De manera automática los registros se añaden a proyectos del sector de la observación. Es recomendable que se investiguen los proyectos previos de una región antes de crear uno nuevo.</p><p id="5edc42cd-7866-4d97-9030-f93071eec1db" class="">Un bioblitz es un evento único en un periodo de tiempo determinado donde se busca crear la mayor cantidad de registros por la mayor cantidad de personas en un lugar determinado.</p><ul id="a642d0ea-88ff-418f-8e24-6d90665ab22c" class="toggle"><li><details open=""><summary><strong>Proyectos de interés para BASE en iNaturalistCL</strong></summary><figure id="a8f92cc3-5d05-41a8-9b31-4af5cb8caafe"><a href="https://inaturalist.mma.gob.cl/projects/biodiversidad-del-parque-marino-islas-diego-ramirez-paso-drake" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Biodiversidad del Parque Marino Islas Diego Ramírez - Paso Drake</div><div class="bookmark-description">Este proyecto busca aportar al conocimiento actual de la biodiversidad marina y terrestre asociada al Parque Marino islas Diego Ramírez - Paso Drake. Buscamos registrar y recopilar la información biológica acerca de todos los grupos de organismos (peces, moluscos, algas, aves, insectos, plantas vasculares, briófitas, etc.), para así aportar a su conservación y valoración. Instituto de Ecología y Biodiversidad Universidad de Magallanes, Centro de Investigación y Asistencia Técnica Puerto Williams. Programa de Conservación Biocultural Subantártica Foto de portada: Omar Barroso</div></div><div class="bookmark-href"><img src="https://static.inaturalist.org/sites/18-favicon.png?1599780729" class="icon bookmark-icon"/>https://inaturalist.mma.gob.cl/projects/biodiversidad-del-parque-marino-islas-diego-ramirez-paso-drake</div></div><img src="https://static.inaturalist.org/projects/109522-icon-original.jpg?1624216576" class="bookmark-image"/></a></figure><figure id="94b96a39-0642-476b-8fe5-66b35da2bddf"><a href="https://inaturalist.mma.gob.cl/projects/fungi-of-antarctica" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Fungi of Antarctica</div><div class="bookmark-description">Fungi and liken from the frozen continent</div></div><div class="bookmark-href"><img src="https://static.inaturalist.org/sites/18-favicon.png?1599780729" class="icon bookmark-icon"/>https://inaturalist.mma.gob.cl/projects/fungi-of-antarctica</div></div><img src="https://static.inaturalist.org/sites/18-shareable_image.png?1599780683" class="bookmark-image"/></a></figure><figure id="26754e0f-6e8e-4bd6-b769-cbe1fb22921d"><a href="https://inaturalist.mma.gob.cl/projects/macroalgas-subantarticas-y-antarticas" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Macroalgas Subantárticas y Antárticas</div><div class="bookmark-description">Proyecto que busca registrar la diversidad de macroalgas de la Región de Magallanes y Antártica Chilena</div></div><div class="bookmark-href"><img src="https://static.inaturalist.org/sites/18-favicon.png?1599780729" class="icon bookmark-icon"/>https://inaturalist.mma.gob.cl/projects/macroalgas-subantarticas-y-antarticas</div></div><img src="https://static.inaturalist.org/sites/18-shareable_image.png?1599780683" class="bookmark-image"/></a></figure><figure id="7f6ab7b9-40dc-42b2-8b2e-d98f0e3138a0"><a href="https://inaturalist.mma.gob.cl/projects/penguins-of-chile" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Penguins of Chile</div><div class="bookmark-description">Discover the penguins of Chile.</div></div><div class="bookmark-href"><img src="https://static.inaturalist.org/sites/18-favicon.png?1599780729" class="icon bookmark-icon"/>https://inaturalist.mma.gob.cl/projects/penguins-of-chile</div></div><img src="https://static.inaturalist.org/sites/18-shareable_image.png?1599780683" class="bookmark-image"/></a></figure></details></li></ul></div></details><p id="3a0aab6c-d18c-43f9-b276-eeaa53a13c36" class="">
+</p></div></article></body></html>
