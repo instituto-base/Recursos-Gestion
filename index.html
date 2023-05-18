@@ -1,0 +1,671 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Recursos Gestión de Datos - Instituto Milenio BASE</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="77f0eb21-3d8e-46aa-bb4b-988a7370e5a7" class="page sans"><header><img class="page-cover-image" src="Recursos%20Gestio%CC%81n%20de%20Datos%20-%20Instituto%20Milenio%20BAS%2077f0eb213d8e46aabb4b988a7370e5a7/DSCF6370.jpg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Recursos%20Gestio%CC%81n%20de%20Datos%20-%20Instituto%20Milenio%20BAS%2077f0eb213d8e46aabb4b988a7370e5a7/LOGONOTION3.png"/></div><h1 class="page-title">Recursos Gestión de Datos - Instituto Milenio BASE</h1></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="d73f1139-2dae-4058-9d63-b07a8a364c11"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%">Con el objetivo de asegurar la calidad de los datos y su correcta gestión para todos los integrantes del equipo del Instituto Milenio BASE, aquí puedes encontrar distintos recursos que contienen información sobre la documentación necesaria para iniciar la gestión de los datos, incluidos los requerimientos para la publicación de los datos en portales internacionales. Además, encuentras el recurso de herramientas para estudiantes que contiene información de apoyo a la investigación.</div></figure><div id="dc0163f1-fa7f-41db-a245-badd6d832184" class="column-list"><div id="508d151d-ee1d-4a05-8524-769996f083ff" style="width:33.33333333333333%" class="column"><h2 id="9f0469ca-2f78-472f-871b-662542c87646" class=""><mark class="highlight-blue_background">Documentación gestión de datos</mark></h2><h3 id="d67ebee5-f971-4f73-bc10-75249112d009" class="">Sistema de Codificación Interna de Instituto Milenio BASE</h3><figure id="0f82720e-e9a0-4a5a-97b6-ffb230c7bfc8" class="link-to-page"><a href="Recursos%20Gestio%CC%81n%20de%20Datos%20-%20Instituto%20Milenio%20BAS%2077f0eb213d8e46aabb4b988a7370e5a7/Co%CC%81digos%20Instituto%20Milenio%20BASE%200f82720ee9a04a5a97b6ffb230c7bfc8.html"><span class="icon">🔢</span>Códigos Instituto Milenio BASE</a></figure><h3 id="2e5e729e-e8fd-466d-98d8-c7ec33a340ae" class="">Instructivo Formulario de gestión de datos</h3><figure id="86718df5-b7ff-480f-8209-211f5142a140" class="link-to-page"><a href="Recursos%20Gestio%CC%81n%20de%20Datos%20-%20Instituto%20Milenio%20BAS%2077f0eb213d8e46aabb4b988a7370e5a7/Ya%20tengo%20mis%20datos%E2%80%A6%20%C2%BFY%20ahora%20que%CC%81%2086718df5b7ff480f8209211f5142a140.html"><span class="icon">📝</span>Ya tengo mis datos… ¿Y ahora qué?</a></figure><h3 id="8414a413-b10e-4eec-8775-716476a0d41e" class="">Formulario de Gestión de Datos <a href="https://forms.gle/AmLZe3n4nLBtEsuC9">https://forms.gle/AmLZe3n4nLBtEsuC9</a></h3><h3 id="aac1bbb6-6658-416a-9815-a371b169be4e" class="">Encuesta de Evaluación para la preservación de datos: <a href="https://forms.gle/BAyi4qrjW6ieSQYK7">https://forms.gle/BAyi4qrjW6ieSQYK7</a></h3><p id="91f58084-c946-49dd-a646-58a9be054a3a" class="">
+</p></div><div id="1a76ef92-8fb0-4c2e-8d7f-4f8964cd76e0" style="width:33.33333333333333%" class="column"><h2 id="58648ec5-855e-43f4-93a6-4998bb5b1028" class=""><mark class="highlight-purple_background">Requerimientos</mark></h2><h3 id="dc0c7fb8-8a12-41ed-9496-9514067c9edb" class="">Requerimientos Genbank - BankIt</h3><figure id="0bd5c505-6f08-4911-8fa5-598de35631f4" class="link-to-page"><a href="Recursos%20Gestio%CC%81n%20de%20Datos%20-%20Instituto%20Milenio%20BAS%2077f0eb213d8e46aabb4b988a7370e5a7/%C2%BFQue%CC%81%20necesito%20enviar%20al%20data%20manager%20para%20subir%20m%200bd5c5056f0849118fa5598de35631f4.html"><span class="icon">🧬</span>¿Qué necesito enviar al data manager para subir mis secuencias a GenBank?</a></figure><h3 id="cab81395-ea54-4bb2-8b11-a799db9f10a1" class="">Requerimientos GBIF</h3><figure id="bf7c929a-4e33-43b9-bd02-497dd1341d54" class="link-to-page"><a href="Recursos%20Gestio%CC%81n%20de%20Datos%20-%20Instituto%20Milenio%20BAS%2077f0eb213d8e46aabb4b988a7370e5a7/Como%20organizar%20mis%20registros%20para%20publicar%20en%20GBIF%20bf7c929a4e3343b9bd02497dd1341d54.html"><span class="icon">🍃</span>Como organizar mis registros para publicar en GBIF</a></figure><h3 id="d17693de-2f58-4b78-8fb5-f76a8e73dd81" class="">Requerimientos iNaturalist</h3><figure id="b3d08999-c81f-4b53-98ad-52274db5d2ec" class="link-to-page"><a href="Recursos%20Gestio%CC%81n%20de%20Datos%20-%20Instituto%20Milenio%20BAS%2077f0eb213d8e46aabb4b988a7370e5a7/Publicacio%CC%81n%20de%20registros%20en%20iNaturalist%20b3d08999c81f4b5398ad52274db5d2ec.html"><span class="icon">🦜</span>Publicación de registros en iNaturalist</a></figure><h3 id="4895ac2b-fcc9-4f7e-8d1e-057e0e507e05" class="">Requerimientos EDI</h3><figure id="611bfe02-ecc3-4ae0-a7b6-d8f3d06c9996" class="link-to-page"><a href="Recursos%20Gestio%CC%81n%20de%20Datos%20-%20Instituto%20Milenio%20BAS%2077f0eb213d8e46aabb4b988a7370e5a7/Publicando%20en%20Environmental%20Data%20Initiative%20611bfe02ecc34ae0a7b6d8f3d06c9996.html"><span class="icon">🟡</span>Publicando en Environmental Data Initiative</a></figure><h3 id="5068407c-a54a-4212-9ba3-48e3b12d9e08" class="">Requerimientos QDR</h3><figure id="2cf74821-5d4c-4299-aecc-a32291a853ff" class="link-to-page"><a href="Recursos%20Gestio%CC%81n%20de%20Datos%20-%20Instituto%20Milenio%20BAS%2077f0eb213d8e46aabb4b988a7370e5a7/Publicando%20datos%20cualitativos%20(Quality%20Data%20Reposi%202cf748215d4c4299aecca32291a853ff.html"><span class="icon">📰</span>Publicando datos cualitativos (Quality Data Repository)</a></figure></div><div id="e5107150-576b-4e64-a1af-c3b180204797" style="width:33.33333333333332%" class="column"><h2 id="5dd44bbd-0fd8-4864-b785-a1a5655032d2" class=""><mark class="highlight-teal_background">Herramientas</mark></h2><h3 id="80a0b05a-fe38-46c4-8926-4f80bb8b8219" class="">Estudiantes</h3><figure id="a83fd11b-c1ff-4dc4-a829-1574ad150849" class="link-to-page"><a href="Recursos%20Gestio%CC%81n%20de%20Datos%20-%20Instituto%20Milenio%20BAS%2077f0eb213d8e46aabb4b988a7370e5a7/Herramientas%20para%20Estudiantes%20BASE%20a83fd11bc1ff4dc4a8291574ad150849.html"><span class="icon">📚</span>Herramientas para Estudiantes BASE</a></figure><h3 id="7a8cb721-227a-44c7-8171-f72498a4d50a" class="">Metadata</h3><figure id="7db831a5-de6f-4c00-adae-e667fd23c561" class="link-to-page"><a href="Recursos%20Gestio%CC%81n%20de%20Datos%20-%20Instituto%20Milenio%20BAS%2077f0eb213d8e46aabb4b988a7370e5a7/Dublin%20Core%20Que%CC%81%20es%20y%20como%20utilizarlo%207db831a5de6f4c00adaee667fd23c561.html"><span class="icon">💽</span>Dublin Core: Qué es y como utilizarlo</a></figure><h3 id="e75cc577-3374-45ea-9a66-dac9911237c1" class="">Creative Commons</h3><figure id="056038a8-49bd-4f69-bbea-61981a7dead8" class="link-to-page"><a href="Recursos%20Gestio%CC%81n%20de%20Datos%20-%20Instituto%20Milenio%20BAS%2077f0eb213d8e46aabb4b988a7370e5a7/Tipos%20de%20licencias%20bajo%20Creative%20Commons%20056038a849bd4f69bbea61981a7dead8.html"><span class="icon">©️</span>Tipos de licencias bajo Creative Commons</a></figure></div></div><p id="95a1bef5-e8e0-4820-8624-b57d1f503981" class="">
+</p></div></article></body></html>
