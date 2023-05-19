@@ -1,0 +1,768 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Buenas prácticas en la creación de Tablas</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="6afebc2f-e68b-41d9-b7b2-580dfc40ab59" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🧮</span></div><h1 class="page-title">Buenas prácticas en la creación de Tablas</h1></header><div class="page-body"><p id="a5868583-13bd-4e0f-b8af-5d6a7082aabd" class="">La personas y los computadores ven las cosas de manera distinta, aunque para un investigador o grupo de investigadores una tabla pueda contener toda la información necesaria de una manera de fácil lectura, para los software los datos pueden ser difíciles de leer y se pueden cometer errores al intentar manejar y trabajar con los datos. A continuación te damos una serie de buenas prácticas y errores comunes que se comenten al momento crear y manejar tablas</p><ol type="1" id="f4a602e2-75a5-455f-9407-2c24dc531cd6" class="numbered-list" start="1"><li><strong>Ser consistente</strong><p id="e58de58e-208a-4825-85ee-620ba6e1a799" class="">Los datos no siempre son como se desean o se esta trabajando con datos en formatos que no son los ideales, lo importante es seguir una línea de trabajo y exploración. Si se cambian las metodologías de manera constante se crearan distintas tablas que luego serán difíciles de unir, manejar y compartir. Si se elige un tipo de tabla las demás deben seguir una estructura similar.</p></li></ol><ol type="1" id="be788923-5e16-40f7-bae8-75162f3fc0f3" class="numbered-list" start="2"><li><strong>Anticipar el uso de los datos</strong><ul id="a40eefba-9634-433b-ae95-5b14c3669c6f" class="bulleted-list"><li style="list-style-type:disc">Permite determinar de manera anticipada el formato que se va a necesitar y si es conveniente registrar los datos en algún estándar específico. Ahorrando tiempo en el procesamiento de los datos-</li></ul></li></ol><ol type="1" id="8aa07199-d259-4129-b21d-b65e916f15fc" class="numbered-list" start="3"><li><strong>Mantener registros de los cambios</strong><ul id="a98f74b0-67b7-4db4-8446-54fbd9af2f89" class="bulleted-list"><li style="list-style-type:disc">Crear archivos nuevos con las modificaciones y mantener el archivo original.</li></ul><ul id="8f943b68-f6df-48c8-93fc-983f106f7c77" class="bulleted-list"><li style="list-style-type:disc">Mantener un archivo de texto que registre los cambios que se han hecho a la base de datos.</li></ul><ul id="04abae47-754f-4506-92a6-bc8aceac0f34" class="bulleted-list"><li style="list-style-type:disc">Preferir el manejo de datos a traves de scripts, así se puede mantener un registro de cuales fueron las acciones y se puede volver a repetir el proceso.</li></ul></li></ol><ol type="1" id="547459fc-4937-451f-8fe5-868a096634ce" class="numbered-list" start="4"><li><strong>Datos estructurados de manera rectangular</strong><ul id="326de016-80e2-463c-9932-f23d3f153cca" class="bulleted-list"><li style="list-style-type:disc">Variables en columnas, observaciones en filas</li></ul><ul id="94051505-0770-4fb0-a748-899a400df1ac" class="bulleted-list"><li style="list-style-type:disc">Una celda, un valor. No agrupar datos ( 30m, es preferible separar por valor y unidad de medida o establecer una condición para que en la columna se registre el valor en metros)</li></ul><ul id="6c56893d-e3f0-49c5-9517-fa8e3c7ad6f1" class="bulleted-list"><li style="list-style-type:disc">La primera fila debería contener los nombres de las variables, evitar utilizar más de una fila para nombrar las variables</li></ul><ul id="004254e9-d069-4095-88a3-51ac1bb3fe57" class="bulleted-list"><li style="list-style-type:disc">Mantener los datos sin procesar. Es mejor generar otras tablas o documentos con valores como promedios, desviación estándar, mínimos, máximos. De esta manera se ayuda a no perder información y mantener un mejor orden de los análisis que se han realizado, además si se desean compartir los datos, es más útil compartir la totalidad de los datos para que otros investigadores puedan repetir u obtener nuevos resultados.</li></ul></li></ol><ol type="1" id="34f38975-ccb2-4e30-87b1-dbe7d473e7c4" class="numbered-list" start="5"><li><strong>Formato de tablas</strong><ul id="ec44e552-8ac0-46e4-a33d-781fcfbc4eb0" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">Wide, tidy, matrix:</span> cada columna representa un valor para una variable. Preferida para aplicaciones estadísticas y es mejor cuando se describe con un archivo de metadatos ( por ejemplo EML)</li></ul><ul id="11b39534-8ade-481c-8f65-0c59e2a64c41" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">Long:</span> pocas columnas, generalmente lugar, fecha y otra con el valor obtenido. Flexibilidad para añadir variables evitando celdas vacías</li></ul></li></ol><ol type="1" id="2498a638-c5a8-4a6d-a31b-9eee55892bf9" class="numbered-list" start="5"><li><strong>Unir tablas</strong><ul id="864e7228-3db6-49b3-b420-cb2610bf273c" class="bulleted-list"><li style="list-style-type:disc">Es recomendable mantener columnas iguales en datos de una misma medición para poder unir de manera más sencillas</li></ul><ul id="5251c2ca-713a-4b59-89a0-0a3d8779e381" class="bulleted-list"><li style="list-style-type:disc">Es ideal diseñar las tablas para añadir solo filas, evitar añadir columnas.</li></ul><ul id="e6af8896-5bef-40d4-9b3d-2d82ef651729" class="bulleted-list"><li style="list-style-type:disc">Mediciones de distintas condiciones en un mismo sitio y día pueden unirse a generando columnas nuevas de cada condición</li></ul><figure id="341001e5-01c3-4784-a884-e9e3223e9ccf" class="image"><a href="Buenas%20pra%CC%81cticas%20en%20la%20creacio%CC%81n%20de%20Tablas%206afebc2fe68b41d9b7b2580dfc40ab59/Untitled.png"><img style="width:960px" src="Buenas%20pra%CC%81cticas%20en%20la%20creacio%CC%81n%20de%20Tablas%206afebc2fe68b41d9b7b2580dfc40ab59/Untitled.png"/></a></figure><ul id="7f5ae02f-cc2f-46ca-8ad5-c022a5826b50" class="bulleted-list"><li style="list-style-type:disc">Mediciones de una misma condición en sitios iguales, pueden agruparse según su fecha<figure id="48d874c6-9f91-44d1-ad2b-25ce39b5b73c" class="image"><a href="Buenas%20pra%CC%81cticas%20en%20la%20creacio%CC%81n%20de%20Tablas%206afebc2fe68b41d9b7b2580dfc40ab59/Untitled%201.png"><img style="width:960px" src="Buenas%20pra%CC%81cticas%20en%20la%20creacio%CC%81n%20de%20Tablas%206afebc2fe68b41d9b7b2580dfc40ab59/Untitled%201.png"/></a></figure></li></ul></li></ol><ol type="1" id="f9cc4df5-e69b-40bd-b918-186482d2a1af" class="numbered-list" start="5"><li><strong><strong><strong><strong><strong><strong><strong><strong>Tablas relacionadas o auxiliares</strong></strong></strong></strong></strong></strong></strong></strong><ul id="0ad1e038-b542-4555-883e-ca8ed4d4e395" class="bulleted-list"><li style="list-style-type:disc">Si los datos tienen información muy diferente y no se pueden unir, se puede usar distintas tablas en formatos predeterminados, como los archivos Darwin Core o los paquetes de datos ecocomDP, ambos son archivos comprimidos que constan de una tabla central que se complementa con tablas auxiliares.</li></ul><ul id="e2fbbd70-0de1-4637-a6df-8e39b4f24f91" class="bulleted-list"><li style="list-style-type:disc">Si se están copiando datos en una variable que corresponde a solo una medición (precipitaciones, sitio, etc), es mejor crear tablas separadas para evitar la confusión sobre si solo es un descriptor o una variable medida.</li></ul><ul id="738f6a6d-adf4-43c4-993b-0a4a796c6dcc" class="bulleted-list"><li style="list-style-type:disc">Registros únicos deben tener un identificador único, así es posible agrupar, comparar y analizar tablas diferentes a través de estos identificadores.</li></ul><ul id="b23d2ee5-a609-4065-8163-7fb4d332f911" class="bulleted-list"><li style="list-style-type:disc">Ventajas de usar tablas relacionadas<ul id="7c0f9952-38b3-4145-a4ab-72675b5dfe4f" class="bulleted-list"><li style="list-style-type:circle">Reducir celdas vacías</li></ul><ul id="28455c3c-607e-4c66-8022-e3ce553eb685" class="bulleted-list"><li style="list-style-type:circle">Evitar cambios en la estructura de las tablas</li></ul><ul id="f495c468-0c0e-437d-96ff-19e60187014d" class="bulleted-list"><li style="list-style-type:circle">Reducir información y datos redundantes</li></ul><ul id="83c948a8-33e4-4ef5-8e14-a35dfb4043a0" class="bulleted-list"><li style="list-style-type:circle">Hacer resúmenes más fácil</li></ul><ul id="52d36ea4-63e2-465f-b7ea-a926fc44c169" class="bulleted-list"><li style="list-style-type:circle">Reducir inconsistencias</li></ul></li></ul></li></ol><ol type="1" id="2ba984d5-f46a-4d66-89eb-ecb9a050503f" class="numbered-list" start="5"><li><strong>Problemas en los formatos y como solucionarlos</strong><ol type="a" id="a1ea93b6-59d0-4bf2-92d7-d4f0a5416cd6" class="numbered-list" start="1"><li>Usar tablas multiples en un mismo archivo<p id="af523b58-da91-48cd-97ab-85c171ed7bf6" class="">Es preferible crear otra variable que indique que son mediciones distintas o hacer archivos distintos para cada medición</p></li></ol><ol type="a" id="4e2c2ef2-f29c-4c96-9077-b30fa9f90e4d" class="numbered-list" start="2"><li>Usar hojas multiples<ol type="i" id="78fc2748-5943-46b3-b8f8-d3271d0d1b28" class="numbered-list" start="1"><li>Mayor posibilidad de añadir datos inconsistentes</li></ol><ol type="i" id="cc324577-6c33-4566-a671-cca9cdd6d236" class="numbered-list" start="2"><li>Mayor dificultad para exportar los datos</li></ol><p id="e009eaa7-a4ea-42a2-abbd-e8030908831f" class=""><mark class="highlight-yellow_background">¿Es necesario hacer otra hoja o se puede crear una nueva variable?</mark></p></li></ol><ol type="a" id="e29b657e-12e9-4396-83da-a4e00007f84c" class="numbered-list" start="3"><li>Usar valores nulos problemáticos<ul id="59b9eb24-e3db-4c6b-b8a7-e0b03c31c8b4" class="bulleted-list"><li style="list-style-type:disc">Evitar 0 o cualquier otra variable numérica</li></ul><ul id="1d4bfc52-e688-455a-b7df-7486e878855d" class="bulleted-list"><li style="list-style-type:disc">Evitar dar valor categórico (por ejemplo: no data, miss)</li></ul><ul id="56ede44b-b593-413f-b521-1e4e09f00a6c" class="bulleted-list"><li style="list-style-type:disc">Dejar valores nulos o incompletos como una celda en blanco (compatible con R, Python y SQL), o utilizar valor predeterminado por el software de análisis o estándar utilizado</li></ul></li></ol><ol type="a" id="504f8edd-5bdc-4731-ab26-142e885669ca" class="numbered-list" start="4"><li>Usar las opciones de formato de la celda para expresar información<ul id="ca677d13-526f-453b-8964-d2e1f8296fef" class="bulleted-list"><li style="list-style-type:disc">No utilizar celdas resaltadas o distintos colores para entregar información (por ejemplo: outlier, error en la medición), esta información se debe almacenar como una nueva columna o variable.</li></ul></li></ol><ol type="a" id="203bbcf2-28a8-4a4b-95be-017f9e6dbea4" class="numbered-list" start="5"><li>Uso de nombres problemáticos<ul id="ddd70296-8fc1-4f5a-af73-9dce4d436c37" class="bulleted-list"><li style="list-style-type:disc">Se deben elegir nombres descriptivos, sin espacios ni caracteres especiales. Guiones bajos “_” son una buena alternativa para utilizar espacios. Considerar utilizar estilo de caja de camello (ejemploTitulo o EjemploTitutlo). Evitar abreviaciones o nombres largos. Evitar unidades de medida en los nombres.</li></ul><ul id="d8f6a5ab-d1ad-4501-a499-ad69894c1b60" class="bulleted-list"><li style="list-style-type:disc">El nombre de la variable puede ayudar a indicar el tipo de valor que se almacena en esta<table id="d424968c-279a-42b6-8216-3cff5378c79a" class="simple-table"><thead class="simple-table-header"><tr id="98e166e5-ff3b-4a9f-a505-56c0d029b407"><th id="ycHV" class="simple-table-header-color simple-table-header" style="width:204px">Nombre sugerido</th><th id="d?&gt;V" class="simple-table-header-color simple-table-header" style="width:204px">Alternativa</th><th id="@Byw" class="simple-table-header-color simple-table-header" style="width:204px">Evitar</th></tr></thead><tbody><tr id="3c640402-2033-4d45-a248-12d7ee00aaf6"><td id="ycHV" class="" style="width:204px">Max_temp_C</td><td id="d?&gt;V" class="" style="width:204px">MaxTemp</td><td id="@Byw" class="" style="width:204px">Maximum Temp (°C)</td></tr><tr id="4dc6a02d-83a0-4817-ba34-a4720c667170"><td id="ycHV" class="" style="width:204px">Precipitation_mm</td><td id="d?&gt;V" class="" style="width:204px">Precipitation</td><td id="@Byw" class="" style="width:204px">precmm</td></tr><tr id="03323c73-c44d-4e9b-ab67-cbdaf8e227ac"><td id="ycHV" class="" style="width:204px">Mean_year_growth</td><td id="d?&gt;V" class="" style="width:204px">MeanYearGrowth</td><td id="@Byw" class="" style="width:204px">Mean growth/year</td></tr><tr id="7d68fbaa-8399-4685-9319-46b34dd610ae"><td id="ycHV" class="" style="width:204px">sex</td><td id="d?&gt;V" class="" style="width:204px">sex</td><td id="@Byw" class="" style="width:204px">M/F</td></tr><tr id="0727bf6e-2c13-45f6-8056-ecde156979b5"><td id="ycHV" class="" style="width:204px">weight</td><td id="d?&gt;V" class="" style="width:204px">weight</td><td id="@Byw" class="" style="width:204px">w.</td></tr><tr id="a732f73d-88f7-4738-abaa-c73b8ee212a6"><td id="ycHV" class="" style="width:204px">cell_type</td><td id="d?&gt;V" class="" style="width:204px">CellType</td><td id="@Byw" class="" style="width:204px">Cell Type</td></tr><tr id="6c33368e-1eef-426d-be1d-f45433f697c0"><td id="ycHV" class="" style="width:204px">Observation_01</td><td id="d?&gt;V" class="" style="width:204px">first_observation</td><td id="@Byw" class="" style="width:204px">1st Obs</td></tr><tr id="f31e3f39-575d-4e00-b4d7-0d7768708e21"><td id="ycHV" class="" style="width:204px">Sp1_Count</td><td id="d?&gt;V" class="" style="width:204px">Sp1</td><td id="@Byw" class="" style="width:204px">Sp. 1</td></tr></tbody></table></li></ul></li></ol><p id="e6a2c50f-b344-4955-838e-b732dca425d4" class="">
+</p></li></ol><ol type="1" id="ecc62364-262f-4aca-b409-5c71b686f9a0" class="numbered-list" start="6"><li><strong>Fechas como datos</strong><ul id="63576fe7-b4d4-4d45-89e8-e837040b3f7e" class="bulleted-list"><li style="list-style-type:disc">Es preferible guardar el AÑO,MES,DÍA en columnas distintas.</li></ul><ul id="d17831e7-5859-477f-b25c-c04287c5d5e2" class="bulleted-list"><li style="list-style-type:disc">Otra alternativa es guardarlo como AÑO, DÍA DEL AÑO</li></ul><ul id="988ae315-a24d-4df5-8793-7560b9e0d117" class="bulleted-list"><li style="list-style-type:disc">Para guardarlo en una columna es preferible el formato YYYYMMDD</li></ul><ul id="3e351040-4774-474c-9b5f-6af929ce58cf" class="bulleted-list"><li style="list-style-type:disc">Es recomendado también usar la fecha según el estándar ISO 8601 AAA-MM-DD hh:mm:ss, además de indicar la zona horario y las prácticas de observación de horario de verano durante las mediciones</li></ul><ul id="c74aa0b3-bbe6-4707-82b0-705e7ba26f75" class="bulleted-list"><li style="list-style-type:disc">En ocasiones Excel no reconoce o tiene errores al registrar las fechas, esto se soluciona al utilizar un apóstrofe al inicio de la escritura (ejemplo: ‘2023-04-06 ), así excel reconoce como texto y evita que se transforme la fecha. Al guardar el archivo en formato .csv no se agrega dicho apóstrofe.</li></ul></li></ol><ol type="1" id="322d2f57-2279-4109-8222-0b5e46de30d1" class="numbered-list" start="7"><li><strong>Control de Calidad</strong><ul id="dcb5ce4d-6261-48ee-a9ef-637839459ddb" class="bulleted-list"><li style="list-style-type:disc">Utilizar sistemas de validación para evitar que se ingresen datos erróneos a las columnas</li></ul><ul id="2cb0f29b-9384-428f-9e9d-f1e2450b3f64" class="bulleted-list"><li style="list-style-type:disc">Generar archivos readMe para conocer las transformaciones se han hecho a los datos<ul id="f4e7bd09-7ebd-4da3-bba4-81fe15cdf784" class="toggle"><li><details open=""><summary>Plantilla archivo readMe Universidad Cornell</summary><pre id="1a9774bc-7cf3-4c2d-ad95-193bc7016c0d" class="code"><code>This readme file was generated on [YYYY-MM-DD] by [NAME]
+&lt;help text in angle brackets should be deleted before finalizing your document&gt;
+&lt;[text in square brackets should be changed for your specific dataset]&gt;
+
+
+GENERAL INFORMATION
+
+Title of Dataset: 
+
+&lt;provide at least two contacts&gt;
+Author/Principal Investigator Information
+Name: 
+ORCID:
+Institution: 
+Address: 
+Email: 
+
+Author/Associate or Co-investigator Information
+Name: 
+ORCID:
+Institution: 
+Address: 
+Email: 
+
+Author/Alternate Contact Information
+Name: 
+ORCID:
+Institution: 
+Address: 
+Email: 
+
+Date of data collection: &lt;provide single date, range, or approximate date; suggested format YYYY-MM-DD&gt; 
+
+Geographic location of data collection: &lt;provide latitude, longiute, or city/region, State, Country&gt;
+
+Information about funding sources that supported the collection of the data: 
+
+
+SHARING/ACCESS INFORMATION
+
+Licenses/restrictions placed on the data: 
+
+Links to publications that cite or use the data: 
+
+Links to other publicly accessible locations of the data: 
+
+Links/relationships to ancillary data sets: 
+
+Was data derived from another source?
+If yes, list source(s): 
+
+Recommended citation for this dataset: 
+
+
+DATA &amp; FILE OVERVIEW
+
+File List: &lt;list all files (or folders, as appropriate for dataset organization) contained in the dataset, with a brief description&gt;
+
+Relationship between files, if important: 
+
+Additional related data collected that was not included in the current data package: 
+
+Are there multiple versions of the dataset?
+If yes, name of file(s) that was updated: 
+Why was the file updated? 
+When was the file updated? 
+
+
+METHODOLOGICAL INFORMATION
+
+Description of methods used for collection/generation of data: &lt;include links or references to publications or other documentation containing experimental design or protocols used in data collection&gt;
+
+Methods for processing the data: &lt;describe how the submitted data were generated from the raw or collected data&gt;
+
+Instrument- or software-specific information needed to interpret the data: &lt;include full name and version of software, and any necessary packages or libraries needed to run scripts&gt;
+
+Standards and calibration information, if appropriate: 
+
+Environmental/experimental conditions: 
+
+Describe any quality-assurance procedures performed on the data: 
+
+People involved with sample collection, processing, analysis and/or submission: 
+
+
+DATA-SPECIFIC INFORMATION FOR: [FILENAME]
+&lt;repeat this section for each dataset, folder or file, as appropriate&gt;
+
+Number of variables: 
+
+Number of cases/rows: 
+
+Variable List: &lt;list variable name(s), description(s), unit(s) and value labels as appropriate for each&gt;
+
+Missing data codes: &lt;list code/symbol and definition&gt;
+
+Specialized formats or other abbreviations used:</code></pre></details></li></ul></li></ul><ul id="d1f71854-849a-41d9-8013-b0903d4c0258" class="bulleted-list"><li style="list-style-type:disc">Buscar errores en los valores que puedan estar escondidos debido a ciertos filtros o clasificaciones (datos erróneos se ubican de manera general al final de las tablas)</li></ul><ul id="a2498310-0ff5-4a12-b067-0ca4a65bb336" class="bulleted-list"><li style="list-style-type:disc">Comprobar valores<ul id="319b409b-5811-400f-b45c-29453f3fa643" class="bulleted-list"><li style="list-style-type:circle">Registros duplicados: listados dos veces, pero no réplicas</li></ul><ul id="4ec735db-1929-44aa-8f23-0e7b360ea2c8" class="bulleted-list"><li style="list-style-type:circle">Registros secuenciales: comprobar que esta en la correcta secuencia</li></ul><ul id="1230a65f-5286-4e66-b29a-748a97b9efd4" class="bulleted-list"><li style="list-style-type:circle">Rangos: si hay muchos datos fuera de rango puede indicar error en la medición</li></ul><ul id="98220c2d-3390-44e2-9a36-ba34355ff51d" class="bulleted-list"><li style="list-style-type:circle">Persistencia: datos constantes puede indicar mediciones erróneas</li></ul><ul id="3cf8d50b-ec03-498b-b3f8-ef037aac9160" class="bulleted-list"><li style="list-style-type:circle">Cambio en la pendiente y escalones: en series de tiempo, puede representar una desviación en el instrumento</li></ul><ul id="ca723b27-b5fd-4760-989f-6bd8119af0e5" class="bulleted-list"><li style="list-style-type:circle">Consistencia interna: Los valores se encuentran dentro de un rango establecido según el sitio de muestreo</li></ul><ul id="141bed44-09e8-4e4f-a43b-6d3df265c6f9" class="bulleted-list"><li style="list-style-type:circle">Consistencia en pareja: Observadores/instrumentos duplicados producen valores y tendencias similares</li></ul></li></ul></li></ol><ol type="1" id="affe0607-39f8-4bf8-9b04-1153c55edb3a" class="numbered-list" start="8"><li><strong><strong><strong><strong><strong><strong><strong>Crear un diccionario de datos</strong></strong></strong></strong></strong></strong></strong><ul id="792cb040-6742-4136-bfa4-b13da14f38c4" class="bulleted-list"><li style="list-style-type:disc">Los nombres exactos de las variables de cada archivo</li></ul><ul id="38605057-14e5-476a-9c43-7bdeae360c91" class="bulleted-list"><li style="list-style-type:disc">Una versión de el nombre de la variable que puede ser utilizada en la visualización de los datos</li></ul><ul id="b836bb3a-1f96-400e-87b2-cdcfbf0e30ac" class="bulleted-list"><li style="list-style-type:disc">Explicaciones más extensas del significado de cada variable</li></ul><ul id="312dd471-a9b6-4c77-8666-609e5ad34fc8" class="bulleted-list"><li style="list-style-type:disc">Valores mínimos y máximos esperados</li></ul></li></ol><ol type="1" id="a1a024a0-5be2-48af-92c4-8e1e59d5f406" class="numbered-list" start="9"><li><strong>Exportando los datos</strong><ul id="834cc5a4-2b4b-4df3-b1be-fe4de77c5a54" class="bulleted-list"><li style="list-style-type:disc">Formatos como .xlsx pueden tener errores ya que guardan formatos que no son legibles por otros softwares y es un formato que no todas las revistas o repositorios aceptan.</li></ul><ul id="fa9e8d98-627f-453c-b520-bc3e5990f2cf" class="bulleted-list"><li style="list-style-type:disc">Exportar los datos en csv o en formato plano de texto. Estos formatos son compatibles con la mayoría de los software pueden leer este tipo de archivos, se pierde menos información por el cambio de formato y los repositorios de manera general sugieren este formato al momento de compartir datos</li></ul></li></ol><ol type="1" id="a5ba719e-8b06-41ba-b09c-190696c990ac" class="numbered-list" start="10"><li><strong>Nombre de los archivos</strong><ul id="25482417-784c-4d75-b560-2667926983b0" class="bulleted-list"><li style="list-style-type:disc">Se sugiere usar nombres cortos, sin caracteres numéricos ni especiales, sin espacios (utilizar guion bajo “_”, o formato caja camello)</li></ul><ul id="c8e81984-40ae-4a60-ae32-d62601640649" class="bulleted-list"><li style="list-style-type:disc">Idealmente el nombre del archivo debe tener indicios de el lugar, tiempo y tema, incluso si debe estar abreviado.<p id="9cc7c2d3-ace7-45a3-9a50-635ffbfae5c2" class="">Nombre de archivo no recomendado: <strong>soil properties 2010-2020.csv</strong></p><p id="77d46e01-10da-4c21-bae5-3e5af1ab5633" class="">Nombre de archivo recomendado <strong>soil_properties.csv</strong></p><p id="7d8a7b36-5b02-4a37-b4f5-0de8465d34a0" class="">Nombre de variable no recomendado: <strong>dissolved oxygen % saturation</strong></p><p id="2854f05b-3c0b-4108-94b0-d18a6803be3d" class="">Nombre de archivo recomendado <strong>dosat</strong></p></li></ul></li></ol><ol type="1" id="4e919368-539b-4fc4-8057-13c36869d36c" class="numbered-list" start="11"><li><strong><strong><strong><strong><strong><strong><strong>Crear y mantener actualizado un archivo de metadatos o readMe</strong></strong></strong></strong></strong></strong></strong><ul id="b3a499c8-f4e3-434c-b169-71fb75735cc9" class="bulleted-list"><li style="list-style-type:disc">Permite tener las información del <span style="border-bottom:0.05em solid">qué, como, cuándo, donde y quién </span>de la información presentada</li></ul><ul id="3e7b18fc-d68e-4c81-87c5-b6007734b305" class="bulleted-list"><li style="list-style-type:disc">Util en el caso de tener multiples versiones o tablas combinadas</li></ul><ul id="e65c2134-beed-4c18-be68-961eb7fa4063" class="bulleted-list"><li style="list-style-type:disc">Existen diversos formatos, pero lo importante es que sea descriptivo y complemente la información de que se entregan en las tablas</li></ul><ul id="e4499871-9d21-4918-b588-b9df490deba5" class="bulleted-list"><li style="list-style-type:disc">Se puede añadir el diccionario de los datos.</li></ul></li></ol><ol type="1" id="e29e93cd-c1e6-4c58-ae08-ca9f86437248" class="numbered-list" start="15"><li><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Crear respaldos</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><ul id="a6ee6300-837a-45c4-9500-a185ae7d9df1" class="bulleted-list"><li style="list-style-type:disc">Ideal es seguir la regla de tres: TRES copias, al menos en DOS formatos distintos, con una copia en un lugar distinto (universidad, computador, servidor)</li></ul><ul id="d2deb18f-dc47-4338-af0c-1a739845d7ae" class="bulleted-list"><li style="list-style-type:disc">Mantener el archivo original, sin correcciones y en formato de solo lectura.</li></ul><ul id="021930f1-f93c-433d-97f0-26f1be80f955" class="bulleted-list"><li style="list-style-type:disc">Mantener todas las versiones de los archivos mientras se trabajo, así, en caso de que exista un pérdida se puede recuperar información</li></ul><ul id="cc259cb1-8b08-4009-b4fe-0c9e0bd6ca77" class="bulleted-list"><li style="list-style-type:disc">Cuando se finalice el trabajo con los datos, proteger los datos cambiando la configuración a solo lectura</li></ul><p id="2d248756-7fef-42b3-9c32-dbd90e44d4e9" class="">
+</p></li></ol><p id="aa68b2d3-8d5f-4b5d-8257-c9f617bf7070" class="">Referencias</p><p id="a997492a-8548-4d17-8557-10dd01236f68" class="">Borer, E.T., Seabloom, E.W., Jones, M.B. and Schildhauer, M. (2009), Some Simple Guidelines for Effective Data Management. The Bulletin of the Ecological Society of America, 90: 205-214. <a href="https://doi.org/10.1890/0012-9623-90.2.205">https://doi.org/10.1890/0012-9623-90.2.205</a></p><p id="9cb0797e-144b-4064-a6fa-5fa88215e489" class="">White EP, Baldridge E, Brym ZT, Locey KJ, McGlinn DJ, Supp SR. 2013. Nine simple ways to make it easier to (re)use your data. <em>PeerJ PrePrints </em>1:e7v2 <a href="https://doi.org/10.7287/peerj.preprints.7v2">https://doi.org/10.7287/peerj.preprints.7v2</a></p><p id="99f0b082-c170-4eb2-9672-e4252f59c8ac" class="">Hart EM, Barmby P, LeBauer D, Michonneau F, Mount S, Mulrooney P, et al. (2016) Ten Simple Rules for Digital Data Storage. PLoS Comput Biol 12(10): e1005097. <a href="https://doi.org/10.1371/journal.pcbi.1005097">https://doi.org/10.1371/journal.pcbi.1005097</a></p><p id="3ab4f9e1-5f8a-4e3b-a1ea-e62c55aafef1" class="">Karl W. Broman &amp; Kara H. Woo (2018) Data Organization in Spreadsheets, The American Statistician, 72:1, 2-10, DOI: <a href="https://doi.org/10.1080/00031305.2017.1375989">10.1080/00031305.2017.1375989</a></p><p id="a162bb41-0cc0-4325-ad3f-67eca156f091" class=""><em>Data Organization in spreadsheets for ecologists</em>. Available at: https://datacarpentry.org/spreadsheet-ecology-lesson/ (Accessed: April 6, 2023). </p><p id="19e647c9-81e2-4d8e-a418-313b66153738" class="">Peter R. Hoyt, Christie Bahlai, Tracy K. Teal (Eds.), Erin Alison Becker, Aleksandra Pawlik, Peter Hoyt, Francois Michonneau, Christie Bahlai, Toby Reiter, et al. (2019, July 5). datacarpentry/spreadsheet-ecology-lesson: Data Carpentry: Data Organization in Spreadsheets for Ecologists, June 2019 (Version v2019.06.2). Zenodo. <a href="http://doi.org/10.5281/zenodo.3269869">http://doi.org/10.5281/zenodo.3269869</a></p><p id="80543059-a20b-4e9f-b07e-4f980eadd083" class="">O&#x27;Brien, M., Smith, C. A., Sokol, E. R., Gries, C., Lany, N., Record, S. and M. C. N. Castorani. 2021. &quot;ecocomDP: A flexible data design pattern for ecological community survey data.&quot; <em>Ecological Informatics </em>64:101374. DOI: <a href="https://doi.org/10.1016/j.ecoinf.2021.101374">https://doi.org/10.1016/j.ecoinf.2021.101374</a></p><p id="611082ab-3c6c-48e3-89b9-c9604cde91fd" class="">Cornell University. <em>Author_dataset_readmetemplate.TXT: Powered by</em> <em>Box</em>. Available at: https://cornell.app.box.com/v/ReadmeTemplate (Accessed: April 6, 2023). </p><p id="d1540875-33d5-488b-832a-54094d2cc59c" class="">Cornell University (2022) . <em>Research Data Management Service Groupcomprehensive Data Management Planning &amp; Services. Data storage and backup | Research Data Management Service Group</em>. Available at: https://data.research.cornell.edu/content/data-storage-and-backup (Accessed: April 6, 2023). </p><p id="4ba73307-c5aa-4d49-bdbb-21ba993d9a0e" class="">Cornell University (2022). <em>Research Data Management Service Groupcomprehensive Data Management Planning &amp; Services</em> (no date) <em>Metadata and describing data | Research Data Management Service Group</em>. Available at: https://data.research.cornell.edu/content/writing-metadata (Accessed: April 6, 2023). </p><p id="6b712856-c386-4290-b27a-a6b78ecd92e5" class="">
+</p></div></article></body></html>
