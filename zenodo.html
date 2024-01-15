@@ -1,0 +1,678 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Como publicar datos en Zenodo</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="106e89eb-d3f5-404a-a419-8736b7313e2f" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🗃️</span></div><h1 class="page-title">Como publicar datos en Zenodo</h1><p class="page-description"></p></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="e439a88d-3a6c-41ca-bd15-a434a54a2589"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%"><strong>Resumen de requerimientos:<br/><br/></strong><br/>- Tipo de Recurso<br/>- Tipo de Visibilidad<br/>- Archivos<br/>- Título<br/>- Creadores/Autores<br/>- Descripción<br/>- Financiamiento<br/>- Licencia<br/>- Palabras Clave<br/>- Idioma<br/></div></figure><h2 id="e272503c-cc80-43b3-b60a-e2b90622ec0b" class="">¿Qué es Zenodo?</h2><p id="54ff0950-27e0-42a3-a787-0b2f44e527a9" class="">Es un repositorio gratuito y de acceso abierto desarrollado por el programa OpenAIRE y operado por CERN. Permite la publicación de distintos archivos con un máximo de 100 archivos con un máximo total de 50 GB por recurso, generando un DOI a cada publicación que se realice, además tiene conexión directa con la plataforma GitHub para facilitar la publicación de códigos y software de manera centralizada. </p><p id="9e2b6883-7dc3-4b2c-b2b6-98c7e6781480" class="">La publicaciones realizadas en esta plataforma pueden tener dos tipos de visibilidad:<div class="indented"><ul id="c1b623cb-d404-490b-9569-49ca6ded82ad" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal_background">Abierta:</mark> Los archivos publicados estás disponibles para ser descargados en cualquier momento</li></ul><ul id="d1dec304-2dfb-4567-8fc8-29b9b44a8e28" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Restringida:</mark> Los archivos publicados solo pueden ser descargada cuando el autor de los archivos autoriza las solicitudes enviadas por otros usuarios.</li></ul><ul id="3395ebce-4038-46b4-b44a-cc6375a36a89" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Embargo:</mark> Este tipo de visibilidad es una variación de restricción, los archivos se publican bajo la categoría <mark class="highlight-red">Restringida</mark> hasta la fecha de término de embargo seleccionada previamente. En esa fecha los archivos obtienen visibilidad <mark class="highlight-teal">Abierta.</mark></li></ul><p id="520c3eb4-2b48-42ad-9978-0c2e0d9074cf" class="">Ambos tipos de visibilidad cumplen con los principios FAIR. </p></div></p><p id="c7f2b616-5cb0-4455-80c5-13bd4dcb8200" class="">El Instituto Milenio BASE publica en la plataforma con el nombre de usuario <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>instituto-base</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><h2 id="32169bd6-de76-40ab-99a9-639e1c69367d" class="">¿Qué puedo publicar en Zenodo?</h2><div id="555dd272-6058-4308-97d7-50ee59c85624" class="column-list"><div id="6eaeb365-8079-4a1d-a82e-21bbb0ef7426" style="width:50%" class="column"><ul id="8c1872f1-97f3-4254-9f82-eeaf89b59995" class="bulleted-list"><li style="list-style-type:disc">Dataset</li></ul><ul id="37d67a16-b9de-4904-9061-b981c9e8c78a" class="bulleted-list"><li style="list-style-type:disc">Event</li></ul><ul id="cefcc97c-9cb5-4cbd-afbe-8fe9d239dab0" class="bulleted-list"><li style="list-style-type:disc">Image</li></ul><ul id="792a3842-690c-4760-9256-8aaa4bb5afbc" class="bulleted-list"><li style="list-style-type:disc">Image / Diagram</li></ul><ul id="9978dd85-e720-4964-bf68-b518d1206681" class="bulleted-list"><li style="list-style-type:disc">Image / Drawing</li></ul><ul id="5bf15ad6-31de-45f0-8e29-84f7a18255f8" class="bulleted-list"><li style="list-style-type:disc">Image / Figure</li></ul><ul id="c44fb0ae-d654-46d4-9637-111d67768037" class="bulleted-list"><li style="list-style-type:disc">Image / Other</li></ul><ul id="9758e504-cf35-4a92-9760-80b8853327ed" class="bulleted-list"><li style="list-style-type:disc">Image / Plot</li></ul><ul id="11b290c4-f027-4a9b-9728-447a6872ec63" class="bulleted-list"><li style="list-style-type:disc">Lesson</li></ul><ul id="26af7435-14c9-4455-9895-068bdbf401c3" class="bulleted-list"><li style="list-style-type:disc">Model</li></ul><ul id="656ab616-c5f1-48a4-a272-f123e5b73086" class="bulleted-list"><li style="list-style-type:disc">Physical Object</li></ul><ul id="e4f393d3-98fd-4d82-b283-04486a040bed" class="bulleted-list"><li style="list-style-type:disc">Poster</li></ul><ul id="f4f08c18-bce7-4a1d-855b-c143ee30ef28" class="bulleted-list"><li style="list-style-type:disc">Presentation</li></ul><ul id="2b292083-56e4-47eb-8bb4-7867b442eb70" class="bulleted-list"><li style="list-style-type:disc">Publication</li></ul><ul id="299b0c6e-4ca3-4b0c-bccd-28e7cc9a9f35" class="bulleted-list"><li style="list-style-type:disc">Publication / Annotation collection</li></ul><ul id="8ae8fcda-5664-4124-8026-6e815ca5b3d3" class="bulleted-list"><li style="list-style-type:disc">Publication / Book</li></ul><ul id="4b22a825-4f47-449e-a12c-79f0da9bebee" class="bulleted-list"><li style="list-style-type:disc">Publication / Book chapter</li></ul><ul id="bb94a994-e717-4b75-83ab-0dffaad2e98a" class="bulleted-list"><li style="list-style-type:disc">Publication / Conference paper</li></ul><ul id="cdc31394-5181-4a8b-af1d-fb8f14f26963" class="bulleted-list"><li style="list-style-type:disc">Publication / Conference proceeding</li></ul><ul id="4afd54e3-3af7-420e-80e1-ceab619fb946" class="bulleted-list"><li style="list-style-type:disc">Publication / Data Paper</li></ul><ul id="d6b8ccb4-cf4d-4d9d-b420-486bfc2814f5" class="bulleted-list"><li style="list-style-type:disc">Publicación / Dissertation</li></ul></div><div id="7438b2ff-66a0-4b39-a67f-d120d43fc6f2" style="width:50%" class="column"><ul id="fc90b8c6-3932-4e24-b1c7-330213a4fc12" class="bulleted-list"><li style="list-style-type:disc">Publication / Journal</li></ul><ul id="b8c196f9-1ae2-49f7-bc77-1bc5250c6f95" class="bulleted-list"><li style="list-style-type:disc">Publication / Journal article</li></ul><ul id="bafc9e8d-a802-4722-9e68-c1fe7ad5b1dd" class="bulleted-list"><li style="list-style-type:disc">Publication / Other</li></ul><ul id="44328435-f95a-4337-8586-cf0fc36a1708" class="bulleted-list"><li style="list-style-type:disc">Publication / Output management plan</li></ul><ul id="020c229b-6a1b-4b39-8f21-c7d0ccfdab3d" class="bulleted-list"><li style="list-style-type:disc">Publication / Patent</li></ul><ul id="3c2a291b-f42d-4b94-a3d3-d7d937bfd625" class="bulleted-list"><li style="list-style-type:disc">Publication / Peer review</li></ul><ul id="40d666da-d52a-4d4f-85cc-e447431922e1" class="bulleted-list"><li style="list-style-type:disc">Publication / Preprint</li></ul><ul id="4d206b71-68a6-4490-80fe-0401b8523988" class="bulleted-list"><li style="list-style-type:disc">Publication / Project deliverable</li></ul><ul id="b93bc015-ecde-4df5-9373-25cee440f4fd" class="bulleted-list"><li style="list-style-type:disc">Publication / Project milestone</li></ul><ul id="71ddf74c-552a-40b8-ab46-3acf112f52e9" class="bulleted-list"><li style="list-style-type:disc">Publication / Proposal</li></ul><ul id="877e5904-1319-4b3c-a6e6-b2318a4d91d6" class="bulleted-list"><li style="list-style-type:disc">Publication / Report</li></ul><ul id="f66972ae-7a87-4fd2-b1cc-102e06d4c93c" class="bulleted-list"><li style="list-style-type:disc">Publication / Software documentarios</li></ul><ul id="54c5c821-39c2-4540-8807-b03cb1437f0b" class="bulleted-list"><li style="list-style-type:disc">Publication / Standard</li></ul><ul id="52578ace-fe11-4be1-abf6-1838f70fb321" class="bulleted-list"><li style="list-style-type:disc">Publication / Taxonomic treatment</li></ul><ul id="63b82dbf-a61b-4c5f-a665-9786a7b5f59e" class="bulleted-list"><li style="list-style-type:disc">Publication / Technical note</li></ul><ul id="b40bdfc9-2cf5-4b25-88d7-cf353b5ae692" class="bulleted-list"><li style="list-style-type:disc">Publication / Thesis</li></ul><ul id="b1fc4135-0862-42ab-99d0-b1e009f8ef93" class="bulleted-list"><li style="list-style-type:disc">Publication / Working paper</li></ul><ul id="889d30d5-844a-499d-839d-87a9dcaf4ebf" class="bulleted-list"><li style="list-style-type:disc">Software</li></ul><ul id="586f9a58-26d9-4a4e-a78d-db8bbb131421" class="bulleted-list"><li style="list-style-type:disc">Software / Computational notebook</li></ul><ul id="591287cf-8140-4721-aa13-da2973d293fe" class="bulleted-list"><li style="list-style-type:disc">Video/ Audio</li></ul><ul id="9578555b-f8a6-4cb2-9d6e-e4e18d0d55d7" class="bulleted-list"><li style="list-style-type:disc">Workflow</li></ul></div></div><h2 id="d4bda32e-265d-4d2c-8e5f-68073e561389" class="">Pasos Para Publicar</h2><ol type="1" id="08c0ff41-309c-4d9e-80f0-958ef382a924" class="numbered-list" start="1"><li>Cargar archivos: Luego de iniciar la sesión, se crea un nuevo recurso en la opción de “New upload”. Luego se cargan los archivos que se desean publicar.</li></ol><ol type="1" id="564c4d01-1472-471b-b773-4a8ba9064d92" class="numbered-list" start="2"><li>Describir los archivos: Completar los campos obligatorios que describen los archivos y otra información relevante que sea de utilidad para comprender el alcance de los datos. Luego de completar esa información es posible guardar el recurso como borrador.</li></ol><ol type="1" id="f85035cf-c4bb-4825-83c1-d7a4fd6f8bcc" class="numbered-list" start="3"><li>Publicar: Al momento de publicar se debe seleccionar la visibilidad de los archivos del recurso. Luego de publicar no se pueden eliminar o agregar archivos al recurso publicado, pero si se pueden modificar los metadatos.</li></ol><h2 id="b4cff6fe-fc65-4d2a-83a1-3d255baf05a0" class="">Requerimientos</h2><h3 id="1c9acdbe-5309-48f5-a60e-2c07b1794b7e" class="">Archivos</h3><p id="d215b291-8b75-4e65-a491-0557bb01d379" class="">Puede ser cualquier tipo de archivo, se sugiere que las tablas se publiquen en .csv, especialmente cuando son multiples tablas, en lugar de publicar un archivo .xslx con distintas hojas (interoperabilidad de los datos). Es importante también entregar información sobre que es el contenido de cada uno de lor archivos.</p><h3 id="9c3da6e0-18a3-4f9c-960b-dbd4470d2bd5" class="">Metadatos</h3><p id="cd3fdcb5-7c7e-4cf5-b745-92a1b605b802" class="">A continuación se detalla la información obligatoria para poder publicar un recurso:</p><ul id="0e1ab280-22d9-4c4e-bff4-a8a989ac7f96" class="bulleted-list"><li style="list-style-type:disc"><strong>Visibilidad:</strong> Puede ser Abierta, Restringida o con Embargo (revisar primera sección para más detalles de la visibilidad)</li></ul><ul id="13cc431d-77f3-4e3c-baf8-5bc0d2f5d5d9" class="bulleted-list"><li style="list-style-type:disc"><strong>Tipo de recurso:</strong> a que corresponden los datos que se publicarán (revisar la sección ¿Qué puedo publicar en Zenodo? para ver la lista completa de tipos de recursos). En el caso de publicar Poster o Presentaciones de Congreso, la solicitud debe realizarse a través del siguiente formulario <a href="https://forms.gle/zGDM3UbsyextdNF99">https://forms.gle/zGDM3UbsyextdNF99</a></li></ul><ul id="caa7d4d1-52f3-48a2-901e-b678f8ce3b05" class="bulleted-list"><li style="list-style-type:disc"><strong>Título: </strong>Frase descriptiva del recurso, en caso de que el recurso este asociado a un artículo y no se tenga un título específico para el set de datos, se sugiere <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Data from/Data suporting : Título del artículo.</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="b18e3b83-4f62-477a-85bd-43ff2a23374c" class="bulleted-list"><li style="list-style-type:disc"><strong>Creadores:</strong> Personas u organizaciones que crearon los datos a publicar y se integran en la cita del recurso. Se debe enviar la lista de los creadores según el orden que se requiera en la cita. Los datos solicitados en esta sección son las siguientes:<ul id="e938a20e-e53f-4c9c-9215-be92c8f2b7d5" class="bulleted-list"><li style="list-style-type:circle">Nombre y apellido</li></ul><ul id="51ef780c-e23f-4984-a1ca-2f2ccf6a3f12" class="bulleted-list"><li style="list-style-type:circle">ORCID, ISNI, GND u otro identificador único (opcional)</li></ul><ul id="3663a211-1015-40c7-b055-21afcb9a0f5c" class="bulleted-list"><li style="list-style-type:circle">Afiliación</li></ul><ul id="6554d196-1087-4512-b9c9-806113707062" class="bulleted-list"><li style="list-style-type:circle">Rol: Por defecto se selecciona Researcher, pero existen otras alternativas (Contact person, Data collector, Data curator, Data Manager, Distributor, Editor, Hosting institution, Other, Producer, Project leader, Project manager, Project member, Registration agency, Registration authority, Related person, Research group, Rights holder, Sponsor, Supervisor o Work package leader)</li></ul></li></ul><ul id="0f725882-b27b-4a1f-b475-173221f43e52" class="bulleted-list"><li style="list-style-type:disc"><strong>Descripción: </strong>Información sobre los archivos que son publicados, en caso de que no se tenga información específica y los datos corresponden a un recurso ya publicado, se sugiere mantener el abstract del artículo asociado.</li></ul><ul id="01400e7a-d787-417b-abf6-34d21b228041" class="bulleted-list"><li style="list-style-type:disc"><strong>Financiamiento:</strong> Proyectos, Instituciones u otra entidad que aportó monetariamente al desarrollo y creación de los archivos publicados. En el caso del Instituto Milenio Base corresponde al código ICN2021_002.</li></ul><ul id="728fe221-aacc-4c04-8b22-be42a2706189" class="bulleted-list"><li style="list-style-type:disc"><strong>Licencia: </strong>Que tipo de licencia para el uso de los archivos se desea utilizar, se recomienda seleccionar una de las siguientes:<ul id="74419dbf-5ddf-46a6-93b1-1352b55c4e8b" class="bulleted-list"><li style="list-style-type:circle">Creative Commons Attribution 4.0</li></ul><ul id="1d9e7590-9d16-49f6-ab86-1674d0b15b9e" class="bulleted-list"><li style="list-style-type:circle">Creative Commons Attribution Share Alike 4.0</li></ul><ul id="00a5d666-f102-4c90-87b8-7341211612de" class="bulleted-list"><li style="list-style-type:circle">Creative Commons Zero 1.0</li></ul><p id="98965f72-e23b-43b3-8bde-7dea06b988a1" class="">Para obtener más información sobre que significa cada licencia puedes entrar al siguiente enlace: <a href="https://instituto-base.github.io/Recursos-Gestion/cc-ins.html">https://instituto-base.github.io/Recursos-Gestion/cc-ins.html</a></p></li></ul><ul id="be43e171-4e0f-49f9-ac0d-01a4c2cbeb5d" class="bulleted-list"><li style="list-style-type:disc"><strong>Palabras Claves: </strong>Palabras relacionadas a los datos o a la investigación relacionada, en caso de que los datos provengan de un artículo ya publicado y no posean un set de palabras claves específicas, se recomienda utilizar las mismas del artículo de origen.</li></ul><ul id="ed38473d-320a-402d-ab17-469ff449fb71" class="bulleted-list"><li style="list-style-type:disc"><strong>Idioma:</strong> Corresponde al idioma del recurso y de los datos. Puede ser más de un idioma</li></ul><p id="770a5e62-958e-42ba-9610-0474e79bed90" class="">Otros campos de interés pero que no son obligatorios son los siguientes:</p><ul id="b1ebcc0a-cbfc-40ae-b9fb-c6ca8978ab48" class="bulleted-list"><li style="list-style-type:disc"><strong>Referencias:</strong> Trabajos en los cuales se basan los resultados, puede ser el artículo de origen, artículo donde se describen las metodologías, otros dataset, etc</li></ul><ul id="f30b983a-f2b5-426b-a9d2-c0a754704471" class="bulleted-list"><li style="list-style-type:disc"><strong>Trabajos Relacionados: </strong>Trabajos que tienen directa relación con el set de datos, es necesario seleccionar el tipo de relación y deben tener un identificador único (DOI). Las relaciones son las siguientes:<div id="0ed7ab5c-d712-4420-9b1f-33a2d4733e6d" class="column-list"><div id="f30d76b7-d9ed-4676-a316-cb242fea1f23" style="width:50%" class="column"><ul id="cc4e74a3-dd6c-4d52-9e53-b3f16a9b3cba" class="bulleted-list"><li style="list-style-type:disc">Is complied by</li></ul><ul id="015d590c-88fc-4ca8-8934-3be3be6226f4" class="bulleted-list"><li style="list-style-type:disc">Is previous version of</li></ul><ul id="c634d2f4-7526-4147-89a8-cb5be0442ad4" class="bulleted-list"><li style="list-style-type:disc">Is original form of</li></ul><ul id="a2c4cc3d-b0b6-4998-9166-84b23a00039d" class="bulleted-list"><li style="list-style-type:disc">Requires</li></ul><ul id="48aac98c-362e-44d8-9d1e-762ef1cd7a88" class="bulleted-list"><li style="list-style-type:disc">Is metadata for</li></ul><ul id="3fd27a93-cb46-48e8-8bde-a0347df80ad6" class="bulleted-list"><li style="list-style-type:disc">Is version of</li></ul><ul id="3b7b65a1-7588-4ddc-9d16-60d4ba06f587" class="bulleted-list"><li style="list-style-type:disc">Reference</li></ul><ul id="6a9273e8-547d-4928-ae5c-3cf13aad9eba" class="bulleted-list"><li style="list-style-type:disc">Documents</li></ul><ul id="5cf5dce5-2e1f-44b3-90b4-e7ee4407b5ee" class="bulleted-list"><li style="list-style-type:disc">Is continued by</li></ul><ul id="b2457b7e-f65e-4bcb-b4fd-f6babe49f4ea" class="bulleted-list"><li style="list-style-type:disc">Is described by</li></ul><ul id="0fc9011e-2114-40c9-b2dd-7ab2a04f6113" class="bulleted-list"><li style="list-style-type:disc">Is supplemented by</li></ul><ul id="0c20d631-459c-40cc-8b36-be15e71a72d0" class="bulleted-list"><li style="list-style-type:disc">Is cited by</li></ul><ul id="0102b213-c92c-47aa-bd16-996d0dbf8521" class="bulleted-list"><li style="list-style-type:disc">Is published in</li></ul><ul id="cabbf351-9a08-49d5-8ed7-f0fac45af8a3" class="bulleted-list"><li style="list-style-type:disc">Continues</li></ul><ul id="6c37767c-8138-4899-ab3d-e04c3145c1f4" class="bulleted-list"><li style="list-style-type:disc">Has metadata</li></ul><ul id="d1757be4-a062-4630-9f4a-a3807318ec7d" class="bulleted-list"><li style="list-style-type:disc">Is new version of</li></ul><ul id="4f8c165b-ca76-4f15-b759-336f040f63b6" class="bulleted-list"><li style="list-style-type:disc">Is part of</li></ul></div><div id="c41f5753-3951-49d5-8c4d-db29e31d2f27" style="width:50%" class="column"><ul id="65cda9e8-c1ff-4fed-9e7f-1fe848b9753c" class="bulleted-list"><li style="list-style-type:disc">Is referenced by</li></ul><ul id="2e7e3a4a-c903-428e-8dd2-276824db7d74" class="bulleted-list"><li style="list-style-type:disc">Is required by</li></ul><ul id="ab612a3a-106a-4b33-b684-b56ff93969aa" class="bulleted-list"><li style="list-style-type:disc">Reviews</li></ul><ul id="fc18ea13-ada4-45b5-b892-8f1cd13fe529" class="bulleted-list"><li style="list-style-type:disc">Is obsoleted by</li></ul><ul id="23ccb417-7f28-4d77-b26b-1566a52a91a1" class="bulleted-list"><li style="list-style-type:disc">Obsoletes</li></ul><ul id="871bb96f-d9f2-45fb-b6df-8dfb0922d49a" class="bulleted-list"><li style="list-style-type:disc">Has part</li></ul><ul id="14d1c084-be90-4618-87cb-1f46faad4665" class="bulleted-list"><li style="list-style-type:disc">Is documented by</li></ul><ul id="caad9217-61ff-4eb2-88b1-e27a3667d161" class="bulleted-list"><li style="list-style-type:disc">Is identical to</li></ul><ul id="ba1b00d3-d74b-4f57-91c5-ae677a5973ff" class="bulleted-list"><li style="list-style-type:disc">Compiles</li></ul><ul id="5cadaa79-3344-4b59-b130-757224233fe2" class="bulleted-list"><li style="list-style-type:disc">Is a variant form</li></ul><ul id="4e4fe595-bf88-4329-99dd-2e6f5e5974b8" class="bulleted-list"><li style="list-style-type:disc">Is reviewed by</li></ul><ul id="254ede3d-7937-40e3-a592-5de697c254fa" class="bulleted-list"><li style="list-style-type:disc">Is derived from</li></ul><ul id="edaf8321-992a-4478-a891-47416447ccc8" class="bulleted-list"><li style="list-style-type:disc">Is supplement to</li></ul><ul id="db4a6786-356b-4d5e-82c1-54544fc5c664" class="bulleted-list"><li style="list-style-type:disc">Cites</li></ul><ul id="1c4378d3-e52a-4578-8a0c-2cfc07c50397" class="bulleted-list"><li style="list-style-type:disc">Describes</li></ul><ul id="f02315e3-9fed-4380-a690-3b753f533f58" class="bulleted-list"><li style="list-style-type:disc">Has version</li></ul><p id="d6bf3bd0-8c3c-4b79-bb69-365184b2d7d6" class="">
+</p></div></div></li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="28b7e987-dfcf-4be7-a97a-fdda6d3eba9d"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%">Si requieres hacer una publicación en Zenodo, puedes completar el formulario de Gestión de Datos en el siguiente enlace: <a href="https://n9.cl/p2n9s">https://n9.cl/p2n9s</a></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8e7d8617-a598-40a8-9c59-7a40723fffe2"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%">Si tienes dudas puedes contactarte con la data manager:<br/>Catalina Marín Cruz<br/>cmarin@institutobase.cl<br/>Asunto: Consultas sobre publicación en Zenodo<br/></div></figure><p id="52b0161e-b179-4371-8551-b732afa85817" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
