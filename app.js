@@ -27,10 +27,11 @@ function displayZoteroData(data) {
     titleElement.textContent = item.data.title;
     liElement.appendChild(titleElement);
 
-    // Mostrar autores
+     // Mostrar autores
     if (item.data.creators) {
       const authorsElement = document.createElement('p');
-      authorsElement.textContent = `Autores: ${item.data.creators.map(creator => creator.name).join(', ')}`;
+      const authorNames = item.data.creators.map(creator => creator.lastName + ', ' + creator.firstName).join(', ');
+      authorsElement.textContent = `Autores: ${authorNames}`;
       liElement.appendChild(authorsElement);
     }
 
@@ -47,7 +48,12 @@ function displayZoteroData(data) {
       abstractElement.textContent = `Resumen: ${item.data.abstractNote}`;
       liElement.appendChild(abstractElement);
     }
-
+ // Mostrar DOI
+    if (item.data.DOI) {
+      const doiElement = document.createElement('p');
+      doiElement.textContent = `DOI: ${item.data.DOI}`;
+      liElement.appendChild(doiElement);
+    }
     // Agregar el elemento de lista al elemento principal
     ulElement.appendChild(liElement);
   });
