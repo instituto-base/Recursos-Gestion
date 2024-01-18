@@ -15,13 +15,43 @@ function displayZoteroData(data) {
   // Puedes adaptar esta función según cómo quieras mostrar los datos
   // ...
 
-  // Por ejemplo, puedes agregar elementos de lista con los títulos de los elementos
+  // Crear una lista para mostrar los elementos
   const ulElement = document.createElement('ul');
+
   data.forEach(item => {
+    // Crear un elemento de lista para cada artículo
     const liElement = document.createElement('li');
-    liElement.textContent = item.data.title;
+
+    // Mostrar título
+    const titleElement = document.createElement('strong');
+    titleElement.textContent = item.data.title;
+    liElement.appendChild(titleElement);
+
+    // Mostrar autores
+    if (item.data.creators) {
+      const authorsElement = document.createElement('p');
+      authorsElement.textContent = `Autores: ${item.data.creators.map(creator => creator.name).join(', ')}`;
+      liElement.appendChild(authorsElement);
+    }
+
+    // Mostrar revista
+    if (item.data.publicationTitle) {
+      const journalElement = document.createElement('p');
+      journalElement.textContent = `Revista: ${item.data.publicationTitle}`;
+      liElement.appendChild(journalElement);
+    }
+
+    // Mostrar resumen
+    if (item.data.abstractNote) {
+      const abstractElement = document.createElement('p');
+      abstractElement.textContent = `Resumen: ${item.data.abstractNote}`;
+      liElement.appendChild(abstractElement);
+    }
+
+    // Agregar el elemento de lista al elemento principal
     ulElement.appendChild(liElement);
   });
 
+  // Agregar la lista al div en la página
   zoteroDataDiv.appendChild(ulElement);
 }
