@@ -48,10 +48,13 @@ function displayZoteroData(data) {
       abstractElement.textContent = `Resumen: ${item.data.abstractNote}`;
       liElement.appendChild(abstractElement);
     }
- // Mostrar DOI
+ // Mostrar DOI como hipervínculo
     if (item.data.DOI) {
       const doiElement = document.createElement('p');
-      doiElement.textContent = `DOI: ${item.data.DOI}`;
+      const doiLink = document.createElement('a');
+      doiLink.href = `https://doi.org/${item.data.DOI}`;
+      doiLink.textContent = `DOI: ${item.data.DOI}`;
+      doiElement.appendChild(doiLink);
       liElement.appendChild(doiElement);
     }
     // Agregar el elemento de lista al elemento principal
