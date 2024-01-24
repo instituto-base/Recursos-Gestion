@@ -30,7 +30,7 @@ function displayZoteroData(data) {
      // Mostrar autores
     if (item.data.creators) {
       const authorsElement = document.createElement('p');
-      const authorNames = item.data.creators.map(creator => creator.lastName + ', ' + creator.firstName).join(', ');
+      const authorNames = item.data.creators.map(creator => creator.lastName + ', ' + creator.firstName).join('; ');
       authorsElement.textContent = `Autores: ${authorNames}`;
       liElement.appendChild(authorsElement);
     }
