@@ -57,6 +57,12 @@ function displayZoteroData(data) {
       doiElement.appendChild(doiLink);
       liElement.appendChild(doiElement);
     }
+ // Mostrar fecha de publicación
+    if (item.data.date) {
+      const dateElement = document.createElement('p');
+      dateElement.textContent = `Fecha de publicación: ${item.data.date}`;
+      liElement.appendChild(dateElement);
+    }
     // Agregar el elemento de lista al elemento principal
     ulElement.appendChild(liElement);
   });
