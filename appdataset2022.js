@@ -3,7 +3,7 @@
 const groupID = '5360829'; // Puedes usar tu ID de usuario si es una biblioteca personal
 const zoteroDataDiv = document.getElementById('zotero-data');
 
-fetch(`https://https://api.zotero.org/groups/5360829/collections/S89X69DF/items/top?format=json&sort=date`)
+fetch(`https://api.zotero.org/groups/5360829/collections/S89X69DF/items/top?format=json&sort=date`)
   .then(response => response.json())
   .then(data => {
     displayZoteroData(data);
