@@ -42,12 +42,6 @@ function displayZoteroData(data) {
       liElement.appendChild(journalElement);
     }
 
-    // Mostrar resumen
-    if (item.data.abstractNote) {
-      const abstractElement = document.createElement('p');
-      abstractElement.textContent = `Resumen: ${item.data.abstractNote}`;
-      liElement.appendChild(abstractElement);
-    }
  // Mostrar DOI como hipervínculo
     if (item.data.DOI) {
       const doiElement = document.createElement('p');
