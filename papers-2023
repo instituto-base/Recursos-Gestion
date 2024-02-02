@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Datasets BASE</title>
+   <article><header>
+<div>📰</div>
+<h1>Nuevos conjuntos de datos</h1>
+</header>
+<div>
+<p>A continuaci&oacute;n puedes encontrar informaci&oacute;n sobre los &uacute;iltimos set de datos publicados por los investigadores Instituto Milenio BASE. Si quieres ver el recurso complero, puedes pinchar el enlace DOI.</p>
+</div>
+</article>
+
+   <div id="zotero-data"></div>
+   <script src="appdataset.js"></script>
+</body>
+</html>
