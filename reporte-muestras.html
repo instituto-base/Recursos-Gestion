@@ -1,0 +1,678 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>¿Cómo realizo el reporte de muestras de mi terreno?</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="dbd1250c-645f-451f-98f0-54fd930349b9" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🦟</span></div><h1 class="page-title">¿Cómo realizo el reporte de muestras de mi terreno?</h1><p class="page-description"></p></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="290b5da4-48bf-44d4-b4f4-124ed29fa636"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%"><strong>Resumen de información necesaria:</strong><br/>- Metadatos de la campaña<br/>- Inventario de muestras<br/>- Laboratorio/Colección de destino<br/><br/><strong>Plazo de envío: </strong><br/>- 15 días hábiles posterior al término de la campaña<br/></div></figure><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">¿Por qué tengo que reportar las muestras colectadas?</summary><div class="indented"><ul id="4a0525ea-a9b0-4399-a2e1-4fbe79f04b16" class="bulleted-list"><li style="list-style-type:disc">Permite mantener registro de las muestras y sitios visitados por todos/as los colaboradores/as de BASE</li></ul><ul id="d684a9dc-e56e-4286-a85c-9aa36768d7e8" class="bulleted-list"><li style="list-style-type:disc">Ayuda a evaluar sitios prioritarios para realizar próximas campañas</li></ul><ul id="9e2a590e-6a91-4beb-a528-b35c2cbc5e47" class="bulleted-list"><li style="list-style-type:disc">Ayuda a la colaboración de equipos a través de los sitios y muestras colectadas</li></ul><ul id="33967a9a-31ee-49b3-b25d-1c94b90836e5" class="bulleted-list"><li style="list-style-type:disc">Sistema de respaldo de información externo para los/as investigadores/as</li></ul><ul id="3959114c-f085-4c6c-8a7f-b9fbade66194" class="bulleted-list"><li style="list-style-type:disc">Ayuda a mantener la calidad e interoperabilidad en los datos asociados a las muestras colectadas, facilitando futuras colaboraciones con otras institutciones</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">¿Cuáles son los documentos que debo entregar?</summary><div class="indented"><h2 id="f9583343-e0a0-450f-a125-8f4284b26fad" class="">Metadatos</h2><p id="e54f395a-248b-4739-b4e9-33de6102b805" class="">Corresponde a información general sobre la expedición realizada, esta información puede completarse a través de un formulario de google o en la tabla plantilla para metadatos. La información que se solicita es la siguiente:</p><table id="a0f6ff95-33b3-4aa1-a879-e55183a23382" class="simple-table"><thead class="simple-table-header"><tr id="a1cf5e8a-3cff-4a15-b556-b7178d307864"><th id="&gt;d[~" class="simple-table-header-color simple-table-header" style="width:220.66666666666666px">Campo</th><th id="|quv" class="simple-table-header-color simple-table-header" style="width:220.66666666666666px">Descripción</th><th id="YJPi" class="simple-table-header-color simple-table-header" style="width:220.66666666666666px">Ejemplo</th></tr></thead><tbody><tr id="4556272c-6f6a-4c49-b85b-ca6e6b61283a"><th id="&gt;d[~" class="simple-table-header-color simple-table-header" style="width:220.66666666666666px">Nombre del encargado</th><td id="|quv" class="" style="width:220.66666666666666px">Nombre de quién fue designado como jefe/a de expedición, encargado de grupo, responsable del inventario. </td><td id="YJPi" class="" style="width:220.66666666666666px">Angie Díaz</td></tr><tr id="070d7c53-bf0d-45b5-b8e2-519b645c90ff"><th id="&gt;d[~" class="simple-table-header-color simple-table-header" style="width:220.66666666666666px">Nombre de los colectores</th><td id="|quv" class="" style="width:220.66666666666666px">Nombre de quién o quienes participaron en la recolección de las muestras</td><td id="YJPi" class="" style="width:220.66666666666666px">Angie Díaz | Elie Poulin</td></tr><tr id="fe04824e-dead-4d6d-9def-3416e81a7188"><th id="&gt;d[~" class="simple-table-header-color simple-table-header" style="width:220.66666666666666px">Fecha inicio expedición</th><td id="|quv" class="" style="width:220.66666666666666px">Fecha en la cual comenzó la expedición independiente de los días en que se realizaron las colectas</td><td id="YJPi" class="" style="width:220.66666666666666px">02-01-2024</td></tr><tr id="001666ad-3a82-4519-97d1-0921f69396ea"><th id="&gt;d[~" class="simple-table-header-color simple-table-header" style="width:220.66666666666666px">Fecha de término expedición</th><td id="|quv" class="" style="width:220.66666666666666px">Fecha del término de la expedición independiente del momento en que las muestras llegaron a destinos o comenzaron a utilizarse</td><td id="YJPi" class="" style="width:220.66666666666666px">31-01-2024</td></tr><tr id="69f00fcc-b631-4796-b81d-672bd88ad0b1"><th id="&gt;d[~" class="simple-table-header-color simple-table-header" style="width:220.66666666666666px">Tipo de muestras colectadas</th><td id="|quv" class="" style="width:220.66666666666666px">Corresponde al tipo final de las muestras, las que serán almacenadas e inventariadas</td><td id="YJPi" class="" style="width:220.66666666666666px">Ejemplar completo, Tejido</td></tr><tr id="0b5acf28-8203-494a-9d7d-58a7c15f6457"><th id="&gt;d[~" class="simple-table-header-color simple-table-header" style="width:220.66666666666666px">Método de colecta</th><td id="|quv" class="" style="width:220.66666666666666px">Metodologías utilizadas para la obtención de las muestras</td><td id="YJPi" class="" style="width:220.66666666666666px">Buceo</td></tr><tr id="35c44a76-beef-4e64-9d67-bbb725d683e9"><th id="&gt;d[~" class="simple-table-header-color simple-table-header" style="width:220.66666666666666px">Destino de la colecta</th><td id="|quv" class="" style="width:220.66666666666666px">Institución y localidad donde se almacenarán las muestras</td><td id="YJPi" class="" style="width:220.66666666666666px">Laboratorio LEMMAR, Universidad de Concepción, Concepción</td></tr><tr id="a8788624-e50a-41ee-9078-18891750eb8f"><th id="&gt;d[~" class="simple-table-header-color simple-table-header" style="width:220.66666666666666px">Colección biológica a la que pertenece</th><td id="|quv" class="" style="width:220.66666666666666px">Indicar si las muestras forman parte de alguna colección biológica, ya sea interna a BASE o en alguna otra institución albergante de colecciones biológicas</td><td id="YJPi" class="" style="width:220.66666666666666px">Colección Zoología de Invertebrados LEMMAR</td></tr></tbody></table><h3 id="0e3079d6-e007-438f-acbe-8c85ced0f106" class="">¿Cómo saber cuál es la colección de destino?</h3><p id="fffa60c1-6a11-4114-8c37-e7310d7e2a18" class="">La colección de destino corresponde al lugar físico en el cual las muestras colectadas se almacenarán y/o procesarán. El Instituto Milenio BASE mantiene registro las colecciones asociadas a sus investigadores/as, la información solicitada para realizar el registro se basa en la información requerida por el Ministerio de Medio Ambiente en su sistema de registro de colecciones biológicas. </p><p id="cd4a6681-1bae-4f7b-82c6-49dd4805bab6" class="">En el campo solicitado debe ingresar el nombre de la colección o código con la cual se ingresó la información. En caso de no tener claro el nombre o código con el cual fue ingresada, al momento de realizar el reporte puede consultar al data manager o dar otra información relevante que ayude a identificar la colección.</p><p id="b85d2b59-f2b8-4299-a836-666cb9f85fe3" class=""><strong>¿Qué hago si mi colección de destino no esta registrada?</strong></p><p id="265ab11b-0d7d-4920-9b26-ba669d72edb2" class="">Si no tiene información sobre el ingreso de la colección de destino, esta debe ser agregada a la base de datos. Para poder ingresarla es necesario completar la Encuesta de Colecciones biológicas BASE, en esta encuesta solo hay siete preguntas obligatorias pero se solicita a los investigadores llenar la mayor cantidad de información. Ante cualquier duda se puede contactar a el/la data manager para solicitar más instrucciones</p><blockquote id="63b228f8-e6a2-4107-9979-52cf83a5f3a7" class=""><mark class="highlight-blue_background">Enlace Encuesta Colecciones Biológicas BASE: <br/><br/></mark><a href="https://forms.gle/kB4FkC5Fc6YU49dS8">https://forms.gle/kB4FkC5Fc6YU49dS8</a></blockquote><blockquote id="89fa5f63-0bfd-4639-b804-9eab580e14de" class=""><mark class="highlight-blue_background">Formulario de Metadatos Expediciones BASE:</mark> <br/><br/><a href="https://forms.gle/rhufxmFvYttLR8yn9">https://forms.gle/rhufxmFvYttLR8yn9</a></blockquote><blockquote id="ae3627ee-99c3-4818-89d6-10290384143c" class=""><mark class="highlight-blue_background">Plantilla Metadatos expediciones BASE:</mark><figure id="e743910b-d5f4-4b8c-9614-ac2d116a0d12"><div class="source"><a href="%C2%BFCo%CC%81mo%20realizo%20el%20reporte%20de%20muestras%20de%20mi%20terren%20dbd1250c645f451f98f054fd930349b9/metadatos-expediciones-BASE.xlsx">metadatos-expediciones-BASE.xlsx</a></div></figure></blockquote><h2 id="fcc11c05-8ae7-4bab-a175-4107ab6db120" class="">Inventario</h2><p id="d472596e-811f-475b-9a6c-0a399f755d2a" class="">Corresponde a la lista de las muestras que fueron colectadas y transportadas para su almacenamiento y/análisis por los investigadores y colaboradores del Instituto Milenio BASE. El formato de la lista utiliza campos Darwin Core y es una modificación del registro biológico o evento de muestreo (más detalles en la sección <em>Reporte de muestras sin material previo</em>)</p><p id="d6ed14db-c71a-48f3-93b3-5fe1ee0b1bff" class="">Los campos obligatorios para completar son los siguientes:</p><table id="6a2dc482-de8e-49f6-b87b-b27c0d33c4dd" class="simple-table"><thead class="simple-table-header"><tr id="fa29b1c5-dbea-48ca-bd59-9ed0acd72fc7"><th id="{&lt;Mf" class="simple-table-header-color simple-table-header" style="width:331px">Campo</th><th id="`@cC" class="simple-table-header-color simple-table-header" style="width:331px">Descripción</th></tr></thead><tbody><tr id="1739e007-39b7-43ee-9adb-08bc3a174857"><th id="{&lt;Mf" class="simple-table-header-color simple-table-header" style="width:331px">ocurrencceID</th><td id="`@cC" class="" style="width:331px">Codificación de la muestra colectada</td></tr><tr id="60cfb356-51e6-4db1-98f0-345fcced00a6"><th id="{&lt;Mf" class="simple-table-header-color simple-table-header" style="width:331px">basisOfRecord</th><td id="`@cC" class="" style="width:331px">Tipo de registro de muestra, puede ser: <mark class="highlight-default">Preserved Specimen, Material Entity o Material Sample</mark></td></tr><tr id="447f18b1-5d7e-4cee-8886-1e04541cf1d0"><th id="{&lt;Mf" class="simple-table-header-color simple-table-header" style="width:331px">scientificName</th><td id="`@cC" class="" style="width:331px">Nombre científico de los especímenes colectados. Puede ser cualquier nivel de identificación taxonómica</td></tr><tr id="fc098702-00c7-40bc-ab6c-91a03194cd76"><th id="{&lt;Mf" class="simple-table-header-color simple-table-header" style="width:331px">taxonRank</th><td id="`@cC" class="" style="width:331px">Nivel taxonómico que representa scientificName</td></tr><tr id="f4b4759d-8f16-4a93-a493-02114df1dbc7"><th id="{&lt;Mf" class="simple-table-header-color simple-table-header" style="width:331px">evenDate</th><td id="`@cC" class="" style="width:331px">Fecha en que se realizó la colecta en formato AAAA-MM-DD</td></tr><tr id="0d8102f5-70f5-4b92-8f83-e6b4c97cbc48"><th id="{&lt;Mf" class="simple-table-header-color simple-table-header" style="width:331px">locality</th><td id="`@cC" class="" style="width:331px">Nombre de la localidad donde las muestras fueron tomadas</td></tr><tr id="58ba46c0-b22a-44b5-b10e-f4e5aa4a9135"><th id="{&lt;Mf" class="simple-table-header-color simple-table-header" style="width:331px">decimalLatitude</th><td id="`@cC" class="" style="width:331px">Latitud en formato decimal del sitio donde se realizó la colecta</td></tr><tr id="f4021eda-d905-4415-a72e-4836e6eccf9b"><th id="{&lt;Mf" class="simple-table-header-color simple-table-header" style="width:331px">decimalLongitude</th><td id="`@cC" class="" style="width:331px">Longitud en formato decimal del sitio donde se realizó la colecta</td></tr><tr id="4599f6c5-2ae1-425e-b3f2-6a4aa818cc1e"><th id="{&lt;Mf" class="simple-table-header-color simple-table-header" style="width:331px">preparations</th><td id="`@cC" class="" style="width:331px">Medio físico en el cual se almacenaron las muestras colectados</td></tr><tr id="15c7ce74-aafc-41b3-897b-961b0a04643d"><th id="{&lt;Mf" class="simple-table-header-color simple-table-header" style="width:331px">recordedBy</th><td id="`@cC" class="" style="width:331px">Nombres de quienes realizaron la toma de muestras</td></tr><tr id="e2594855-b247-418c-8340-819cf4f7b51f"><th id="{&lt;Mf" class="simple-table-header-color simple-table-header" style="width:331px">individualCount</th><td id="`@cC" class="" style="width:331px">Número de individuos colectados y almacenados para el registro</td></tr><tr id="116e2ddf-04f0-412c-b425-5fd8b82050f7"><th id="{&lt;Mf" class="simple-table-header-color simple-table-header" style="width:331px">sampleSizeValue</th><td id="`@cC" class="" style="width:331px">Valor numérico descriptor del tamaño de la muestra</td></tr><tr id="73da4962-5a15-4252-899c-7dc2a0962f72"><th id="{&lt;Mf" class="simple-table-header-color simple-table-header" style="width:331px">sampleSizeUnit</th><td id="`@cC" class="" style="width:331px">Unidad de medida asociada a sampleSizeValue</td></tr></tbody></table><p id="adc67594-21b2-4101-b0a5-4f9d80fb43af" class=""><strong>Algunas excepciones:</strong><div class="indented"><ul id="81706a27-1a8a-4ce3-9d1b-930135485aee" class="bulleted-list"><li style="list-style-type:disc">En caso de que las muestras correspondan a individuos preservados, se puede utilizar sólo el campo individualCount para indicar el tamaño de las muestras, sin necesidad de utilizar sampleSizeValue y sampleSizeUnit.</li></ul><ul id="d59a5e42-43e9-4116-a982-dd2a6f7ef6af" class="bulleted-list"><li style="list-style-type:disc">Para aquellas muestras que no son directamente asociadas a una especie o grupo taxonómico previamente identificado, no es necesario completar la información de scientificName ni taxonRank.</li></ul></div></p><h3 id="f7754e15-08ec-42c8-b0a7-9b3d82868f34" class="">¿A quién debo enviar la información y cuál es el plazo?</h3><p id="a3c5ef2b-db8b-4ef8-8253-2221af9f2425" class="">Toda la documentación solicitada debe ser enviado a el/la data manager del instituto, con copia a los directores científicos y administrativos del instituto. El plazo de entrega de la información es de 15 días hábiles luego del término de la expedición, los cuales se pueden extender por otros 15 días en caso de tener complicaciones o requisitos extras para realizar el reporte. Los correos electrónicos de los destinatarios actuales son los siguientes:</p><blockquote id="43b48414-ab74-41d4-b89d-edb637f24fa6" class="">Data Manager: Catalina Marín Cruz - <a href="mailto:cmarin@institutobase.cl">cmarin@institutobase.cl</a> </blockquote><blockquote id="bbf7cd61-89af-49ef-94a2-e19fbbab5a9e" class="">Directora Ejecutiva: Yasna Pardo - <a href="mailto:ypardo@institutobase.cl">ypardo@institutobase.cl</a> </blockquote><blockquote id="dc8fed27-de49-44e8-8f35-a5374c758a5a" class="">Director Principal: Elie Poulin - <a href="mailto:epoulin@uchile.cl">epoulin@uchile.cl</a></blockquote><blockquote id="99f0fc60-331f-48b5-97c1-fc9aff9da3b3" class="">Directora Alterna: Julieta Orlando - <a href="mailto:jorlando@uchile.cl">jorlando@uchile.cl</a> </blockquote></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">Reporte de muestras desde formato INACH</summary><div class="indented"><p id="413a1986-e0ca-4ffe-9826-b2bf51ee755a" class="">Muchas de las expediciones en las que participan integrantes del equipo BASE también deben completar el informe de la campaña en formato INACH. En ese caso, se puede utilizar la información requerida para la base de datos del instituto con la misma información entregada en el reporte INACH</p><p id="d0b58474-65d7-4858-95aa-8e3329f41375" class=""><mark class="highlight-teal_background">¿Por qué se debe enviar “dos veces” la misma información? </mark>Se solicita mandar el inventario de muestras en un formato basado en Darwin Core, lo que permite combinar distinto tipo de información proveniente de distintos equipos, además de poder integrar las muestras que han sido colectadas en campañas en las cuales no se requiere entregar el informe en formato INACH. </p><h3 id="630b6fa1-e06b-47ee-818f-be5686c048fa" class="">Metadatos incluidos en formato INACH</h3><table id="9c3ba3b0-e34e-4593-b4ac-1ab3bafdd4bd" class="simple-table"><thead class="simple-table-header"><tr id="b62a54b2-c83d-4352-b835-4adb344cf83a"><th id="yMBn" class="simple-table-header-color simple-table-header" style="width:331px">Informe INACH</th><th id="xFh&lt;" class="simple-table-header-color simple-table-header" style="width:331px">Informe BASE</th></tr></thead><tbody><tr id="1f7317c8-52bd-42e7-891d-e06d82ba99d2"><td id="yMBn" class="" style="width:331px">Investigadores participantes</td><td id="xFh&lt;" class="" style="width:331px">Nombre de los colectores</td></tr><tr id="c7245e3c-0121-40a5-96df-cda9cddc6bdd"><td id="yMBn" class="" style="width:331px">Itinerario de viaje - Fecha de ingreso (Primera fecha registrada)</td><td id="xFh&lt;" class="" style="width:331px">Fecha inicio expedición</td></tr><tr id="3aaaa46c-8e51-4282-bfa9-520f613f31b3"><td id="yMBn" class="" style="width:331px">Itinerario de viaje - Fecha de salida (última fecha registrada)</td><td id="xFh&lt;" class="" style="width:331px">Fecha término expedición</td></tr><tr id="cc662469-6512-4b9b-b3dc-8f5743e853a4"><td id="yMBn" class="" style="width:331px">Actividades desarrolladas - Trabajo desarrollado | Muestras Recolectadas -</td><td id="xFh&lt;" class="" style="width:331px">Método de colecta</td></tr></tbody></table><p id="087fbdc0-9f23-4392-b2fa-ada7185b60bc" class=""><strong>Metadatos no incluidos en formato INACH:</strong><div class="indented"><p id="e4bdb0d6-1b4d-4442-ba22-eac294297c4d" class=""><strong>Nombre del encargado: </strong>puede ser el encargado del terreno o de hacer el reporte de muestras</p><p id="523de847-856a-4e5b-aa8b-03313202acd4" class=""><strong>Destino de la colecta: </strong>Corresponde a la universidad o institución a la cual llegarán las muestras para su conservación o estudios</p><p id="23c677b7-fb5f-41ee-8a98-17b7e43083f8" class=""><strong>Colección biológica a la que pertenece:</strong> Nombre de la colección a la cual llegarán las muestras para su conservación o estudios</p></div></p><h3 id="17710dca-aef1-45e5-9281-dde5a302a485" class="">Campos inventario incluidos en formato INACH:</h3><table id="1c1badb2-c7f0-438b-81c2-96251593f2de" class="simple-table"><thead class="simple-table-header"><tr id="32acc26d-671a-4349-96a9-b8578b3148d6"><th id="C{SV" class="simple-table-header-color simple-table-header" style="width:220.66666666666666px">Informe INACH</th><th id="[=&lt;m" class="simple-table-header-color simple-table-header" style="width:220.66666666666666px">Informe BASE</th><th id="wWlD" class="simple-table-header-color simple-table-header" style="width:220.66666666666666px">Aclaraciones</th></tr></thead><tbody><tr id="198b1bd0-3cfb-477c-82dc-58055f699571"><td id="C{SV" class="" style="width:220.66666666666666px">Fecha de recolección</td><td id="[=&lt;m" class="" style="width:220.66666666666666px">eventDate</td><td id="wWlD" class="" style="width:220.66666666666666px">Formato aceptado: AAAA-MM-DD</td></tr><tr id="20380592-a68c-4d4b-b662-cb349f068134"><td id="C{SV" class="" style="width:220.66666666666666px">Lugar</td><td id="[=&lt;m" class="" style="width:220.66666666666666px">locality</td><td id="wWlD" class="" style="width:220.66666666666666px"></td></tr><tr id="5997b08c-b120-4093-bc6f-e28155dbdb3a"><td id="C{SV" class="" style="width:220.66666666666666px">Coord UTM norte</td><td id="[=&lt;m" class="" style="width:220.66666666666666px">decimalLatitude</td><td id="wWlD" class="" style="width:220.66666666666666px">Coordinar con data manager en caso de tener problemas en la conversión a unidades. No olvidar el registro de la Zona</td></tr><tr id="19573abe-de55-4359-a6de-446ccffbcbd6"><td id="C{SV" class="" style="width:220.66666666666666px">Coord UTM este</td><td id="[=&lt;m" class="" style="width:220.66666666666666px">decimalLongitude</td><td id="wWlD" class="" style="width:220.66666666666666px">Coordinar con data manager en caso de tener problemas en la conversión a unidades. No olvidar el registro de la Zona</td></tr><tr id="5994c078-c66a-4974-95a9-707410821976"><td id="C{SV" class="" style="width:220.66666666666666px">Especie</td><td id="[=&lt;m" class="" style="width:220.66666666666666px">scientificName</td><td id="wWlD" class="" style="width:220.66666666666666px">Cualquier nivel taxonómico utilizado. No es necesario para </td></tr><tr id="7af96135-2cd7-459d-be97-84daa156c793"><td id="C{SV" class="" style="width:220.66666666666666px">Cantidad</td><td id="[=&lt;m" class="" style="width:220.66666666666666px">sampleSizeValue - samplesSizeUnit | individualCount | preparations</td><td id="wWlD" class="" style="width:220.66666666666666px">Esta columna puede entregar distinta información para distintas columnas del reporte de muestras BASE. Se puede consultar al data manager o en <a href="https://dwc.tdwg.org/terms/">https://dwc.tdwg.org/terms/</a> para evaluar a cual de todas las columnas se debe copiar la información</td></tr><tr id="893173c1-8fb7-49bc-bd80-84fa612cd214"><td id="C{SV" class="" style="width:220.66666666666666px">Tamaño de la muestra</td><td id="[=&lt;m" class="" style="width:220.66666666666666px">sampleSizeValue - samplesSizeUnit | individualCount | preparations</td><td id="wWlD" class="" style="width:220.66666666666666px">Esta columna puede entregar distinta información para distintas columnas del reporte de muestras BASE. Se puede consultar al data manager o en <a href="https://dwc.tdwg.org/terms/">https://dwc.tdwg.org/terms/</a> para evaluar a cual de todas las columnas se debe copiar la información</td></tr></tbody></table><p id="4f6ef665-97ec-4083-ac31-b5002a59824d" class=""><strong>Campos inventario no incluidos en formato INACH:</strong><div class="indented"><p id="6dbc6255-f913-4719-8569-e11a14d75c97" class=""><strong>occurrenceID: </strong>cualquier código que identifique la muestra.</p><p id="7f530745-f2d1-4785-9b38-d30f55093aa8" class=""><strong>taxonRank:</strong> nivel de identificación taxonómica de las muestras colectadas</p><p id="7fc4d224-67e3-4cb7-a0f9-b61613e95c4a" class=""><strong>recordedBy:</strong> nombres de los colectores específicos de la muestra, pueden ser los mismos indicados en los metadatos</p></div></p></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">Reporte de muestras sin material previo</summary><div class="indented"><p id="c2cd31d4-47c3-4e91-9f3f-eb63868369ea" class="">Para realizar el reporte de muestras sin la información de apoyo del informe INACH, existen dos plantillas de apoyo que contienen los campos requeridos por el instituto: Plantillas simplificada despendiendo el tipo de muestras o la plantilla general para registros de presencia en terreno.</p><h2 id="316608ed-c118-4b60-bc81-181a9d5aa6d5" class="">Plantillas simplificadas</h2><p id="65d3edb1-47dc-43ef-9351-94e39463af6d" class="">Existen tres plantillas distintas dependiendo del tipo de muestra colectada (basisOfRecord), a continuación se da una pequeña explicación de cada una de ellas<div class="indented"><p id="016efb27-b090-477a-8603-dfc5482822ee" class=""><strong>dwc - preservedSpecimen</strong></p><p id="f538ce64-610c-43ba-a9d1-a5a84a076e77" class="">Esta plantilla es para aquellas muestras de organismos preservados, puede ser tanto en una muestra líquida como seca. Se diferencia de materialEntity debido a que las muestras se pueden organizar en número de individuos, a diferencia de materialEntity que registra uan cantidad específica de muestra (ml de sangre, número de plumas, gramos de masa vegetal)</p><p id="56641707-6147-43d6-bdbc-78d4911715cf" class=""><strong>dwc - materialEntity</strong></p><p id="9d4c6d47-83df-472f-a5fd-c8902b29146e" class="">Esta plantilla es para aquellas muestras obtenidas desde organismos pero que no corresponden a la conservación completa de este, puede variar el tipo de muestra y la forma de almacenamiento. Se diferencia de materialSample porque proviene de un organismo identificado en algún nivel taxonómico, además no se requiere desglosar por completo la cantidad de muestra que fue colectada (dicha información se completa en la columna preparations), aunque si los investigadores lo desean, pueden agregar las columnas sampleSizeValue y sampleSizeUnit para indicar dicha información</p><p id="7db7cd37-6ca4-4ac6-bb60-eb56aae5e1fa" class=""><strong>dwc - materialSample</strong></p><p id="04c69fba-eb79-4770-9b96-95bcabd128dd" class="">Esta plantilla es para aquellas muestras en que no están asociadas directamente a alguna especie o taxón al momento de realizar la colecta. También pueden ser muestras de restos biológicos donde el origen de estos no puede ser determinado.</p></div></p><p id="b167f557-c9c8-40bb-8778-08b173d984a9" class="">Puedes descargas las plantillas aquí:</p><blockquote id="cc3af14a-0082-43f2-a0a6-39e60468926d" class="">dwc - preservedSpecimen<figure id="245884af-fd49-4538-9d92-6c21a21b2b80"><div class="source"><a href="%C2%BFCo%CC%81mo%20realizo%20el%20reporte%20de%20muestras%20de%20mi%20terren%20dbd1250c645f451f98f054fd930349b9/dwc-preservedSpecimen.xlsx">dwc-preservedSpecimen.xlsx</a></div></figure></blockquote><blockquote id="f8550081-5842-4c78-a969-a1d460e4e7f6" class="">dwc - materialEntity<figure id="2ed14fda-31c2-4567-9fc3-bce608b38761"><div class="source"><a href="%C2%BFCo%CC%81mo%20realizo%20el%20reporte%20de%20muestras%20de%20mi%20terren%20dbd1250c645f451f98f054fd930349b9/dwc_-_materialEntity.xlsx">dwc - materialEntity.xlsx</a></div></figure></blockquote><blockquote id="26d22b16-fbd6-4d56-88ae-2f950765a395" class="">dwc - materialSample<figure id="d42a9870-de98-44c4-9836-5cfe2b5b956e"><div class="source"><a href="%C2%BFCo%CC%81mo%20realizo%20el%20reporte%20de%20muestras%20de%20mi%20terren%20dbd1250c645f451f98f054fd930349b9/dwc-_materialSample.xlsx">dwc- materialSample.xlsx</a></div></figure></blockquote><h2 id="d8b7fe03-f6ee-4918-be44-05bcb87f48b2" class="">Plantilla general</h2><p id="2c554a40-0ccb-4174-9817-3e4084e0334d" class="">El inventario de muestras también se puede entregar en formato DWC extendido, esta versión es recomendable para preparar publicaciones en GBIF relacionadas con las muestras colectadas durante las expediciones o cuando las colecciones serán donadas a otra institución. Se recomienda también para todas aquellas muestras en donde se cuenta con información detallada que se puede registrar en el formato DWC de terreno.</p><p id="dac63a7c-8ce0-4357-bee9-a28df1542263" class="">Puedes encontrar la plantilla aquí:</p><figure id="a5462e95-f5df-4910-abce-54bfbfa23b6c"><div class="source"><a href="%C2%BFCo%CC%81mo%20realizo%20el%20reporte%20de%20muestras%20de%20mi%20terren%20dbd1250c645f451f98f054fd930349b9/Plantilla_Estndar_Darwin_Core___terreno.xlsx">Plantilla Estándar Darwin Core _ terreno.xlsx</a></div></figure><p id="b6bd5091-bcd4-4e0d-b2c9-ae75dd50d2af" class="">También puedes revisar el instructivo de toma de datos en terreno en el siguiente video:</p><figure id="aae3eefb-4eae-4352-9647-c312491206e8"><div class="source"><a href="https://www.youtube.com/watch?v=tCPWO11Nb0I">https://www.youtube.com/watch?v=tCPWO11Nb0I</a></div></figure></div></details><p id="2c530c4d-5c1a-4529-a381-d8582594ea14" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
