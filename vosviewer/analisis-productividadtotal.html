@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visualizaciones VOSviewer</title>
+  <title>Análisis de Redes de Investigación BASE 2022-2025</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -11,9 +11,10 @@
       color: #333;
       margin: 0;
       display: flex;
+      flex-direction: row;
     }
 
-    /* Barra lateral fija */
+    /* Barra lateral */
     nav {
       position: fixed;
       top: 0;
@@ -24,6 +25,7 @@
       color: white;
       padding: 20px 10px;
       box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
 
     nav h2 {
@@ -48,10 +50,41 @@
       background-color: rgba(255, 255, 255, 0.2);
     }
 
+    /* Botón hamburguesa (solo visible en móviles) */
+    .menu-toggle {
+      display: none;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background: #0077b6;
+      color: white;
+      border: none;
+      font-size: 1.5rem;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
     .container {
-      margin-left: 240px; /* espacio para la barra lateral */
+      margin-left: 240px;
       padding: 20px;
-      max-width: 1000px;
+      width: calc(100% - 260px);
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+      color: #023e8a;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      text-align: center;
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 30px;
     }
 
     section {
@@ -96,20 +129,80 @@
       padding: 10px;
       border-radius: 8px;
     }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    /* Botón volver arriba */
+    #backToTop {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      z-index: 999;
+      transition: background 0.3s ease;
+    }
+
+    #backToTop:hover {
+      background: #023e8a;
+    }
+
+    /* Responsivo para pantallas pequeñas */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      nav {
+        transform: translateX(-100%);
+        width: 200px;
+        height: 100%;
+      }
+
+      nav.open {
+        transform: translateX(0);
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .container {
+        margin-left: 0;
+        width: 100%;
+        padding-top: 60px;
+      }
+    }
   </style>
 </head>
 <body>
 
+  <!-- Botón hamburguesa -->
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
   <!-- Barra lateral -->
-  <nav>
+  <nav id="sidebar">
     <h2>Índice</h2>
     <a href="#productividad-total">Productividad Total</a>
     <a href="#productividad-isi">Productividad ISI/WOS</a>
     <a href="#estudiantes">Estudiantes</a>
     <a href="#congresos">Congresos</a>
+    <a href="#terminologia">Terminología</a>
   </nav>
 
   <div class="container">
+    <h1>Análisis de Redes de Investigación BASE 2022-2025</h1>
+    <p class="intro"><em>Análisis realizado con información disponible hasta agosto 2025.</em></p>
 
     <!-- SECCIÓN PRODUCTIVIDAD TOTAL -->
     <section id="productividad-total">
@@ -212,7 +305,44 @@
         </p>
       </div>
     </section>
+  <!-- Sección Terminología -->
+    <section id="terminologia">
+      <h2>Terminología y Definiciones</h2>
+      <ul>
+        <li><strong>Items:</strong> objetos de interés de análisis, pueden ser investigadores y/o estudiantes.</li>
+        <li><strong>Cluster:</strong> grupo de colaboración.</li>
+        <li><strong>Link:</strong> conexión entre dos items.</li>
+        <li><strong>Documents:</strong> número de publicaciones, tesis o participaciones en congresos asociadas a un investigador y/o estudiante.</li>
+        <li><strong>Links:</strong> número de asociaciones (link) que tiene un investigador y/o estudiante.</li>
+        <li><strong>Link strength:</strong> número de artículos publicados entre dos investigadores, número de estudiantes en co-tutorías, o número de presentaciones en congresos entre dos investigadores y/o estudiantes.</li>
+        <li><strong>Total link strength:</strong> suma de enlaces generados por el total de documentos de cada investigador y/o estudiante. Si total link strength &gt; documents, significa que uno o más de los documentos analizados tienen más de dos coautores/cotutores.</li>
+        <li><strong>Grupos de colaboración:</strong> red generada a través de normalización de modularidad, que permite identificar comunidades y entender la estructura global.</li>
+        <li><strong>Fuerza de asociación:</strong> red generada a través de normalización por fuerza de asociación, que mide la intensidad relativa de colaboración entre autores.</li>
+      </ul>
+    </section>
   </div>
+
+  <!-- Botón volver arriba -->
+  <button id="backToTop" onclick="scrollToTop()">↑</button>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("sidebar").classList.toggle("open");
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.onscroll = function() {
+      const btn = document.getElementById("backToTop");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+  </script>
 
 </body>
 </html>
