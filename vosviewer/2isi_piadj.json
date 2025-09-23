@@ -1,0 +1,373 @@
+{
+    "network": {
+        "items": [
+            {
+                "id": 1,
+                "label": "andrea piñones",
+                "x": -0.1221,
+                "y": 0.5341,
+                "cluster": 3,
+                "weights": {
+                    "Documents": 7
+                }
+            },
+            {
+                "id": 2,
+                "label": "angie díaz",
+                "x": -0.2911,
+                "y": -0.5692,
+                "cluster": 2,
+                "weights": {
+                    "Documents": 7
+                }
+            },
+            {
+                "id": 3,
+                "label": "claudio gonzález-wevar",
+                "x": 0.0665,
+                "y": -0.4768,
+                "cluster": 1,
+                "weights": {
+                    "Documents": 13
+                }
+            },
+            {
+                "id": 4,
+                "label": "césar cárdenas",
+                "x": -0.0687,
+                "y": 0.6849,
+                "cluster": 3,
+                "weights": {
+                    "Documents": 17
+                }
+            },
+            {
+                "id": 5,
+                "label": "elie poulin",
+                "x": 0.0878,
+                "y": -0.163,
+                "cluster": 1,
+                "weights": {
+                    "Documents": 35
+                }
+            },
+            {
+                "id": 6,
+                "label": "hugo benítez",
+                "x": -0.1799,
+                "y": -0.1099,
+                "cluster": 2,
+                "weights": {
+                    "Documents": 15
+                }
+            },
+            {
+                "id": 7,
+                "label": "juan navedo",
+                "x": 0.9561,
+                "y": 1.1692,
+                "cluster": 6,
+                "weights": {
+                    "Documents": 6
+                }
+            },
+            {
+                "id": 8,
+                "label": "juliana vianna",
+                "x": 0.4043,
+                "y": -0.2097,
+                "cluster": 1,
+                "weights": {
+                    "Documents": 8
+                }
+            },
+            {
+                "id": 9,
+                "label": "julieta orlando",
+                "x": -0.4584,
+                "y": -0.215,
+                "cluster": 4,
+                "weights": {
+                    "Documents": 14
+                }
+            },
+            {
+                "id": 10,
+                "label": "karin gérard",
+                "x": -0.202,
+                "y": 0.1603,
+                "cluster": 4,
+                "weights": {
+                    "Documents": 6
+                }
+            },
+            {
+                "id": 11,
+                "label": "kurt paschke",
+                "x": 0.3287,
+                "y": -0.7533,
+                "cluster": 5,
+                "weights": {
+                    "Documents": 5
+                }
+            },
+            {
+                "id": 12,
+                "label": "lucas krüger",
+                "x": -0.1725,
+                "y": 0.6865,
+                "cluster": 3,
+                "weights": {
+                    "Documents": 14
+                }
+            },
+            {
+                "id": 13,
+                "label": "luis valentín ferrada",
+                "x": 1.5068,
+                "y": 0.0995,
+                "cluster": 7,
+                "weights": {
+                    "Documents": 1
+                }
+            },
+            {
+                "id": 14,
+                "label": "luis vargas-chacoff",
+                "x": 0.44,
+                "y": -0.7334,
+                "cluster": 5,
+                "weights": {
+                    "Documents": 26
+                }
+            },
+            {
+                "id": 15,
+                "label": "léa cabrol",
+                "x": -0.4149,
+                "y": 0.024,
+                "cluster": 4,
+                "weights": {
+                    "Documents": 12
+                }
+            },
+            {
+                "id": 16,
+                "label": "maría josé pérez-álvarez",
+                "x": 0.3003,
+                "y": 0.0728,
+                "cluster": 1,
+                "weights": {
+                    "Documents": 7
+                }
+            },
+            {
+                "id": 17,
+                "label": "máximo frangópulos",
+                "x": -1.433,
+                "y": 0.6548,
+                "cluster": 8,
+                "weights": {
+                    "Documents": 7
+                }
+            },
+            {
+                "id": 18,
+                "label": "pablo guerrero",
+                "x": -0.4869,
+                "y": -0.5113,
+                "cluster": 2,
+                "weights": {
+                    "Documents": 4
+                }
+            },
+            {
+                "id": 19,
+                "label": "tamara contador",
+                "x": -0.2608,
+                "y": -0.3445,
+                "cluster": 2,
+                "weights": {
+                    "Documents": 15
+                }
+            }
+        ],
+        "links": [
+            {
+                "source_id": 1,
+                "target_id": 4,
+                "strength": 1
+            },
+            {
+                "source_id": 1,
+                "target_id": 5,
+                "strength": 1
+            },
+            {
+                "source_id": 1,
+                "target_id": 10,
+                "strength": 1
+            },
+            {
+                "source_id": 1,
+                "target_id": 12,
+                "strength": 1
+            },
+            {
+                "source_id": 2,
+                "target_id": 3,
+                "strength": 1
+            },
+            {
+                "source_id": 2,
+                "target_id": 5,
+                "strength": 4
+            },
+            {
+                "source_id": 2,
+                "target_id": 9,
+                "strength": 2
+            },
+            {
+                "source_id": 2,
+                "target_id": 18,
+                "strength": 2
+            },
+            {
+                "source_id": 2,
+                "target_id": 19,
+                "strength": 3
+            },
+            {
+                "source_id": 3,
+                "target_id": 5,
+                "strength": 11
+            },
+            {
+                "source_id": 3,
+                "target_id": 9,
+                "strength": 1
+            },
+            {
+                "source_id": 3,
+                "target_id": 10,
+                "strength": 1
+            },
+            {
+                "source_id": 3,
+                "target_id": 11,
+                "strength": 1
+            },
+            {
+                "source_id": 3,
+                "target_id": 19,
+                "strength": 2
+            },
+            {
+                "source_id": 4,
+                "target_id": 12,
+                "strength": 2
+            },
+            {
+                "source_id": 5,
+                "target_id": 6,
+                "strength": 3
+            },
+            {
+                "source_id": 5,
+                "target_id": 8,
+                "strength": 3
+            },
+            {
+                "source_id": 5,
+                "target_id": 9,
+                "strength": 3
+            },
+            {
+                "source_id": 5,
+                "target_id": 10,
+                "strength": 5
+            },
+            {
+                "source_id": 5,
+                "target_id": 14,
+                "strength": 1
+            },
+            {
+                "source_id": 5,
+                "target_id": 15,
+                "strength": 3
+            },
+            {
+                "source_id": 5,
+                "target_id": 16,
+                "strength": 3
+            },
+            {
+                "source_id": 5,
+                "target_id": 18,
+                "strength": 1
+            },
+            {
+                "source_id": 5,
+                "target_id": 19,
+                "strength": 4
+            },
+            {
+                "source_id": 6,
+                "target_id": 10,
+                "strength": 1
+            },
+            {
+                "source_id": 6,
+                "target_id": 15,
+                "strength": 1
+            },
+            {
+                "source_id": 6,
+                "target_id": 19,
+                "strength": 4
+            },
+            {
+                "source_id": 9,
+                "target_id": 10,
+                "strength": 2
+            },
+            {
+                "source_id": 9,
+                "target_id": 15,
+                "strength": 4
+            },
+            {
+                "source_id": 9,
+                "target_id": 18,
+                "strength": 1
+            },
+            {
+                "source_id": 9,
+                "target_id": 19,
+                "strength": 3
+            },
+            {
+                "source_id": 10,
+                "target_id": 15,
+                "strength": 3
+            },
+            {
+                "source_id": 11,
+                "target_id": 14,
+                "strength": 3
+            },
+            {
+                "source_id": 15,
+                "target_id": 19,
+                "strength": 1
+            },
+            {
+                "source_id": 18,
+                "target_id": 19,
+                "strength": 2
+            }
+        ]
+    }
+}
