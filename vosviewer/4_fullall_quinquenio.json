@@ -1,0 +1,2848 @@
+﻿{
+	"network": {
+		"items": [
+			{
+				"id": 1,
+				"label": "albert palomino",
+				"x": -0.9601,
+				"y": -0.2139,
+				"cluster": 1,
+				"weights": {
+					"Links": 5.0000,
+					"Total link strength": 5.0000,
+					"Documents": 1.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.0000
+				}
+			},
+			{
+				"id": 2,
+				"label": "amado villalobos",
+				"x": 0.8531,
+				"y": -0.0000,
+				"cluster": 5,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 2.0000,
+					"Documents": 1.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.0000
+				}
+			},
+			{
+				"id": 3,
+				"label": "andrea martínez",
+				"x": -0.2406,
+				"y": 0.1290,
+				"cluster": 6,
+				"weights": {
+					"Links": 3.0000,
+					"Total link strength": 9.0000,
+					"Documents": 3.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.3333
+				}
+			},
+			{
+				"id": 4,
+				"label": "andrea piñones",
+				"x": -0.3626,
+				"y": 0.0867,
+				"cluster": 1,
+				"weights": {
+					"Links": 6.0000,
+					"Total link strength": 6.0000,
+					"Documents": 8.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.1250
+				}
+			},
+			{
+				"id": 5,
+				"label": "angie díaz",
+				"x": 0.1003,
+				"y": -0.0434,
+				"cluster": 6,
+				"weights": {
+					"Links": 21.0000,
+					"Total link strength": 52.0000,
+					"Documents": 19.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.2105
+				}
+			},
+			{
+				"id": 6,
+				"label": "antonia hinojosa",
+				"x": -0.5155,
+				"y": 0.1424,
+				"cluster": 1,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 2.0000,
+					"Documents": 1.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2026.0000
+				}
+			},
+			{
+				"id": 7,
+				"label": "camila neder",
+				"x": -0.1065,
+				"y": -0.4749,
+				"cluster": 6,
+				"weights": {
+					"Links": 3.0000,
+					"Total link strength": 8.0000,
+					"Documents": 7.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.8571
+				}
+			},
+			{
+				"id": 8,
+				"label": "camila parra",
+				"x": -0.0975,
+				"y": 0.5008,
+				"cluster": 3,
+				"weights": {
+					"Links": 6.0000,
+					"Total link strength": 6.0000,
+					"Documents": 1.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2025.0000
+				}
+			},
+			{
+				"id": 9,
+				"label": "carolina márquez",
+				"x": -0.1059,
+				"y": -0.1227,
+				"cluster": 6,
+				"weights": {
+					"Links": 1.0000,
+					"Total link strength": 1.0000,
+					"Documents": 1.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2025.0000
+				}
+			},
+			{
+				"id": 10,
+				"label": "carolina pérez",
+				"x": -0.8503,
+				"y": 0.1929,
+				"cluster": 1,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 4.0000,
+					"Documents": 3.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.0000
+				}
+			},
+			{
+				"id": 11,
+				"label": "catalina escobar",
+				"x": 0.1222,
+				"y": -0.3038,
+				"cluster": 6,
+				"weights": {
+					"Links": 11.0000,
+					"Total link strength": 20.0000,
+					"Documents": 5.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2025.0000
+				}
+			},
+			{
+				"id": 12,
+				"label": "catalina sepúlveda",
+				"x": -0.2001,
+				"y": -0.7370,
+				"cluster": 8,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 2.0000,
+					"Documents": 1.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.0000
+				}
+			},
+			{
+				"id": 13,
+				"label": "christina cheng",
+				"x": -0.3354,
+				"y": 0.5107,
+				"cluster": 4,
+				"weights": {
+					"Links": 6.0000,
+					"Total link strength": 13.0000,
+					"Documents": 4.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.7500
+				}
+			},
+			{
+				"id": 14,
+				"label": "claudia maturana",
+				"x": 0.6292,
+				"y": 0.4819,
+				"cluster": 3,
+				"weights": {
+					"Links": 25.0000,
+					"Total link strength": 117.0000,
+					"Documents": 27.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.6296
+				}
+			},
+			{
+				"id": 15,
+				"label": "claudia ulloa",
+				"x": -0.7987,
+				"y": -0.2221,
+				"cluster": 1,
+				"weights": {
+					"Links": 7.0000,
+					"Total link strength": 13.0000,
+					"Documents": 3.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.6667
+				}
+			},
+			{
+				"id": 16,
+				"label": "claudio cornejo",
+				"x": 0.6621,
+				"y": 0.1603,
+				"cluster": 6,
+				"weights": {
+					"Links": 3.0000,
+					"Total link strength": 3.0000,
+					"Documents": 2.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2025.0000
+				}
+			},
+			{
+				"id": 17,
+				"label": "claudio gonzález-wevar",
+				"x": 0.1925,
+				"y": 0.7695,
+				"cluster": 3,
+				"weights": {
+					"Links": 21.0000,
+					"Total link strength": 76.0000,
+					"Documents": 21.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.5714
+				}
+			},
+			{
+				"id": 18,
+				"label": "claudio valenzuela",
+				"x": 0.1599,
+				"y": -0.4269,
+				"cluster": 2,
+				"weights": {
+					"Links": 1.0000,
+					"Total link strength": 1.0000,
+					"Documents": 1.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2022.0000
+				}
+			},
+			{
+				"id": 19,
+				"label": "constanza madriaga",
+				"x": 0.2695,
+				"y": -0.6818,
+				"cluster": 2,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 2.0000,
+					"Documents": 1.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.0000
+				}
+			},
+			{
+				"id": 20,
+				"label": "constanza millán",
+				"x": -0.0988,
+				"y": 0.8197,
+				"cluster": 3,
+				"weights": {
+					"Links": 3.0000,
+					"Total link strength": 6.0000,
+					"Documents": 2.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.0000
+				}
+			},
+			{
+				"id": 21,
+				"label": "constanza soto",
+				"x": 0.4218,
+				"y": -0.6798,
+				"cluster": 2,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 2.0000,
+					"Documents": 1.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2026.0000
+				}
+			},
+			{
+				"id": 22,
+				"label": "césar cárdenas",
+				"x": -0.6654,
+				"y": 0.1381,
+				"cluster": 1,
+				"weights": {
+					"Links": 9.0000,
+					"Total link strength": 21.0000,
+					"Documents": 27.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.5556
+				}
+			},
+			{
+				"id": 23,
+				"label": "daly noll",
+				"x": -0.3840,
+				"y": -0.4304,
+				"cluster": 1,
+				"weights": {
+					"Links": 7.0000,
+					"Total link strength": 20.0000,
+					"Documents": 7.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.5714
+				}
+			},
+			{
+				"id": 24,
+				"label": "daniela nualart",
+				"x": -0.6600,
+				"y": 0.7435,
+				"cluster": 4,
+				"weights": {
+					"Links": 9.0000,
+					"Total link strength": 36.0000,
+					"Documents": 18.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.7222
+				}
+			},
+			{
+				"id": 25,
+				"label": "diego ahumada",
+				"x": 0.0782,
+				"y": -0.5036,
+				"cluster": 2,
+				"weights": {
+					"Links": 5.0000,
+					"Total link strength": 9.0000,
+					"Documents": 2.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2025.0000
+				}
+			},
+			{
+				"id": 26,
+				"label": "eduardo pizarro",
+				"x": -0.7373,
+				"y": -0.3692,
+				"cluster": 1,
+				"weights": {
+					"Links": 9.0000,
+					"Total link strength": 21.0000,
+					"Documents": 6.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.8333
+				}
+			},
+			{
+				"id": 27,
+				"label": "elie poulin",
+				"x": 0.1259,
+				"y": 0.2746,
+				"cluster": 3,
+				"weights": {
+					"Links": 40.0000,
+					"Total link strength": 186.0000,
+					"Documents": 56.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.8929
+				}
+			},
+			{
+				"id": 28,
+				"label": "elisa gonzález",
+				"x": -0.9345,
+				"y": -0.3288,
+				"cluster": 1,
+				"weights": {
+					"Links": 5.0000,
+					"Total link strength": 5.0000,
+					"Documents": 1.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.0000
+				}
+			},
+			{
+				"id": 29,
+				"label": "erwan courville",
+				"x": -0.2365,
+				"y": 0.2730,
+				"cluster": 6,
+				"weights": {
+					"Links": 3.0000,
+					"Total link strength": 13.0000,
+					"Documents": 7.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.4286
+				}
+			},
+			{
+				"id": 30,
+				"label": "fabio méndez",
+				"x": -0.4582,
+				"y": -0.8124,
+				"cluster": 7,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 4.0000,
+					"Documents": 2.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.5000
+				}
+			},
+			{
+				"id": 31,
+				"label": "fabiola león",
+				"x": -0.5686,
+				"y": -0.4596,
+				"cluster": 1,
+				"weights": {
+					"Links": 6.0000,
+					"Total link strength": 22.0000,
+					"Documents": 8.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.3750
+				}
+			},
+			{
+				"id": 32,
+				"label": "fernando moya",
+				"x": 0.8406,
+				"y": -0.1867,
+				"cluster": 2,
+				"weights": {
+					"Links": 12.0000,
+					"Total link strength": 34.0000,
+					"Documents": 7.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.4286
+				}
+			},
+			{
+				"id": 33,
+				"label": "francisca higueras",
+				"x": 0.2001,
+				"y": -0.7009,
+				"cluster": 2,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 2.0000,
+					"Documents": 1.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.0000
+				}
+			},
+			{
+				"id": 34,
+				"label": "francisca rodríguez",
+				"x": -0.2364,
+				"y": 0.0074,
+				"cluster": 3,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 2.0000,
+					"Documents": 1.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.0000
+				}
+			},
+			{
+				"id": 35,
+				"label": "francisco bahamonde",
+				"x": -0.4673,
+				"y": -0.9076,
+				"cluster": 7,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 4.0000,
+					"Documents": 2.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.5000
+				}
+			},
+			{
+				"id": 36,
+				"label": "francisco santa-cruz",
+				"x": -0.7729,
+				"y": 0.2537,
+				"cluster": 1,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 3.0000,
+					"Documents": 2.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.0000
+				}
+			},
+			{
+				"id": 37,
+				"label": "franco cruz",
+				"x": 1.3696,
+				"y": 0.0572,
+				"cluster": 5,
+				"weights": {
+					"Links": 4.0000,
+					"Total link strength": 9.0000,
+					"Documents": 4.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2025.5000
+				}
+			},
+			{
+				"id": 38,
+				"label": "gabriela narváez",
+				"x": -0.3689,
+				"y": -0.3043,
+				"cluster": 1,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 2.0000,
+					"Documents": 1.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2026.0000
+				}
+			},
+			{
+				"id": 39,
+				"label": "giovannina sutherland",
+				"x": -0.2620,
+				"y": -0.8495,
+				"cluster": 8,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 4.0000,
+					"Documents": 3.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.6667
+				}
+			},
+			{
+				"id": 40,
+				"label": "gonzalo barriga",
+				"x": -0.6724,
+				"y": -0.0245,
+				"cluster": 1,
+				"weights": {
+					"Links": 1.0000,
+					"Total link strength": 2.0000,
+					"Documents": 2.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.5000
+				}
+			},
+			{
+				"id": 41,
+				"label": "guillaume schwob",
+				"x": 0.5954,
+				"y": -0.0422,
+				"cluster": 2,
+				"weights": {
+					"Links": 24.0000,
+					"Total link strength": 76.0000,
+					"Documents": 18.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.5000
+				}
+			},
+			{
+				"id": 42,
+				"label": "hugo benítez",
+				"x": 1.1127,
+				"y": -0.0119,
+				"cluster": 5,
+				"weights": {
+					"Links": 17.0000,
+					"Total link strength": 62.0000,
+					"Documents": 29.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.3793
+				}
+			},
+			{
+				"id": 43,
+				"label": "jaime ojeda",
+				"x": 0.0000,
+				"y": -0.0000,
+				"cluster": 9,
+				"weights": {
+					"Links": 0.0000,
+					"Total link strength": 0.0000,
+					"Documents": 1.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2026.0000
+				}
+			},
+			{
+				"id": 44,
+				"label": "javier rendoll",
+				"x": 1.2315,
+				"y": 0.5920,
+				"cluster": 5,
+				"weights": {
+					"Links": 11.0000,
+					"Total link strength": 38.0000,
+					"Documents": 9.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.1111
+				}
+			},
+			{
+				"id": 45,
+				"label": "jordan hernández",
+				"x": 1.3117,
+				"y": 0.2910,
+				"cluster": 5,
+				"weights": {
+					"Links": 9.0000,
+					"Total link strength": 33.0000,
+					"Documents": 9.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.4444
+				}
+			},
+			{
+				"id": 46,
+				"label": "jose valdebenito",
+				"x": -0.6709,
+				"y": 0.5589,
+				"cluster": 4,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 2.0000,
+					"Documents": 3.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2025.3333
+				}
+			},
+			{
+				"id": 47,
+				"label": "juan navedo",
+				"x": -0.7631,
+				"y": 0.9232,
+				"cluster": 4,
+				"weights": {
+					"Links": 4.0000,
+					"Total link strength": 8.0000,
+					"Documents": 9.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.0000
+				}
+			},
+			{
+				"id": 48,
+				"label": "julia saravia",
+				"x": -0.7849,
+				"y": 0.5828,
+				"cluster": 4,
+				"weights": {
+					"Links": 3.0000,
+					"Total link strength": 6.0000,
+					"Documents": 2.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.5000
+				}
+			},
+			{
+				"id": 49,
+				"label": "juliana vianna",
+				"x": -0.5254,
+				"y": -0.2052,
+				"cluster": 1,
+				"weights": {
+					"Links": 15.0000,
+					"Total link strength": 48.0000,
+					"Documents": 21.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.4286
+				}
+			},
+			{
+				"id": 50,
+				"label": "julieta orlando",
+				"x": 0.5428,
+				"y": -0.4056,
+				"cluster": 2,
+				"weights": {
+					"Links": 34.0000,
+					"Total link strength": 103.0000,
+					"Documents": 39.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.2821
+				}
+			},
+			{
+				"id": 51,
+				"label": "karin gérard",
+				"x": 0.4459,
+				"y": 0.1784,
+				"cluster": 2,
+				"weights": {
+					"Links": 15.0000,
+					"Total link strength": 49.0000,
+					"Documents": 12.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.9167
+				}
+			},
+			{
+				"id": 52,
+				"label": "katerin almendras",
+				"x": 0.6950,
+				"y": -0.7281,
+				"cluster": 2,
+				"weights": {
+					"Links": 6.0000,
+					"Total link strength": 15.0000,
+					"Documents": 6.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.3333
+				}
+			},
+			{
+				"id": 53,
+				"label": "kurt paschke",
+				"x": -0.5393,
+				"y": 0.5244,
+				"cluster": 4,
+				"weights": {
+					"Links": 8.0000,
+					"Total link strength": 23.0000,
+					"Documents": 9.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.2222
+				}
+			},
+			{
+				"id": 54,
+				"label": "lucas krüger",
+				"x": -0.8174,
+				"y": -0.0435,
+				"cluster": 1,
+				"weights": {
+					"Links": 9.0000,
+					"Total link strength": 20.0000,
+					"Documents": 27.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.4444
+				}
+			},
+			{
+				"id": 55,
+				"label": "lucila morales",
+				"x": -0.2834,
+				"y": -0.2707,
+				"cluster": 1,
+				"weights": {
+					"Links": 3.0000,
+					"Total link strength": 6.0000,
+					"Documents": 2.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2025.0000
+				}
+			},
+			{
+				"id": 56,
+				"label": "luis pertierra",
+				"x": -0.2722,
+				"y": -0.1556,
+				"cluster": 1,
+				"weights": {
+					"Links": 7.0000,
+					"Total link strength": 8.0000,
+					"Documents": 8.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.8750
+				}
+			},
+			{
+				"id": 57,
+				"label": "luis valentín ferrada",
+				"x": -0.1842,
+				"y": -0.8833,
+				"cluster": 8,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 4.0000,
+					"Documents": 11.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.3636
+				}
+			},
+			{
+				"id": 58,
+				"label": "luis vargas-chacoff",
+				"x": -0.4366,
+				"y": 0.7820,
+				"cluster": 4,
+				"weights": {
+					"Links": 14.0000,
+					"Total link strength": 46.0000,
+					"Documents": 37.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.7838
+				}
+			},
+			{
+				"id": 59,
+				"label": "léa cabrol",
+				"x": 0.3505,
+				"y": -0.1740,
+				"cluster": 2,
+				"weights": {
+					"Links": 20.0000,
+					"Total link strength": 74.0000,
+					"Documents": 24.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.0417
+				}
+			},
+			{
+				"id": 60,
+				"label": "magdalena osorio",
+				"x": 0.1727,
+				"y": -0.5835,
+				"cluster": 2,
+				"weights": {
+					"Links": 5.0000,
+					"Total link strength": 9.0000,
+					"Documents": 2.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2025.0000
+				}
+			},
+			{
+				"id": 61,
+				"label": "marcelo lizama",
+				"x": -0.0840,
+				"y": 0.6784,
+				"cluster": 3,
+				"weights": {
+					"Links": 7.0000,
+					"Total link strength": 12.0000,
+					"Documents": 3.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.3333
+				}
+			},
+			{
+				"id": 62,
+				"label": "maría josé pérez-álvarez",
+				"x": -0.1427,
+				"y": -0.0409,
+				"cluster": 3,
+				"weights": {
+					"Links": 4.0000,
+					"Total link strength": 7.0000,
+					"Documents": 13.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.3846
+				}
+			},
+			{
+				"id": 63,
+				"label": "mauricio ergas",
+				"x": -0.4712,
+				"y": 0.3953,
+				"cluster": 4,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 2.0000,
+					"Documents": 1.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.0000
+				}
+			},
+			{
+				"id": 64,
+				"label": "mauricio landaeta",
+				"x": -0.4040,
+				"y": 0.1821,
+				"cluster": 1,
+				"weights": {
+					"Links": 4.0000,
+					"Total link strength": 8.0000,
+					"Documents": 5.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2025.4000
+				}
+			},
+			{
+				"id": 65,
+				"label": "mauricio mardones",
+				"x": -0.4795,
+				"y": 0.0531,
+				"cluster": 1,
+				"weights": {
+					"Links": 1.0000,
+					"Total link strength": 1.0000,
+					"Documents": 1.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2026.0000
+				}
+			},
+			{
+				"id": 66,
+				"label": "melisa gañán",
+				"x": 0.9263,
+				"y": 0.7900,
+				"cluster": 5,
+				"weights": {
+					"Links": 15.0000,
+					"Total link strength": 42.0000,
+					"Documents": 9.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.5556
+				}
+			},
+			{
+				"id": 67,
+				"label": "máximo frangópulos",
+				"x": -0.5515,
+				"y": -0.8450,
+				"cluster": 7,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 4.0000,
+					"Documents": 7.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.5714
+				}
+			},
+			{
+				"id": 68,
+				"label": "mélanie delleuze",
+				"x": 0.2963,
+				"y": -0.4380,
+				"cluster": 2,
+				"weights": {
+					"Links": 7.0000,
+					"Total link strength": 30.0000,
+					"Documents": 7.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.4286
+				}
+			},
+			{
+				"id": 69,
+				"label": "natalia lizana",
+				"x": 0.4597,
+				"y": -0.9784,
+				"cluster": 2,
+				"weights": {
+					"Links": 4.0000,
+					"Total link strength": 10.0000,
+					"Documents": 3.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.3333
+				}
+			},
+			{
+				"id": 70,
+				"label": "nayla serey",
+				"x": 0.5546,
+				"y": -0.8843,
+				"cluster": 2,
+				"weights": {
+					"Links": 4.0000,
+					"Total link strength": 13.0000,
+					"Documents": 4.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.5000
+				}
+			},
+			{
+				"id": 71,
+				"label": "nicolás segovia",
+				"x": 0.3163,
+				"y": 0.9971,
+				"cluster": 3,
+				"weights": {
+					"Links": 4.0000,
+					"Total link strength": 12.0000,
+					"Documents": 3.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2022.6667
+				}
+			},
+			{
+				"id": 72,
+				"label": "pablo guerrero",
+				"x": -0.0314,
+				"y": -0.2546,
+				"cluster": 6,
+				"weights": {
+					"Links": 12.0000,
+					"Total link strength": 24.0000,
+					"Documents": 15.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2025.0000
+				}
+			},
+			{
+				"id": 73,
+				"label": "paula segovia",
+				"x": 0.0033,
+				"y": 0.5584,
+				"cluster": 3,
+				"weights": {
+					"Links": 6.0000,
+					"Total link strength": 6.0000,
+					"Documents": 1.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2025.0000
+				}
+			},
+			{
+				"id": 74,
+				"label": "peter convey",
+				"x": 0.9786,
+				"y": 0.5320,
+				"cluster": 5,
+				"weights": {
+					"Links": 21.0000,
+					"Total link strength": 88.0000,
+					"Documents": 23.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.9130
+				}
+			},
+			{
+				"id": 75,
+				"label": "roy mackenzie",
+				"x": 0.6716,
+				"y": 0.6887,
+				"cluster": 5,
+				"weights": {
+					"Links": 3.0000,
+					"Total link strength": 3.0000,
+					"Documents": 3.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.0000
+				}
+			},
+			{
+				"id": 76,
+				"label": "sebastián rosenfeld",
+				"x": 0.4883,
+				"y": 0.8089,
+				"cluster": 3,
+				"weights": {
+					"Links": 15.0000,
+					"Total link strength": 51.0000,
+					"Documents": 14.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2022.8571
+				}
+			},
+			{
+				"id": 77,
+				"label": "steven chown",
+				"x": -0.1286,
+				"y": 0.0640,
+				"cluster": 1,
+				"weights": {
+					"Links": 3.0000,
+					"Total link strength": 5.0000,
+					"Documents": 2.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.5000
+				}
+			},
+			{
+				"id": 78,
+				"label": "tamara contador",
+				"x": 0.9809,
+				"y": 0.2382,
+				"cluster": 5,
+				"weights": {
+					"Links": 21.0000,
+					"Total link strength": 107.0000,
+					"Documents": 28.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.9286
+				}
+			},
+			{
+				"id": 79,
+				"label": "valentina bernal",
+				"x": 0.3384,
+				"y": 0.5178,
+				"cluster": 3,
+				"weights": {
+					"Links": 13.0000,
+					"Total link strength": 20.0000,
+					"Documents": 5.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.4000
+				}
+			},
+			{
+				"id": 80,
+				"label": "valeria araya",
+				"x": -0.6377,
+				"y": 0.9846,
+				"cluster": 4,
+				"weights": {
+					"Links": 3.0000,
+					"Total link strength": 6.0000,
+					"Documents": 2.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2025.0000
+				}
+			},
+			{
+				"id": 81,
+				"label": "yasna tapia",
+				"x": 0.9147,
+				"y": -0.3554,
+				"cluster": 2,
+				"weights": {
+					"Links": 6.0000,
+					"Total link strength": 12.0000,
+					"Documents": 2.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.0000
+				}
+			},
+			{
+				"id": 82,
+				"label": "yosbany pérez",
+				"x": 0.6775,
+				"y": -0.9603,
+				"cluster": 2,
+				"weights": {
+					"Links": 4.0000,
+					"Total link strength": 13.0000,
+					"Documents": 4.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.5000
+				}
+			},
+			{
+				"id": 83,
+				"label": "zambra lópez",
+				"x": 0.2149,
+				"y": 0.5816,
+				"cluster": 3,
+				"weights": {
+					"Links": 5.0000,
+					"Total link strength": 7.0000,
+					"Documents": 2.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2022.0000
+				}
+			},
+			{
+				"id": 84,
+				"label": "ángela bahamondes",
+				"x": -0.0000,
+				"y": 0.0000,
+				"cluster": 10,
+				"weights": {
+					"Links": 0.0000,
+					"Total link strength": 0.0000,
+					"Documents": 1.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2026.0000
+				}
+			}
+		],
+		"links": [
+			{
+				"source_id": 1,
+				"target_id": 15,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 1,
+				"target_id": 26,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 1,
+				"target_id": 28,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 1,
+				"target_id": 49,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 1,
+				"target_id": 54,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 2,
+				"target_id": 42,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 2,
+				"target_id": 78,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 3,
+				"target_id": 5,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 3,
+				"target_id": 27,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 3,
+				"target_id": 29,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 4,
+				"target_id": 22,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 4,
+				"target_id": 27,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 4,
+				"target_id": 51,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 4,
+				"target_id": 54,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 4,
+				"target_id": 64,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 4,
+				"target_id": 79,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 5,
+				"target_id": 7,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 5,
+				"target_id": 9,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 5,
+				"target_id": 11,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 5,
+				"target_id": 14,
+				"strength": 5.0000
+			},
+			{
+				"source_id": 5,
+				"target_id": 16,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 5,
+				"target_id": 17,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 5,
+				"target_id": 27,
+				"strength": 8.0000
+			},
+			{
+				"source_id": 5,
+				"target_id": 29,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 5,
+				"target_id": 32,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 5,
+				"target_id": 44,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 5,
+				"target_id": 50,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 5,
+				"target_id": 51,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 5,
+				"target_id": 56,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 5,
+				"target_id": 59,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 5,
+				"target_id": 62,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 5,
+				"target_id": 66,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 5,
+				"target_id": 72,
+				"strength": 6.0000
+			},
+			{
+				"source_id": 5,
+				"target_id": 74,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 5,
+				"target_id": 76,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 5,
+				"target_id": 78,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 6,
+				"target_id": 22,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 6,
+				"target_id": 64,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 7,
+				"target_id": 11,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 7,
+				"target_id": 72,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 8,
+				"target_id": 14,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 8,
+				"target_id": 17,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 8,
+				"target_id": 27,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 8,
+				"target_id": 50,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 8,
+				"target_id": 61,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 8,
+				"target_id": 73,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 10,
+				"target_id": 22,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 10,
+				"target_id": 36,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 11,
+				"target_id": 14,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 11,
+				"target_id": 27,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 11,
+				"target_id": 41,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 11,
+				"target_id": 50,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 11,
+				"target_id": 66,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 11,
+				"target_id": 72,
+				"strength": 5.0000
+			},
+			{
+				"source_id": 11,
+				"target_id": 74,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 11,
+				"target_id": 78,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 11,
+				"target_id": 79,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 12,
+				"target_id": 39,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 12,
+				"target_id": 57,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 13,
+				"target_id": 17,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 13,
+				"target_id": 24,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 13,
+				"target_id": 41,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 13,
+				"target_id": 50,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 13,
+				"target_id": 53,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 13,
+				"target_id": 58,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 16,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 17,
+				"strength": 12.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 27,
+				"strength": 16.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 32,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 41,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 42,
+				"strength": 5.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 44,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 45,
+				"strength": 5.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 50,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 51,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 59,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 61,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 66,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 71,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 72,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 73,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 74,
+				"strength": 11.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 76,
+				"strength": 9.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 78,
+				"strength": 14.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 79,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 81,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 14,
+				"target_id": 83,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 15,
+				"target_id": 26,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 15,
+				"target_id": 27,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 15,
+				"target_id": 28,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 15,
+				"target_id": 31,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 15,
+				"target_id": 49,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 15,
+				"target_id": 54,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 16,
+				"target_id": 42,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 17,
+				"target_id": 20,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 17,
+				"target_id": 24,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 17,
+				"target_id": 27,
+				"strength": 18.0000
+			},
+			{
+				"source_id": 17,
+				"target_id": 41,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 17,
+				"target_id": 50,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 17,
+				"target_id": 51,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 17,
+				"target_id": 53,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 17,
+				"target_id": 58,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 17,
+				"target_id": 61,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 17,
+				"target_id": 66,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 17,
+				"target_id": 71,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 17,
+				"target_id": 73,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 17,
+				"target_id": 74,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 17,
+				"target_id": 76,
+				"strength": 11.0000
+			},
+			{
+				"source_id": 17,
+				"target_id": 78,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 17,
+				"target_id": 79,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 17,
+				"target_id": 83,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 18,
+				"target_id": 50,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 19,
+				"target_id": 33,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 19,
+				"target_id": 50,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 20,
+				"target_id": 27,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 20,
+				"target_id": 61,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 21,
+				"target_id": 50,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 21,
+				"target_id": 52,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 22,
+				"target_id": 36,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 22,
+				"target_id": 42,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 22,
+				"target_id": 49,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 22,
+				"target_id": 54,
+				"strength": 6.0000
+			},
+			{
+				"source_id": 22,
+				"target_id": 64,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 22,
+				"target_id": 65,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 23,
+				"target_id": 26,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 23,
+				"target_id": 27,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 23,
+				"target_id": 31,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 23,
+				"target_id": 38,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 23,
+				"target_id": 49,
+				"strength": 7.0000
+			},
+			{
+				"source_id": 23,
+				"target_id": 55,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 23,
+				"target_id": 56,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 24,
+				"target_id": 41,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 24,
+				"target_id": 47,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 24,
+				"target_id": 48,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 24,
+				"target_id": 50,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 24,
+				"target_id": 53,
+				"strength": 6.0000
+			},
+			{
+				"source_id": 24,
+				"target_id": 58,
+				"strength": 17.0000
+			},
+			{
+				"source_id": 24,
+				"target_id": 80,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 25,
+				"target_id": 27,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 25,
+				"target_id": 41,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 25,
+				"target_id": 50,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 25,
+				"target_id": 59,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 25,
+				"target_id": 60,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 26,
+				"target_id": 27,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 26,
+				"target_id": 28,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 26,
+				"target_id": 31,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 26,
+				"target_id": 49,
+				"strength": 6.0000
+			},
+			{
+				"source_id": 26,
+				"target_id": 54,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 26,
+				"target_id": 59,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 29,
+				"strength": 7.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 31,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 32,
+				"strength": 5.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 34,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 41,
+				"strength": 9.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 42,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 44,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 45,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 49,
+				"strength": 6.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 50,
+				"strength": 11.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 51,
+				"strength": 10.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 55,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 58,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 59,
+				"strength": 11.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 60,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 61,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 62,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 66,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 68,
+				"strength": 6.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 71,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 72,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 73,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 74,
+				"strength": 5.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 75,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 76,
+				"strength": 10.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 78,
+				"strength": 5.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 79,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 27,
+				"target_id": 83,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 28,
+				"target_id": 49,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 28,
+				"target_id": 54,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 30,
+				"target_id": 35,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 30,
+				"target_id": 67,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 31,
+				"target_id": 49,
+				"strength": 8.0000
+			},
+			{
+				"source_id": 31,
+				"target_id": 56,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 32,
+				"target_id": 41,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 32,
+				"target_id": 42,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 32,
+				"target_id": 45,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 32,
+				"target_id": 50,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 32,
+				"target_id": 51,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 32,
+				"target_id": 59,
+				"strength": 5.0000
+			},
+			{
+				"source_id": 32,
+				"target_id": 68,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 32,
+				"target_id": 78,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 32,
+				"target_id": 81,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 33,
+				"target_id": 50,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 34,
+				"target_id": 62,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 35,
+				"target_id": 67,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 37,
+				"target_id": 42,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 37,
+				"target_id": 45,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 37,
+				"target_id": 74,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 37,
+				"target_id": 78,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 38,
+				"target_id": 49,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 39,
+				"target_id": 57,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 40,
+				"target_id": 54,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 41,
+				"target_id": 42,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 41,
+				"target_id": 50,
+				"strength": 13.0000
+			},
+			{
+				"source_id": 41,
+				"target_id": 51,
+				"strength": 5.0000
+			},
+			{
+				"source_id": 41,
+				"target_id": 52,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 41,
+				"target_id": 53,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 41,
+				"target_id": 58,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 41,
+				"target_id": 59,
+				"strength": 9.0000
+			},
+			{
+				"source_id": 41,
+				"target_id": 60,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 41,
+				"target_id": 66,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 41,
+				"target_id": 68,
+				"strength": 5.0000
+			},
+			{
+				"source_id": 41,
+				"target_id": 72,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 41,
+				"target_id": 74,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 41,
+				"target_id": 76,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 41,
+				"target_id": 78,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 41,
+				"target_id": 79,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 41,
+				"target_id": 81,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 42,
+				"target_id": 44,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 42,
+				"target_id": 45,
+				"strength": 7.0000
+			},
+			{
+				"source_id": 42,
+				"target_id": 51,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 42,
+				"target_id": 59,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 42,
+				"target_id": 64,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 42,
+				"target_id": 66,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 42,
+				"target_id": 68,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 42,
+				"target_id": 74,
+				"strength": 9.0000
+			},
+			{
+				"source_id": 42,
+				"target_id": 78,
+				"strength": 11.0000
+			},
+			{
+				"source_id": 44,
+				"target_id": 45,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 44,
+				"target_id": 50,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 44,
+				"target_id": 59,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 44,
+				"target_id": 66,
+				"strength": 7.0000
+			},
+			{
+				"source_id": 44,
+				"target_id": 74,
+				"strength": 7.0000
+			},
+			{
+				"source_id": 44,
+				"target_id": 76,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 44,
+				"target_id": 78,
+				"strength": 9.0000
+			},
+			{
+				"source_id": 45,
+				"target_id": 66,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 45,
+				"target_id": 74,
+				"strength": 7.0000
+			},
+			{
+				"source_id": 45,
+				"target_id": 78,
+				"strength": 7.0000
+			},
+			{
+				"source_id": 46,
+				"target_id": 47,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 46,
+				"target_id": 58,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 47,
+				"target_id": 58,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 47,
+				"target_id": 80,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 48,
+				"target_id": 53,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 48,
+				"target_id": 58,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 49,
+				"target_id": 54,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 49,
+				"target_id": 55,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 49,
+				"target_id": 56,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 49,
+				"target_id": 59,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 49,
+				"target_id": 74,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 49,
+				"target_id": 77,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 50,
+				"target_id": 51,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 50,
+				"target_id": 52,
+				"strength": 6.0000
+			},
+			{
+				"source_id": 50,
+				"target_id": 53,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 50,
+				"target_id": 58,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 50,
+				"target_id": 59,
+				"strength": 10.0000
+			},
+			{
+				"source_id": 50,
+				"target_id": 60,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 50,
+				"target_id": 61,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 50,
+				"target_id": 62,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 50,
+				"target_id": 68,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 50,
+				"target_id": 69,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 50,
+				"target_id": 70,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 50,
+				"target_id": 72,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 50,
+				"target_id": 73,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 50,
+				"target_id": 74,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 50,
+				"target_id": 76,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 50,
+				"target_id": 78,
+				"strength": 5.0000
+			},
+			{
+				"source_id": 50,
+				"target_id": 81,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 50,
+				"target_id": 82,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 51,
+				"target_id": 58,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 51,
+				"target_id": 59,
+				"strength": 6.0000
+			},
+			{
+				"source_id": 51,
+				"target_id": 68,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 51,
+				"target_id": 76,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 51,
+				"target_id": 79,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 51,
+				"target_id": 83,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 52,
+				"target_id": 69,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 52,
+				"target_id": 70,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 52,
+				"target_id": 82,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 53,
+				"target_id": 58,
+				"strength": 7.0000
+			},
+			{
+				"source_id": 53,
+				"target_id": 63,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 54,
+				"target_id": 59,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 56,
+				"target_id": 72,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 56,
+				"target_id": 74,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 56,
+				"target_id": 77,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 58,
+				"target_id": 63,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 58,
+				"target_id": 79,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 58,
+				"target_id": 80,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 59,
+				"target_id": 60,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 59,
+				"target_id": 66,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 59,
+				"target_id": 68,
+				"strength": 7.0000
+			},
+			{
+				"source_id": 59,
+				"target_id": 74,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 59,
+				"target_id": 76,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 59,
+				"target_id": 78,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 59,
+				"target_id": 81,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 61,
+				"target_id": 73,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 66,
+				"target_id": 72,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 66,
+				"target_id": 74,
+				"strength": 8.0000
+			},
+			{
+				"source_id": 66,
+				"target_id": 76,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 66,
+				"target_id": 78,
+				"strength": 9.0000
+			},
+			{
+				"source_id": 66,
+				"target_id": 79,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 69,
+				"target_id": 70,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 69,
+				"target_id": 82,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 70,
+				"target_id": 82,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 71,
+				"target_id": 76,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 72,
+				"target_id": 74,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 72,
+				"target_id": 78,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 72,
+				"target_id": 79,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 74,
+				"target_id": 75,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 74,
+				"target_id": 76,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 74,
+				"target_id": 77,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 74,
+				"target_id": 78,
+				"strength": 20.0000
+			},
+			{
+				"source_id": 74,
+				"target_id": 79,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 75,
+				"target_id": 78,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 76,
+				"target_id": 78,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 76,
+				"target_id": 79,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 76,
+				"target_id": 83,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 78,
+				"target_id": 79,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 78,
+				"target_id": 81,
+				"strength": 2.0000
+			}
+		]
+	}
+}
