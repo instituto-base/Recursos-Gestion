@@ -1,348 +1,525 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Análisis de Redes de Investigación BASE 2022-2026</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
-      margin: 0;
-      display: flex;
-      flex-direction: row;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis de Redes de Investigación BASE 2022–2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Paleta oficial Instituto Milenio BASE (Manual de Marca v04) */
+    --navy:#242E7C;        /* Principal - Pantone 280 */
+    --coral:#EB5D40;       /* Principal - Pantone 179 */
+    --navy-deep:#1E2835;   /* Secundario - Pantone 447 */
+    --steel:#95A5B5;       /* Secundario - Pantone 429 */
+    --paper:#F7F8FA;
+    --card:#FFFFFF;
+    --ink:#1E2835;
+    --muted:#5B6472;
+    --rule:#E4E7EC;
+    --sidebar-w:250px;
+  }
 
-    /* Barra lateral */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 220px;
-      height: 100vh;
-      background-color: #0077b6;
-      color: white;
-      padding: 20px 10px;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
+  *{box-sizing:border-box;}
 
-    nav h2 {
-      font-size: 1.2rem;
-      margin-top: 0;
-      margin-bottom: 20px;
-      text-align: center;
-    }
+  body{
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color:var(--paper);
+    color:var(--ink);
+    margin:0;
+    display:flex;
+    flex-direction:row;
+    line-height:1.55;
+  }
 
-    nav a {
-      display: block;
-      margin: 10px 0;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 8px;
-      border-radius: 6px;
-      transition: background 0.2s ease;
-    }
+  /* ===== Barra lateral ===== */
+  nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:var(--sidebar-w);
+    height:100vh;
+    background:var(--navy);
+    color:#EDEEF2;
+    padding:0;
+    overflow-y:auto;
+    box-shadow:2px 0 12px rgba(0,0,0,0.15);
+    transition:transform 0.3s ease;
+  }
 
-    nav a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-    }
+  .brand{
+    padding:30px 20px 22px;
+    border-bottom:1px solid rgba(255,255,255,0.15);
+  }
 
-    /* Botón hamburguesa (solo visible en móviles) */
-    .menu-toggle {
-      display: none;
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      background: #0077b6;
-      color: white;
-      border: none;
-      font-size: 1.5rem;
-      padding: 8px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      z-index: 1000;
-    }
+  .brand-name{
+    font-family:'Poppins', sans-serif;
+    font-size:1.15rem;
+    letter-spacing:0.01em;
+    color:#FFFFFF;
+    font-weight:700;
+    line-height:1.2;
+  }
 
-    .container {
-      margin-left: 240px;
-      padding: 20px;
-      width: calc(100% - 260px);
-      box-sizing: border-box;
-    }
+  .brand-sub{
+    font-family:'Space Mono', monospace;
+    font-size:0.66rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--coral);
+    margin-top:8px;
+    font-weight:700;
+  }
 
-    h1 {
-      font-size: 2rem;
-      text-align: center;
-      color: #023e8a;
-      margin-bottom: 10px;
-    }
+  nav h2{
+    font-family:'Space Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    margin:24px 20px 10px;
+    color:var(--steel);
+    font-weight:700;
+  }
 
-    .intro {
-      text-align: center;
-      font-size: 1rem;
-      color: #555;
-      margin-bottom: 30px;
-    }
+  nav a{
+    display:block;
+    margin:2px 12px;
+    color:#D6D9E2;
+    text-decoration:none;
+    font-weight:500;
+    font-size:0.92rem;
+    padding:9px 12px;
+    border-radius:4px;
+    border-left:2px solid transparent;
+    transition:background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+  }
 
-    section {
-      margin-bottom: 50px;
-    }
+  nav a:hover{
+    background:rgba(255,255,255,0.08);
+    border-left-color:var(--coral);
+    color:#FFFFFF;
+  }
 
-    h2 {
-      margin-top: 40px;
-      font-size: 1.8rem;
-      color: #0077b6;
-      border-bottom: 2px solid #0077b6;
-      padding-bottom: 5px;
-    }
+  .lang-switch{
+    margin:26px 20px 20px;
+    padding-top:18px;
+    border-top:1px solid rgba(255,255,255,0.15);
+    display:flex;
+    justify-content:center;
+    gap:0;
+  }
 
-    h3 {
-      font-size: 1.2rem;
-      color: #555;
-      margin-top: 20px;
-      margin-bottom: 10px;
-    }
+  .lang-switch button{
+    font-family:'Space Mono', monospace;
+    font-size:0.76rem;
+    font-weight:700;
+    letter-spacing:0.04em;
+    background:none;
+    border:1px solid rgba(255,255,255,0.35);
+    color:#C7CBD6;
+    padding:6px 14px;
+    cursor:pointer;
+    transition:all 0.18s ease;
+  }
+  .lang-switch button:first-child{border-radius:4px 0 0 4px;}
+  .lang-switch button:last-child{border-radius:0 4px 4px 0; border-left:none;}
+  .lang-switch button.active{
+    background:var(--coral);
+    color:#FFFFFF;
+    border-color:var(--coral);
+  }
 
-    .viz-card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      margin-bottom: 30px;
-      padding: 20px;
-    }
+  /* ===== Botón hamburguesa ===== */
+  .menu-toggle{
+    display:none;
+    position:fixed;
+    top:12px;
+    left:12px;
+    background:var(--navy);
+    color:#EDEEF2;
+    border:none;
+    font-size:1.3rem;
+    padding:6px 12px;
+    border-radius:4px;
+    cursor:pointer;
+    z-index:1000;
+  }
 
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-    }
+  .container{
+    margin-left:var(--sidebar-w);
+    padding:44px 56px 60px;
+    width:calc(100% - var(--sidebar-w));
+    box-sizing:border-box;
+    max-width:1100px;
+  }
 
-    .description {
-      font-size: 0.95rem;
-      color: #444;
-      margin-top: 10px;
-      background: #f1f3f5;
-      padding: 10px;
-      border-radius: 8px;
-    }
+  header.page-head{
+    margin-bottom:36px;
+    padding-bottom:26px;
+    border-bottom:3px solid var(--navy);
+  }
 
-    ul {
-      padding-left: 20px;
-    }
+  h1{
+    font-family:'Poppins', sans-serif;
+    font-size:2.3rem;
+    line-height:1.15;
+    text-align:left;
+    color:var(--navy);
+    margin:0 0 12px;
+    font-weight:800;
+  }
 
-    /* Botón volver arriba */
-    #backToTop {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #0077b6;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 45px;
-      height: 45px;
-      font-size: 20px;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-      z-index: 999;
-      transition: background 0.3s ease;
-    }
+  .intro{
+    text-align:left;
+    font-size:0.95rem;
+    color:var(--muted);
+    margin:0;
+  }
 
-    #backToTop:hover {
-      background: #023e8a;
-    }
+  section{
+    margin-bottom:54px;
+    scroll-margin-top:24px;
+  }
 
-    /* Responsivo para pantallas pequeñas */
-    @media (max-width: 768px) {
-      body {
-        flex-direction: column;
-      }
+  h2{
+    font-family:'Poppins', sans-serif;
+    margin-top:0;
+    font-size:1.5rem;
+    color:var(--navy);
+    padding-bottom:10px;
+    margin-bottom:22px;
+    border-bottom:1px solid var(--rule);
+    position:relative;
+    font-weight:700;
+  }
 
-      nav {
-        transform: translateX(-100%);
-        width: 200px;
-        height: 100%;
-      }
+  h2::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-1px;
+    width:48px;
+    height:3px;
+    background:var(--coral);
+  }
 
-      nav.open {
-        transform: translateX(0);
-      }
+  h3{
+    font-family:'Inter', sans-serif;
+    font-size:1.02rem;
+    color:var(--navy);
+    margin-top:0;
+    margin-bottom:12px;
+    font-weight:600;
+    letter-spacing:0.01em;
+  }
 
-      .menu-toggle {
-        display: block;
-      }
+  h3:not(:first-child){
+    margin-top:32px;
+    padding-top:28px;
+    border-top:1px dashed var(--rule);
+  }
 
-      .container {
-        margin-left: 0;
-        width: 100%;
-        padding-top: 60px;
-      }
-    }
-  </style>
+  .viz-card{
+    background:var(--card);
+    border-radius:6px;
+    border:1px solid var(--rule);
+    border-top:3px solid var(--coral);
+    box-shadow:0 2px 10px rgba(30,40,53,0.06);
+    margin-bottom:28px;
+    padding:26px 28px 28px;
+  }
+
+  iframe{
+    width:100%;
+    height:600px;
+    border:1px solid var(--rule);
+    border-radius:4px;
+  }
+
+  .description{
+    font-size:0.9rem;
+    color:var(--muted);
+    margin-top:14px;
+    background:var(--paper);
+    padding:12px 14px;
+    border-radius:4px;
+    border-left:3px solid var(--steel);
+  }
+
+  ul{
+    padding-left:0;
+    list-style:none;
+  }
+
+  #terminologia ul li{
+    padding:12px 0 12px 0;
+    border-bottom:1px solid var(--rule);
+    font-size:0.94rem;
+    color:var(--ink);
+  }
+  #terminologia ul li:last-child{border-bottom:none;}
+
+  #terminologia strong{
+    font-family:'Inter', sans-serif;
+    color:var(--navy);
+    font-weight:700;
+  }
+
+  footer.page-foot{
+    margin-top:60px;
+    padding-top:20px;
+    border-top:1px solid var(--rule);
+    font-size:0.78rem;
+    color:var(--muted);
+    text-align:left;
+  }
+
+  /* Botón volver arriba */
+  #backToTop{
+    display:none;
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    background:var(--navy);
+    color:#fff;
+    border:none;
+    border-radius:50%;
+    width:44px;
+    height:44px;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,0,0,0.25);
+    z-index:999;
+    transition:background 0.25s ease;
+  }
+  #backToTop:hover{ background:var(--coral); }
+
+  @media (max-width:768px){
+    body{flex-direction:column;}
+    nav{transform:translateX(-100%); width:230px; height:100%;}
+    nav.open{transform:translateX(0);}
+    .menu-toggle{display:block;}
+    .container{margin-left:0; width:100%; padding:76px 22px 48px;}
+    h1{font-size:1.7rem;}
+    iframe{height:420px;}
+  }
+</style>
 </head>
 <body>
 
-  <!-- Botón hamburguesa -->
-  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
-  <!-- Barra lateral -->
-  <nav id="sidebar">
-    <h2>Índice</h2>
-    <a href="#productividad-total">Productividad Total</a>
-    <a href="#productividad-isi">Productividad ISI/WOS</a>
-    <a href="#estudiantes">Estudiantes</a>
-    <a href="#congresos">Congresos</a>
-    <a href="#terminologia">Terminología</a>
-  </nav>
-
-  <div class="container">
-    <h1>Análisis de Redes de Investigación BASE 2022-2026</h1>
-    <p class="intro"><em>Análisis realizado con información disponible hasta julio 2026.</em></p>
-
-    <!-- SECCIÓN PRODUCTIVIDAD TOTAL -->
-    <section id="productividad-total">
-      <h2>Productividad Total</h2>
-
-      <div class="viz-card">
-        <h3>Grupos de colaboración</h3>
-        <iframe 
-          allowfullscreen="true"
-          src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/main/vosviewer/4_fullall_quinquenio.json&simple_ui=true">
-        </iframe>
-        <p class="description">
-          Visualización de los grupos de colaboración entre investigadores. Las distancias no tienen significancia.
-        </p>
-      </div>
-
-      <div class="viz-card">
-        <h3>Fuerza de asociación</h3>
-        <iframe 
-          allowfullscreen="true"
-          src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/2_fullall_quinquenio.json&simple_ui=true">
-        </iframe>
-        <p class="description">
-          Mayor cercanía revela una mayor colaboración.
-        </p>
-      </div>
-    </section>
-
-    <!-- SECCIÓN PRODUCTIVIDAD ISI/WOS -->
-    <section id="productividad-isi">
-      <h2>Productividad ISI/WOS</h2>
-
-      <div class="viz-card">
-        <h3>Grupos de colaboración ISI/WOS</h3>
-        <iframe 
-          allowfullscreen="true"
-          src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/4_isiall_quinquenio.json&simple_ui=true">
-        </iframe>
-        <p class="description">
-          Grupos de colaboración considerando solo publicaciones indexadas en ISI/WOS. Las distancias no tienen significancia.
-        </p>
-
-        <h3>Fuerza de asociación</h3>
-        <iframe 
-          allowfullscreen="true"
-          src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/2_isiall_quinquenio.json&simple_ui=true">
-        </iframe>
-        <p class="description">
-          Mayor cercanía revela una mayor colaboración.
-        </p>
-      </div>
-    </section>
-
-    <!-- SECCIÓN ESTUDIANTES -->
-    <section id="estudiantes">
-      <h2>Estudiantes</h2>
-
-      <div class="viz-card">
-        <h3>Grupos de Co-tutorías</h3>
-        <iframe 
-          allowfullscreen="true"
-          src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/4_estudiantes_quinquenio.json&simple_ui=true">
-        </iframe>
-        <p class="description">
-          Grupos de colaboración considerando co-tutorías. Las distancias no tienen significancia.
-        </p>
-
-        <h3>Fuerza de asociación entre Co-tutorías</h3>
-        <iframe 
-          allowfullscreen="true"
-          src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/2_estudiantes_quinquenio.json&simple_ui=true">
-        </iframe>
-        <p class="description">
-          Mayor cercanía revela una mayor colaboración.
-        </p>
-      </div>
-    </section>
-    
- <!-- SECCIÓN CONGRESOS -->
-    <section id="congresos">
-      <h2>Congresos</h2>
-
-      <div class="viz-card">
-        <h3>Grupos de colaboración presentaciones congresos</h3>
-        <iframe 
-          allowfullscreen="true"
-          src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/4_congresos_quinquenio.json&simple_ui=true">
-        </iframe>
-        <p class="description">
-          Grupos de colaboración según coautorías de presentaciones en congresos. Las distancias no tienen significancia.
-        </p>
-
-        <h3>Fuerza de asociación presentaciones congresos</h3>
-        <iframe 
-          allowfullscreen="true"
-          src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/2_congresos_quinquenio.json&simple_ui=true">
-        </iframe>
-        <p class="description">
-          Mayor cercanía revela una mayor colaboración.
-        </p>
-      </div>
-    </section>
-  <!-- Sección Terminología -->
-    <section id="terminologia">
-      <h2>Terminología y Definiciones</h2>
-      <ul>
-        <li><strong>Items:</strong> objetos de interés de análisis, pueden ser investigadores y/o estudiantes.</li>
-        <li><strong>Cluster:</strong> grupo de colaboración.</li>
-        <li><strong>Link:</strong> conexión entre dos items.</li>
-        <li><strong>Documents:</strong> número de publicaciones, tesis o participaciones en congresos asociadas a un investigador y/o estudiante.</li>
-        <li><strong>Links:</strong> número de asociaciones (link) que tiene un investigador y/o estudiante.</li>
-        <li><strong>Link strength:</strong> número de artículos publicados entre dos investigadores, número de estudiantes en co-tutorías, o número de presentaciones en congresos entre dos investigadores y/o estudiantes.</li>
-        <li><strong>Total link strength:</strong> suma de enlaces generados por el total de documentos de cada investigador y/o estudiante. Si total link strength &gt; documents, significa que uno o más de los documentos analizados tienen más de dos coautores/cotutores.</li>
-        <li><strong>Grupos de colaboración:</strong> red generada a través de normalización de modularidad, que permite identificar comunidades y entender la estructura global.</li>
-        <li><strong>Fuerza de asociación:</strong> red generada a través de normalización por fuerza de asociación, que mide la intensidad relativa de colaboración entre autores.</li>
-      </ul>
-    </section>
+<nav id="sidebar">
+  <div class="brand">
+    <div class="brand-name">Instituto Milenio BASE</div>
+    <div class="brand-sub" data-es="Redes de Investigación" data-en="Research Networks">Redes de Investigación</div>
   </div>
 
-  <!-- Botón volver arriba -->
-  <button id="backToTop" onclick="scrollToTop()">↑</button>
+  <h2 data-es="Índice" data-en="Contents">Índice</h2>
+  <a href="#productividad-total" data-es="Productividad Total" data-en="Total Productivity">Productividad Total</a>
+  <a href="#productividad-isi" data-es="Productividad ISI/WOS" data-en="ISI/WOS Productivity">Productividad ISI/WOS</a>
+  <a href="#estudiantes" data-es="Estudiantes" data-en="Students">Estudiantes</a>
+  <a href="#congresos" data-es="Congresos" data-en="Conferences">Congresos</a>
+  <a href="#terminologia" data-es="Terminología" data-en="Terminology">Terminología</a>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById("sidebar").classList.toggle("open");
+  <div class="lang-switch">
+    <button id="btn-es" class="active" onclick="setLang('es')">ES</button>
+    <button id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<div class="container">
+  <header class="page-head">
+    <h1 data-es="Análisis de Redes de Investigación BASE 2022–2026" data-en="BASE Research Network Analysis 2022–2026">Análisis de Redes de Investigación BASE 2022–2026</h1>
+    <p class="intro" data-es="Análisis realizado con información disponible hasta julio 2026." data-en="Analysis prepared with information available through July 2026.">Análisis realizado con información disponible hasta julio 2026.</p>
+  </header>
+
+  <!-- SECCIÓN PRODUCTIVIDAD TOTAL -->
+  <section id="productividad-total">
+    <h2 data-es="Productividad Total" data-en="Total Productivity">Productividad Total</h2>
+
+    <div class="viz-card">
+      <h3 data-es="Grupos de colaboración" data-en="Collaboration clusters">Grupos de colaboración</h3>
+      <iframe
+        allowfullscreen="true"
+        src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/main/vosviewer/4_fullall_quinquenio.json&simple_ui=true">
+      </iframe>
+      <p class="description" data-es="Visualización de los grupos de colaboración entre investigadores. Las distancias no tienen significancia." data-en="Visualization of collaboration clusters among researchers. Distances between nodes carry no meaning.">
+        Visualización de los grupos de colaboración entre investigadores. Las distancias no tienen significancia.
+      </p>
+
+      <h3 data-es="Fuerza de asociación" data-en="Association strength">Fuerza de asociación</h3>
+      <iframe
+        allowfullscreen="true"
+        src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/2_fullall_quinquenio.json&simple_ui=true">
+      </iframe>
+      <p class="description" data-es="Mayor cercanía revela una mayor colaboración." data-en="Closer proximity indicates stronger collaboration.">
+        Mayor cercanía revela una mayor colaboración.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECCIÓN PRODUCTIVIDAD ISI/WOS -->
+  <section id="productividad-isi">
+    <h2 data-es="Productividad ISI/WOS" data-en="ISI/WOS Productivity">Productividad ISI/WOS</h2>
+
+    <div class="viz-card">
+      <h3 data-es="Grupos de colaboración ISI/WOS" data-en="ISI/WOS collaboration clusters">Grupos de colaboración ISI/WOS</h3>
+      <iframe
+        allowfullscreen="true"
+        src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/4_isiall_quinquenio.json&simple_ui=true">
+      </iframe>
+      <p class="description" data-es="Grupos de colaboración considerando solo publicaciones indexadas en ISI/WOS. Las distancias no tienen significancia." data-en="Collaboration clusters considering only publications indexed in ISI/WOS. Distances between nodes carry no meaning.">
+        Grupos de colaboración considerando solo publicaciones indexadas en ISI/WOS. Las distancias no tienen significancia.
+      </p>
+
+      <h3 data-es="Fuerza de asociación" data-en="Association strength">Fuerza de asociación</h3>
+      <iframe
+        allowfullscreen="true"
+        src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/2_isiall_quinquenio.json&simple_ui=true">
+      </iframe>
+      <p class="description" data-es="Mayor cercanía revela una mayor colaboración." data-en="Closer proximity indicates stronger collaboration.">
+        Mayor cercanía revela una mayor colaboración.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECCIÓN ESTUDIANTES -->
+  <section id="estudiantes">
+    <h2 data-es="Estudiantes" data-en="Students">Estudiantes</h2>
+
+    <div class="viz-card">
+      <h3 data-es="Grupos de Co-tutorías" data-en="Co-supervision clusters">Grupos de Co-tutorías</h3>
+      <iframe
+        allowfullscreen="true"
+        src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/4_estudiantes_quinquenio.json&simple_ui=true">
+      </iframe>
+      <p class="description" data-es="Grupos de colaboración considerando co-tutorías. Las distancias no tienen significancia." data-en="Collaboration clusters based on thesis co-supervision. Distances between nodes carry no meaning.">
+        Grupos de colaboración considerando co-tutorías. Las distancias no tienen significancia.
+      </p>
+
+      <h3 data-es="Fuerza de asociación entre Co-tutorías" data-en="Association strength among co-supervisions">Fuerza de asociación entre Co-tutorías</h3>
+      <iframe
+        allowfullscreen="true"
+        src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/2_estudiantes_quinquenio.json&simple_ui=true">
+      </iframe>
+      <p class="description" data-es="Mayor cercanía revela una mayor colaboración." data-en="Closer proximity indicates stronger collaboration.">
+        Mayor cercanía revela una mayor colaboración.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECCIÓN CONGRESOS -->
+  <section id="congresos">
+    <h2 data-es="Congresos" data-en="Conferences">Congresos</h2>
+
+    <div class="viz-card">
+      <h3 data-es="Grupos de colaboración presentaciones congresos" data-en="Conference presentation collaboration clusters">Grupos de colaboración presentaciones congresos</h3>
+      <iframe
+        allowfullscreen="true"
+        src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/4_congresos_quinquenio.json&simple_ui=true">
+      </iframe>
+      <p class="description" data-es="Grupos de colaboración según coautorías de presentaciones en congresos. Las distancias no tienen significancia." data-en="Collaboration clusters based on co-authored conference presentations. Distances between nodes carry no meaning.">
+        Grupos de colaboración según coautorías de presentaciones en congresos. Las distancias no tienen significancia.
+      </p>
+
+      <h3 data-es="Fuerza de asociación presentaciones congresos" data-en="Conference presentation association strength">Fuerza de asociación presentaciones congresos</h3>
+      <iframe
+        allowfullscreen="true"
+        src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/2_congresos_quinquenio.json&simple_ui=true">
+      </iframe>
+      <p class="description" data-es="Mayor cercanía revela una mayor colaboración." data-en="Closer proximity indicates stronger collaboration.">
+        Mayor cercanía revela una mayor colaboración.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECCIÓN TERMINOLOGÍA -->
+  <section id="terminologia">
+    <h2 data-es="Terminología y Definiciones" data-en="Terminology and Definitions">Terminología y Definiciones</h2>
+    <ul>
+      <li>
+        <strong data-es="Items:" data-en="Items:">Items:</strong>
+        <span data-es=" objetos de interés de análisis, pueden ser investigadores y/o estudiantes." data-en=" objects of analytical interest, which may be researchers and/or students."> objetos de interés de análisis, pueden ser investigadores y/o estudiantes.</span>
+      </li>
+      <li>
+        <strong data-es="Cluster:" data-en="Cluster:">Cluster:</strong>
+        <span data-es=" grupo de colaboración." data-en=" a collaboration group."> grupo de colaboración.</span>
+      </li>
+      <li>
+        <strong data-es="Link:" data-en="Link:">Link:</strong>
+        <span data-es=" conexión entre dos items." data-en=" a connection between two items."> conexión entre dos items.</span>
+      </li>
+      <li>
+        <strong data-es="Documents:" data-en="Documents:">Documents:</strong>
+        <span data-es=" número de publicaciones, tesis o participaciones en congresos asociadas a un investigador y/o estudiante." data-en=" the number of publications, theses, or conference participations associated with a researcher and/or student."> número de publicaciones, tesis o participaciones en congresos asociadas a un investigador y/o estudiante.</span>
+      </li>
+      <li>
+        <strong data-es="Links:" data-en="Links:">Links:</strong>
+        <span data-es=" número de asociaciones (link) que tiene un investigador y/o estudiante." data-en=" the number of links a researcher and/or student has."> número de asociaciones (link) que tiene un investigador y/o estudiante.</span>
+      </li>
+      <li>
+        <strong data-es="Link strength:" data-en="Link strength:">Link strength:</strong>
+        <span data-es=" número de artículos publicados entre dos investigadores, número de estudiantes en co-tutorías, o número de presentaciones en congresos entre dos investigadores y/o estudiantes." data-en=" the number of articles co-published by two researchers, the number of students in shared co-supervision, or the number of conference presentations shared between two researchers and/or students."> número de artículos publicados entre dos investigadores, número de estudiantes en co-tutorías, o número de presentaciones en congresos entre dos investigadores y/o estudiantes.</span>
+      </li>
+      <li>
+        <strong data-es="Total link strength:" data-en="Total link strength:">Total link strength:</strong>
+        <span data-es=" suma de enlaces generados por el total de documentos de cada investigador y/o estudiante. Si total link strength > documents, significa que uno o más de los documentos analizados tienen más de dos coautores/cotutores." data-en=" the sum of links generated by the total documents of each researcher and/or student. If total link strength > documents, one or more of the analyzed documents has more than two co-authors/co-supervisors."> suma de enlaces generados por el total de documentos de cada investigador y/o estudiante. Si total link strength &gt; documents, significa que uno o más de los documentos analizados tienen más de dos coautores/cotutores.</span>
+      </li>
+      <li>
+        <strong data-es="Grupos de colaboración:" data-en="Collaboration clusters:">Grupos de colaboración:</strong>
+        <span data-es=" red generada a través de normalización de modularidad, que permite identificar comunidades y entender la estructura global." data-en=" a network generated through modularity normalization, used to identify communities and understand the overall structure."> red generada a través de normalización de modularidad, que permite identificar comunidades y entender la estructura global.</span>
+      </li>
+      <li>
+        <strong data-es="Fuerza de asociación:" data-en="Association strength:">Fuerza de asociación:</strong>
+        <span data-es=" red generada a través de normalización por fuerza de asociación, que mide la intensidad relativa de colaboración entre autores." data-en=" a network generated through association-strength normalization, which measures the relative intensity of collaboration between authors."> red generada a través de normalización por fuerza de asociación, que mide la intensidad relativa de colaboración entre autores.</span>
+      </li>
+    </ul>
+  </section>
+
+  <footer class="page-foot">
+    <span data-es="Instituto Milenio BASE — Documento de uso interno para investigadores de la red." data-en="Instituto Milenio BASE — Internal document for researchers within the network.">Instituto Milenio BASE — Documento de uso interno para investigadores de la red.</span>
+  </footer>
+</div>
+
+<button id="backToTop" onclick="scrollToTop()">↑</button>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("sidebar").classList.toggle("open");
+  }
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  window.onscroll = function() {
+    const btn = document.getElementById("backToTop");
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
     }
+  };
 
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-es]').forEach(function(el) {
+      el.textContent = el.getAttribute('data-' + lang);
+    });
+    document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    try { localStorage.setItem('base-lang', lang); } catch (e) {}
+  }
 
-    window.onscroll = function() {
-      const btn = document.getElementById("backToTop");
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        btn.style.display = "block";
-      } else {
-        btn.style.display = "none";
-      }
-    };
-  </script>
+  (function initLang() {
+    var saved = 'es';
+    try { saved = localStorage.getItem('base-lang') || 'es'; } catch (e) {}
+    setLang(saved);
+  })();
+</script>
 
 </body>
 </html>
