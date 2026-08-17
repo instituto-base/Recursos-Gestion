@@ -199,8 +199,8 @@
   </nav>
 
   <div class="container">
-    <h1>Análisis de Redes de Investigación BASE 2022-2025</h1>
-    <p class="intro"><em>Análisis realizado con información disponible hasta agosto 2025. Datos Investigadores Principales y Adjuntos</em></p>
+    <h1>Análisis de Redes de Investigación BASE 2022-2026</h1>
+    <p class="intro"><em>Análisis realizado con información disponible hasta julio 2026. Datos Investigadores Principales y Adjuntos</em></p>
 
     <!-- SECCIÓN PRODUCTIVIDAD TOTAL -->
     <section id="productividad-total">
@@ -210,7 +210,7 @@
         <h3>Grupos de colaboración</h3>
         <iframe 
           allowfullscreen="true"
-          src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/main/vosviewer/4full_piadj.json&simple_ui=true">
+          src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/main/vosviewer/4_fulladj_quinquenio.json&simple_ui=true">
         </iframe>
         <p class="description">
           Visualización de los grupos de colaboración entre investigadores. Las distancias no tienen significancia.
@@ -221,7 +221,7 @@
         <h3>Fuerza de asociación</h3>
         <iframe 
           allowfullscreen="true"
-          src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/2full_piadj.json&simple_ui=true">
+          src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/2_fulladj_quinquenio.json&simple_ui=true">
         </iframe>
         <p class="description">
           Mayor cercanía revela una mayor colaboración.
@@ -237,7 +237,7 @@
         <h3>Grupos de colaboración ISI/WOS</h3>
         <iframe 
           allowfullscreen="true"
-          src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/4isi_piadj.json&simple_ui=true">
+          src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/4_isiadj_quinquenio.json&simple_ui=true">
         </iframe>
         <p class="description">
           Grupos de colaboración considerando solo publicaciones indexadas en ISI/WOS. Las distancias no tienen significancia.
@@ -246,14 +246,62 @@
         <h3>Fuerza de asociación</h3>
         <iframe 
           allowfullscreen="true"
-          src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/2isi_piadj.json&simple_ui=true">
+          src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/2_isiadj_quinquenio.json&simple_ui=true">
         </iframe>
         <p class="description">
           Mayor cercanía revela una mayor colaboración.
         </p>
       </div>
     </section>
+<!-- SECCIÓN ESTUDIANTES -->
+  <section id="estudiantes">
+    <h2 data-es="Estudiantes" data-en="Students">Estudiantes</h2>
 
+    <div class="viz-card">
+      <h3 data-es="Grupos de Co-tutorías" data-en="Co-supervision clusters">Grupos de Co-tutorías</h3>
+      <iframe
+        allowfullscreen="true"
+        src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/4_estudiantes_adj_quinquenio.json&simple_ui=true">
+      </iframe>
+      <p class="description" data-es="Grupos de colaboración considerando co-tutorías. Las distancias no tienen significancia." data-en="Collaboration clusters based on thesis co-supervision. Distances between nodes carry no meaning.">
+        Grupos de colaboración considerando co-tutorías. Las distancias no tienen significancia.
+      </p>
+
+      <h3 data-es="Fuerza de asociación entre Co-tutorías" data-en="Association strength among co-supervisions">Fuerza de asociación entre Co-tutorías</h3>
+      <iframe
+        allowfullscreen="true"
+        src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/2_estudiantes_adj_quinquenio.json&simple_ui=true">
+      </iframe>
+      <p class="description" data-es="Mayor cercanía revela una mayor colaboración." data-en="Closer proximity indicates stronger collaboration.">
+        Mayor cercanía revela una mayor colaboración.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECCIÓN CONGRESOS -->
+  <section id="congresos">
+    <h2 data-es="Congresos" data-en="Conferences">Congresos</h2>
+
+    <div class="viz-card">
+      <h3 data-es="Grupos de colaboración presentaciones congresos" data-en="Conference presentation collaboration clusters">Grupos de colaboración presentaciones congresos</h3>
+      <iframe
+        allowfullscreen="true"
+        src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/4_congresos_adj_quinquenio.json&simple_ui=true">
+      </iframe>
+      <p class="description" data-es="Grupos de colaboración según coautorías de presentaciones en congresos. Las distancias no tienen significancia." data-en="Collaboration clusters based on co-authored conference presentations. Distances between nodes carry no meaning.">
+        Grupos de colaboración según coautorías de presentaciones en congresos. Las distancias no tienen significancia.
+      </p>
+
+      <h3 data-es="Fuerza de asociación presentaciones congresos" data-en="Conference presentation association strength">Fuerza de asociación presentaciones congresos</h3>
+      <iframe
+        allowfullscreen="true"
+        src="https://app.vosviewer.com/?json=https://raw.githubusercontent.com/instituto-base/Recursos-Gestion/refs/heads/main/vosviewer/2_congresos_adj_quinquenio.json&simple_ui=true">
+      </iframe>
+      <p class="description" data-es="Mayor cercanía revela una mayor colaboración." data-en="Closer proximity indicates stronger collaboration.">
+        Mayor cercanía revela una mayor colaboración.
+      </p>
+    </div>
+  </section>
   <!-- Sección Terminología -->
     <section id="terminologia">
       <h2>Terminología y Definiciones</h2>
