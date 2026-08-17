@@ -1,0 +1,293 @@
+﻿{
+	"network": {
+		"items": [
+			{
+				"id": 1,
+				"label": "angie díaz",
+				"x": -0.5775,
+				"y": 0.0429,
+				"cluster": 2,
+				"weights": {
+					"Links": 6.0000,
+					"Total link strength": 23.0000,
+					"Documents": 19.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.2105
+				}
+			},
+			{
+				"id": 2,
+				"label": "claudio gonzález-wevar",
+				"x": -0.0471,
+				"y": -0.1885,
+				"cluster": 1,
+				"weights": {
+					"Links": 6.0000,
+					"Total link strength": 29.0000,
+					"Documents": 21.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.5714
+				}
+			},
+			{
+				"id": 3,
+				"label": "césar cárdenas",
+				"x": 0.0929,
+				"y": 0.8214,
+				"cluster": 3,
+				"weights": {
+					"Links": 1.0000,
+					"Total link strength": 1.0000,
+					"Documents": 27.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.5556
+				}
+			},
+			{
+				"id": 4,
+				"label": "elie poulin",
+				"x": -0.1061,
+				"y": 0.1393,
+				"cluster": 1,
+				"weights": {
+					"Links": 8.0000,
+					"Total link strength": 61.0000,
+					"Documents": 56.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.8929
+				}
+			},
+			{
+				"id": 5,
+				"label": "juliana vianna",
+				"x": 0.0479,
+				"y": 0.6688,
+				"cluster": 3,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 7.0000,
+					"Documents": 21.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.4286
+				}
+			},
+			{
+				"id": 6,
+				"label": "julieta orlando",
+				"x": -0.2847,
+				"y": -0.3796,
+				"cluster": 1,
+				"weights": {
+					"Links": 7.0000,
+					"Total link strength": 28.0000,
+					"Documents": 39.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.2821
+				}
+			},
+			{
+				"id": 7,
+				"label": "karin gérard",
+				"x": 0.2534,
+				"y": -0.1187,
+				"cluster": 1,
+				"weights": {
+					"Links": 5.0000,
+					"Total link strength": 18.0000,
+					"Documents": 12.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.9167
+				}
+			},
+			{
+				"id": 8,
+				"label": "luis valentín ferrada",
+				"x": 1.9613,
+				"y": -0.1611,
+				"cluster": 4,
+				"weights": {
+					"Links": 0.0000,
+					"Total link strength": 0.0000,
+					"Documents": 11.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.3636
+				}
+			},
+			{
+				"id": 9,
+				"label": "luis vargas-chacoff",
+				"x": 0.1183,
+				"y": -0.4862,
+				"cluster": 1,
+				"weights": {
+					"Links": 4.0000,
+					"Total link strength": 7.0000,
+					"Documents": 37.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.7838
+				}
+			},
+			{
+				"id": 10,
+				"label": "pablo guerrero",
+				"x": -0.8419,
+				"y": -0.0407,
+				"cluster": 2,
+				"weights": {
+					"Links": 4.0000,
+					"Total link strength": 10.0000,
+					"Documents": 15.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2025.0000
+				}
+			},
+			{
+				"id": 11,
+				"label": "tamara contador",
+				"x": -0.6166,
+				"y": -0.2976,
+				"cluster": 2,
+				"weights": {
+					"Links": 5.0000,
+					"Total link strength": 18.0000,
+					"Documents": 28.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.9286
+				}
+			}
+		],
+		"links": [
+			{
+				"source_id": 1,
+				"target_id": 2,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 1,
+				"target_id": 4,
+				"strength": 8.0000
+			},
+			{
+				"source_id": 1,
+				"target_id": 6,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 1,
+				"target_id": 7,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 1,
+				"target_id": 10,
+				"strength": 6.0000
+			},
+			{
+				"source_id": 1,
+				"target_id": 11,
+				"strength": 4.0000
+			},
+			{
+				"source_id": 2,
+				"target_id": 4,
+				"strength": 18.0000
+			},
+			{
+				"source_id": 2,
+				"target_id": 6,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 2,
+				"target_id": 7,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 2,
+				"target_id": 9,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 2,
+				"target_id": 11,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 3,
+				"target_id": 5,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 4,
+				"target_id": 5,
+				"strength": 6.0000
+			},
+			{
+				"source_id": 4,
+				"target_id": 6,
+				"strength": 11.0000
+			},
+			{
+				"source_id": 4,
+				"target_id": 7,
+				"strength": 10.0000
+			},
+			{
+				"source_id": 4,
+				"target_id": 9,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 4,
+				"target_id": 10,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 4,
+				"target_id": 11,
+				"strength": 5.0000
+			},
+			{
+				"source_id": 6,
+				"target_id": 7,
+				"strength": 3.0000
+			},
+			{
+				"source_id": 6,
+				"target_id": 9,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 6,
+				"target_id": 10,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 6,
+				"target_id": 11,
+				"strength": 5.0000
+			},
+			{
+				"source_id": 7,
+				"target_id": 9,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 10,
+				"target_id": 11,
+				"strength": 2.0000
+			}
+		]
+	}
+}

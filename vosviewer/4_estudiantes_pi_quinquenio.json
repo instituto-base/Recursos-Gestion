@@ -1,0 +1,228 @@
+﻿{
+	"network": {
+		"items": [
+			{
+				"id": 1,
+				"label": "angie díaz",
+				"x": -0.5119,
+				"y": -0.3983,
+				"cluster": 1,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 3.0000,
+					"Documents": 12.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.1667
+				}
+			},
+			{
+				"id": 2,
+				"label": "claudio gonzález-wevar",
+				"x": -0.5057,
+				"y": 0.3811,
+				"cluster": 2,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 17.0000,
+					"Documents": 22.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.3182
+				}
+			},
+			{
+				"id": 3,
+				"label": "césar cárdenas",
+				"x": 1.0988,
+				"y": -0.3446,
+				"cluster": 3,
+				"weights": {
+					"Links": 1.0000,
+					"Total link strength": 1.0000,
+					"Documents": 5.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.4000
+				}
+			},
+			{
+				"id": 4,
+				"label": "elie poulin",
+				"x": -0.3402,
+				"y": 0.3304,
+				"cluster": 2,
+				"weights": {
+					"Links": 4.0000,
+					"Total link strength": 23.0000,
+					"Documents": 33.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.0909
+				}
+			},
+			{
+				"id": 5,
+				"label": "juliana vianna",
+				"x": -0.1785,
+				"y": 0.4628,
+				"cluster": 2,
+				"weights": {
+					"Links": 1.0000,
+					"Total link strength": 5.0000,
+					"Documents": 31.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.4194
+				}
+			},
+			{
+				"id": 6,
+				"label": "julieta orlando",
+				"x": 1.0552,
+				"y": -0.4862,
+				"cluster": 3,
+				"weights": {
+					"Links": 1.0000,
+					"Total link strength": 1.0000,
+					"Documents": 29.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.2759
+				}
+			},
+			{
+				"id": 7,
+				"label": "karin gérard",
+				"x": -0.3955,
+				"y": -0.1278,
+				"cluster": 1,
+				"weights": {
+					"Links": 4.0000,
+					"Total link strength": 4.0000,
+					"Documents": 9.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.6667
+				}
+			},
+			{
+				"id": 8,
+				"label": "luis valentín ferrada",
+				"x": 0.8607,
+				"y": 0.9488,
+				"cluster": 4,
+				"weights": {
+					"Links": 0.0000,
+					"Total link strength": 0.0000,
+					"Documents": 35.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.5143
+				}
+			},
+			{
+				"id": 9,
+				"label": "luis vargas-chacoff",
+				"x": -0.5007,
+				"y": 0.1149,
+				"cluster": 2,
+				"weights": {
+					"Links": 3.0000,
+					"Total link strength": 3.0000,
+					"Documents": 11.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.3636
+				}
+			},
+			{
+				"id": 10,
+				"label": "pablo guerrero",
+				"x": -0.3550,
+				"y": -0.5140,
+				"cluster": 1,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 4.0000,
+					"Documents": 16.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2023.6875
+				}
+			},
+			{
+				"id": 11,
+				"label": "tamara contador",
+				"x": -0.2273,
+				"y": -0.3671,
+				"cluster": 1,
+				"weights": {
+					"Links": 2.0000,
+					"Total link strength": 3.0000,
+					"Documents": 13.0000
+				},
+				"scores": {
+					"Avg. pub. year": 2024.2308
+				}
+			}
+		],
+		"links": [
+			{
+				"source_id": 1,
+				"target_id": 7,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 1,
+				"target_id": 10,
+				"strength": 2.0000
+			},
+			{
+				"source_id": 2,
+				"target_id": 4,
+				"strength": 16.0000
+			},
+			{
+				"source_id": 2,
+				"target_id": 9,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 3,
+				"target_id": 6,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 4,
+				"target_id": 5,
+				"strength": 5.0000
+			},
+			{
+				"source_id": 4,
+				"target_id": 7,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 4,
+				"target_id": 9,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 7,
+				"target_id": 9,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 7,
+				"target_id": 11,
+				"strength": 1.0000
+			},
+			{
+				"source_id": 10,
+				"target_id": 11,
+				"strength": 2.0000
+			}
+		]
+	}
+}
